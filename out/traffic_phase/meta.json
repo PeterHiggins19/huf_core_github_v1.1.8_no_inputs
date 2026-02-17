@@ -1,0 +1,7 @@
+{
+  "dataset_id": "351ef20f0c5a5ebe",
+  "rows": 66912,
+  "elements": 1338,
+  "regimes": 851,
+  "note": "Real dataset snapshot (City of Toronto traffic signal phase status). HUF requires schema fidelity and verifiable finite-element mapping."
+}
