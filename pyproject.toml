@@ -4,14 +4,14 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "huf-core"
-version = "1.1.8"
+version = "1.1.8.post1"
 description = "HUF Core: unity-budgeted hierarchy contract + artifact emission."
 readme = "README.md"
 requires-python = ">=3.9"
 dependencies = [
   "numpy>=1.24",
   "pandas>=2.0",
-  "openpyxl>=3.1",
+  "openpyxl>=3.1"
 ]
 
 [project.optional-dependencies]
@@ -21,7 +21,8 @@ planck = ["astropy>=6.0", "healpy>=1.17.3"]
 [project.scripts]
 huf = "huf_core.cli:main"
 
-# Ship ONLY the real Python package. Keep cases/docs/schemas in the repo, not in the pip package.
+# Ship ONLY the real Python package.
+# Keep cases/docs/schemas in the repo, not in the pip package.
 [tool.setuptools]
 include-package-data = false
 
