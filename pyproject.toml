@@ -11,7 +11,7 @@ requires-python = ">=3.9"
 dependencies = [
   "numpy>=1.24",
   "pandas>=2.0",
-  "openpyxl>=3.1"
+  "openpyxl>=3.1",
 ]
 
 [project.optional-dependencies]
@@ -21,15 +21,11 @@ planck = ["astropy>=6.0", "healpy>=1.17.3"]
 [project.scripts]
 huf = "huf_core.cli:main"
 
-# ---- Packaging ----
-# This repo contains top-level folders like `cases/` and `schemas/` that are NOT
-# Python packages. Setuptools flat-layout auto-discovery refuses to build when
-# multiple top-level directories exist, so we explicitly ship only `huf_core`.
-# ---- Packaging: ship only the real python package (huf_core) ----
+# Ship ONLY the real Python package. Keep cases/docs/schemas in the repo, not in the pip package.
 [tool.setuptools]
 include-package-data = false
 
 [tool.setuptools.packages.find]
 where = ["."]
 include = ["huf_core*"]
-exclude = ["cases*", "schemas*", "GET_STARTED*"]
+exclude = ["cases*", "schemas*", "GET_STARTED*", "docs*", "tests*", "examples*", "scripts*"]
