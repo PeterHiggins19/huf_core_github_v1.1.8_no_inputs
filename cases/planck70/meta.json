@@ -1,0 +1,27 @@
+{
+  "dataset_id": "9dad0cd2fe7e0134",
+  "nside_in": 1024,
+  "nside_out": 64,
+  "ordering": "NESTED",
+  "field": "I_STOKES",
+  "fine_npix": 12582912,
+  "coarse_npix": 49152,
+  "group_size": 256,
+  "total_energy": 2.4830984371058893,
+  "provenance": "real",
+  "source": "Planck Public Data Release 3 (PR3): LFI 70 GHz all-sky map (HEALPix FITS). Source is ESA Planck Legacy Archive; mirror/download pages available at NASA/IPAC IRSA. Input FITS is not bundled.",
+  "source_files": [
+    {
+      "path": "cases/planck70/inputs/LFI_SkyMap_070_1024_R3.00_full.fits",
+      "sha256": "3007ac0d5d482bd975c56188acb6fe752453e7db5d5487db358ccf8cb350a770",
+      "bytes": 503326080,
+      "notes": "Large binary; track with Git LFS when publishing to GitHub. Input is excluded from this distribution; download from public sources listed in DATA_SOURCES.md.",
+      "packaged_separately": true
+    }
+  ],
+  "source_urls": [
+    "https://pla.esac.esa.int/",
+    "https://irsa.ipac.caltech.edu/data/Planck/release_3/all-sky-maps/",
+    "https://irsa.ipac.caltech.edu/data/Planck/release_3/all-sky-maps/previews/LFI_SkyMap_070_1024_R3.00_full/index.html"
+  ]
+}

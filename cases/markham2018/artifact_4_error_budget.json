@@ -1,0 +1,21 @@
+{
+  "dataset": "Markham 2018 Budget Allocation of Revenue and Expenditure by Fund (EXPENDITURES)",
+  "budget_type": "mass/weight",
+  "total_expenditures_k$": 456172.0,
+  "note_total_mismatch": "Line-item sum across funds = 456,172 k$; file TOTAL shows 456,171 k$. Unity uses line-item sum.",
+  "tau_global": 0.005,
+  "tau_local": 0.02,
+  "elements_total": 67,
+  "elements_retained": 24,
+  "retained_budget_raw": 0.9710197030944469,
+  "discarded_budget_raw": 0.028980296905553166,
+  "measured_error": {
+    "metric": "total_variation_distance",
+    "value": 0.028980296905553166,
+    "note": "For nonnegative mass budgets with exclusion+renorm, TV equals discarded mass (audit)."
+  },
+  "run_stamp": {
+    "created_at": "2026-02-16T23:13:34.167698",
+    "inputs_md5": "70da7c7dbe8b69a4dad2567126af35cd"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "dataset_id": "markham2018",
+  "provenance": "real",
+  "source": "City of Markham Open Data: 2018 Corporate-Wide Budget \u2013 Allocation of Revenue & Expenditure by Fund (workbook). Input workbook is not bundled in this distribution.",
+  "source_files": [
+    {
+      "path": "inputs/2018-Budget-Allocation-of-Revenue-and-Expenditure-by-Fund.xlsx",
+      "packaged_separately": true,
+      "notes": "Excluded from this distribution; download from Markham Open Data and place at the path above."
+    }
+  ],
+  "note": "Artifacts in this folder were generated from the source workbook via the Markham adapter; traces include sheet cell refs.",
+  "source_urls": [
+    "https://data-markham.opendata.arcgis.com/documents/81a5dda0ccab4fea8e9ea13433964164",
+    "https://www.markham.ca/about-city-markham/open-data-markham"
+  ]
+}

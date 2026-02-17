@@ -1,0 +1,20 @@
+{
+  "dataset_id": "a038eba0236eb368",
+  "rows": 66912,
+  "elements": 1338,
+  "regimes": 851,
+  "note": "Real dataset snapshot; HUF adapter uses only schema + verifiable finite-element mapping (counts by TCS \u00d7 PHASE_BAND).",
+  "provenance": "real",
+  "source": "City of Toronto Open Data: Traffic signal phase status snapshot (export). Input CSV is not bundled in this distribution.",
+  "source_files": [
+    {
+      "path": "inputs/toronto_traffic_signals_phase_status.csv",
+      "packaged_separately": true,
+      "notes": "Excluded from this distribution; download from Toronto Open Data portal and place at the path above."
+    }
+  ],
+  "source_urls": [
+    "https://open.toronto.ca/",
+    "https://open.toronto.ca/catalogue/"
+  ]
+}

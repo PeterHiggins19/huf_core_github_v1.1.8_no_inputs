@@ -1,0 +1,71 @@
+{
+  "system_name": "HUF system",
+  "system_version": "1.1.8",
+  "date": "2026-02-17",
+  "definition": "HUF system = (1) handbook (main content), (2) reference manual (worked examples + artifacts), (3) GitHub package (library/CLI/tests/cases). Inputs are public and not bundled; see DATA_SOURCES.md. Markdown is primary; DOCX copies are included for record-keeping.",
+  "components": {
+    "handbook": "docs/handbook.md",
+    "reference_manual": "docs/reference_manual.md",
+    "github_package": ".",
+    "get_started": {
+      "markdown": "docs/start_here.md",
+      "docx": "docs/start_here.docx",
+      "scripts": {
+        "windows": "START_HERE_WINDOWS.bat",
+        "macos": "START_HERE_MAC.command",
+        "linux": "start_here_linux.sh"
+      }
+    }
+  },
+  "data_statement": "All Markham data is real. All Planck data is real. All Toronto traffic data is real.",
+  "cases": [
+    {
+      "case_id": "markham2018",
+      "provenance": "real",
+      "inputs": [
+        {
+          "path": "cases/markham2018/inputs/2018-Budget-Allocation-of-Revenue-and-Expenditure-by-Fund.xlsx",
+          "packaged_separately": true
+        }
+      ],
+      "notes": "Markham budget allocation workbook; trace report maps retained items to spreadsheet cell refs. Input workbook not bundled; download from Markham Open Data.",
+      "source_urls": [
+        "https://maps.markham.ca/OpenDataSite_Tables/2018-Budget-Allocation-of-Revenue-and-Expenditure-by-Fund.xlsx",
+        "https://data-markham.opendata.arcgis.com/documents/81a5dda0ccab4fea8e9ea13433964164",
+        "https://www.markham.ca/about-city-markham/open-data-markham"
+      ]
+    },
+    {
+      "case_id": "toronto_traffic",
+      "provenance": "real",
+      "inputs": [
+        {
+          "path": "cases/traffic_phase/inputs/toronto_traffic_signals_phase_status.csv",
+          "packaged_separately": true
+        }
+      ],
+      "notes": "City of Toronto traffic signal phase status snapshot; used for phase-band and anomaly adapters. Input CSV not bundled; download/export from Toronto Open Data.",
+      "source_urls": [
+        "https://open.toronto.ca/",
+        "https://open.toronto.ca/catalogue/",
+        "https://open.toronto.ca/api/3/action/"
+      ]
+    },
+    {
+      "case_id": "planck70",
+      "provenance": "real",
+      "inputs": [
+        {
+          "path": "cases/planck70/inputs/LFI_SkyMap_070_1024_R3.00_full.fits",
+          "packaged_separately": true
+        }
+      ],
+      "notes": "Planck LFI 70 GHz sky map FITS; energy-budget demo with exact discarded-energy \u2192 RMSE accounting. Input FITS not bundled; download from ESA PLA or NASA/IPAC IRSA.",
+      "source_urls": [
+        "https://pla.esac.esa.int/",
+        "https://irsa.ipac.caltech.edu/data/Planck/release_3/all-sky-maps/",
+        "https://irsa.ipac.caltech.edu/data/Planck/release_3/all-sky-maps/previews/LFI_SkyMap_070_1024_R3.00_full/index.html"
+      ]
+    }
+  ]
+}

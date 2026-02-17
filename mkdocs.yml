@@ -1,0 +1,13 @@
+site_name: HUF Core
+theme:
+  name: material
+nav:
+  - Home: index.md
+  - Start Here: start_here.md
+  - GitHub for Beginners: github_for_beginners.md
+  - GUI Quickstart: gui_quickstart.md
+  - Handbook: handbook.md
+  - Reference Manual: reference_manual.md
+  - Theory Notes: theory_notes.md
+  - Data Sources: data_sources.md
+  - Cases: cases.md

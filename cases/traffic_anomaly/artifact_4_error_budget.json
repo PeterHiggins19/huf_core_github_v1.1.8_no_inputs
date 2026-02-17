@@ -1,0 +1,7 @@
+{
+  "budget_type": "mass",
+  "discarded_budget_global": 0.6741222366710014,
+  "frame": "mass",
+  "measured_error": null,
+  "measured_error_note": "No error metric callback provided (empirical error is domain-specific)."
+}

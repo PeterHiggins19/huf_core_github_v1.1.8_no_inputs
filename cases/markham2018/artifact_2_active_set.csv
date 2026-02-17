@@ -1,0 +1,25 @@
+element_id,Fund,Account,Amount_k,rho_global_raw,rho_global,rho_fund_raw,rho_fund,keep_reason
+Operating_Fund|Salaries_&_Benefits,Operating Fund,Salaries & Benefits,131828,0.2889874871758898,0.2976123823800321,0.6033787525802923,0.6349821057853947,global
+Waterworks/Stabilization_Capital_Reserve|Contracted_Municipal_Services,Waterworks/Stabilization Capital Reserve,Contracted Municipal Services,100989,0.22138360092245907,0.227990843251639,0.7671954054423629,0.7771852057071617,global
+Capital_Development_Fund|Capital_Expenditures,Capital Development Fund,Capital Expenditures,77715,0.17036337171067054,0.17544790406183966,1.0,1.0,global
+Operating_Fund|Transfers_to_Reserves,Operating Fund,Transfers to Reserves,28756,0.06303762615855422,0.06491899799526811,0.13161664751948665,0.13851037286437487,global
+Waterworks/Stabilization_Capital_Reserve|Transfers_to_Reserves,Waterworks/Stabilization Capital Reserve,Transfers to Reserves,15281,0.03349832957744009,0.03449809460167241,0.11608702918698817,0.11759862092318112,global
+Operating_Fund|Contracted_Municipal_Services,Operating Fund,Contracted Municipal Services,11167,0.02447980147838973,0.02521040654517871,0.05111152812804658,0.05378861224706058,global
+Operating_Fund|Utilities,Operating Fund,Utilities,9121,0.019994651140359337,0.02059139590745724,0.04174695514067456,0.04393354816024354,global
+Waterworks/Stabilization_Capital_Reserve|Salaries_&_Benefits,Waterworks/Stabilization Capital Reserve,Salaries & Benefits,7729,0.01694317055847356,0.01744884321551771,0.058715833295349226,0.05948038355574025,global
+Planning_&_Design|Salaries_&_Benefits,Planning & Design,Salaries & Benefits,6851,0.015018457950071465,0.015466687135400675,0.6654686741136474,0.6771101008104369,global
+Operating_Fund|Maintenance_&_Repair,Operating Fund,Maintenance & Repair,6848,0.015011881483300158,0.015459914392530116,0.03134339971530966,0.03298508253495754,global
+Operating_Fund|Contracts_&_Service_Agreements,Operating Fund,Contracts & Service Agreements,6707,0.014702787545048798,0.015141595477613828,0.030698040579816278,0.03230592122692176,global
+Building_Fee|Salaries_&_Benefits,Building Fee,Salaries & Benefits,6076,0.013319537367484195,0.013717061893839514,0.6102239630410766,0.622732397253254,global
+Engineering|Salaries_&_Benefits,Engineering,Salaries & Benefits,5306,0.011631577562849101,0.011978724557062616,0.6560336300692384,0.6792984252976572,global
+Operating_Fund|Other_Expenditures,Operating Fund,Other Expenditures,5073,0.011120805310277702,0.01145270819411584,0.023219197832325626,0.024435356848691532,global
+Waterworks/Stabilization_Capital_Reserve|Contracts_&_Service_Agreements,Waterworks/Stabilization Capital Reserve,Contracts & Service Agreements,3451,0.007565128942591829,0.007790911882100092,0.026216630961605664,0.02655800280124979,global
+Operating_Fund|Operating_Materials_&_Supplies,Operating Fund,Operating Materials & Supplies,2866,0.006282717922187245,0.006470227022341021,0.013117725406553371,0.013804796516528666,global
+Operating_Fund|Professional_Supplies,Operating Fund,Professional Supplies,2810,0.006159957209122875,0.006343802488757246,0.012861412558414156,0.013535058692060556,global
+Building_Fee|Contracts_&_Service_Agreements,Building Fee,Contracts & Service Agreements,2742,0.006010890628973282,0.006190286983691235,0.2753841518529678,0.2810290048170544,global
+Engineering|Contracts_&_Service_Agreements,Engineering,Contracts & Service Agreements,2505,0.005491349754040142,0.005655240296917047,0.30971810089020774,0.32070157470234284,global
+Waterworks/Stabilization_Capital_Reserve|Other_Purchased_Services,Waterworks/Stabilization Capital Reserve,Other Purchased Services,2492,0.005462851731364485,0.005625891744477957,0.018931279152802467,0.01917778701266719,global
+Operating_Fund|Insurance,Operating Fund,Insurance,2433,0.00533351455152881,0.0054926944680236236,0.011135877848619802,0.01171914512376631,global
+Planning_&_Design|Contracts_&_Service_Agreements,Planning & Design,Contracts & Service Agreements,2369,0.005193216593740957,0.005348209286785024,0.23011170471102477,0.2341371812611188,global
+Building_Fee|Transfers_to_Reserves,Building Fee,Transfers to Reserves,939,0.0020584340994186405,0.002119868518485073,0.09430551370894848,0.0962385979296915,local
+Planning_&_Design|Transfers_to_Reserves,Planning & Design,Transfers to Reserves,898,0.0019685557202107976,0.002027307699254095,0.08722680913064594,0.08875271792844436,local

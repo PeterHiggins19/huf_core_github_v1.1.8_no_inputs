@@ -1,0 +1,12 @@
+{
+  "budget_type": "energy",
+  "discarded_budget_global": 0.029999520540967616,
+  "frame": "energy",
+  "measured_error": null,
+  "measured_error_note": "No error metric callback provided (empirical error is domain-specific).",
+  "metric": "L2_RMSE_pixel_basis",
+  "rmse": 7.694201320154521e-05,
+  "excluded_energy": 0.07449176256920272,
+  "total_energy": 2.4830984371058893,
+  "note": "Exact equality: discarded_budget_global == ||Δf||_2^2 / ||f||_2^2 (pixel basis, energy budget)."
+}

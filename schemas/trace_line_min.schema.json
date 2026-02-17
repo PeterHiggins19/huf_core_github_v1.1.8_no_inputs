@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "HUF Trace Line (minimum)",
+  "type": "object",
+  "required": [
+    "item_id",
+    "regime_path",
+    "rho_global",
+    "inputs_ref",
+    "method_ref",
+    "discarded_budget"
+  ],
+  "properties": {
+    "item_id": {
+      "type": "string"
+    },
+    "regime_path": {
+      "type": "string"
+    },
+    "rho_global": {
+      "type": "number",
+      "minimum": 0
+    },
+    "inputs_ref": {
+      "type": "string"
+    },
+    "method_ref": {
+      "type": "string"
+    },
+    "discarded_budget": {
+      "type": "number",
+      "minimum": 0
+    }
+  },
+  "additionalProperties": true
+}

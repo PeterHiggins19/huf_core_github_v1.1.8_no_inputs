@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "huf-core"
+version = "1.1.8"
+description = "HUF Core: unity-budgeted hierarchy contract + artifact emission."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+  "numpy>=1.24",
+  "pandas>=2.0",
+  "openpyxl>=3.1"
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "ruff>=0.4"]
+planck = ["astropy>=6.0", "healpy>=1.17.3"]
+
+[project.scripts]
+huf = "huf_core.cli:main"

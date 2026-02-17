@@ -1,0 +1,24 @@
+{
+  "dataset_id": "4a31ddbe4beafc6e",
+  "anomaly_status": [
+    "Green Termination"
+  ],
+  "include_call_text": false,
+  "rows_in_subset": 7690,
+  "elements": 3393,
+  "regimes": 837,
+  "note": "Conditional budget: unity is over the anomaly subset only (diagnostic regime).",
+  "provenance": "real",
+  "source": "City of Toronto Open Data: Traffic signal phase status snapshot (export). Input CSV is not bundled in this distribution.",
+  "source_files": [
+    {
+      "path": "inputs/toronto_traffic_signals_phase_status.csv",
+      "packaged_separately": true,
+      "notes": "Excluded from this distribution; download from Toronto Open Data portal and place at the path above."
+    }
+  ],
+  "source_urls": [
+    "https://open.toronto.ca/",
+    "https://open.toronto.ca/catalogue/"
+  ]
+}
