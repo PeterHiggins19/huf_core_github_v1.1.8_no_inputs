@@ -1,57 +1,62 @@
 @echo off
-setlocal
+setlocal EnableExtensions
+
+REM Always run from the repo root (where this .bat lives)
 cd /d "%~dp0"
 
-echo.
 echo === HUF: Start Here (Windows) ===
-echo This will set up Python environment and download Markham + Toronto inputs.
-echo Planck is guided/manual because the files are very large.
+echo This will set up a local Python venv and fetch Markham + Toronto inputs.
+echo Planck is guided/manual because it is very large.
 echo.
 
-where python >nul 2>nul
-if errorlevel 1 (
-  echo ERROR: Python was not found.
-  echo Please install Python 3.10+ from https://www.python.org/downloads/windows/
-  echo IMPORTANT: check "Add python.exe to PATH" during install.
-  echo Then run this file again.
-  echo.
-  pause
-  exit /b 1
-)
-
+REM 1) Bootstrap (creates .venv and installs huf-core + dev tools)
 python scripts\bootstrap.py
-if errorlevel 1 (
-  echo.
-  echo ERROR: bootstrap failed.
-  pause
-  exit /b 1
-)
+if errorlevel 1 goto :error
 
-REM --- Fix Windows SSL cert issues by using certifi ---
-.\.venv\Scripts\python -m pip install -q certifi
-for /f "delims=" %%i in ('.\.venv\Scripts\python -c "import certifi; print(certifi.where())"') do set "SSL_CERT_FILE=%%i"
+REM 2) Ensure certifi is present (helps SSL on some Windows/Python installs)
+.\.venv\Scripts\python -m pip install --upgrade certifi
+if errorlevel 1 goto :error
 
-REM --- Toronto CKAN Action API base (portal front-end is NOT the action API) ---
-set "TORONTO_CKAN=https://ckan0.cf.opendata.inter.prod-toronto.ca/api/3/action"
+REM 3) Fetch Markham (usually works as-is)
+echo.
+echo --- Fetch: Markham ---
+.\.venv\Scripts\python scripts\fetch_data.py --markham
+if errorlevel 1 goto :warn
 
-.\.venv\Scripts\python scripts\fetch_data.py --markham --toronto --yes --toronto-ckan %TORONTO_CKAN%
-if errorlevel 1 (
-  echo.
-  echo NOTE: data fetch reported an error. You can re-run with:
-  echo .\.venv\Scripts\python scripts\fetch_data.py --toronto --yes --toronto-ckan %TORONTO_CKAN%
-)
+REM 4) Fetch Toronto (use the correct CKAN Action API base; non-interactive)
+echo.
+echo --- Fetch: Toronto (non-interactive) ---
+set "TORONTO_CKAN_BASE=https://ckan0.cf.opendata.inter.prod-toronto.ca/api/3/action"
+.\.venv\Scripts\python scripts\fetch_data.py --toronto --yes --toronto-ckan "%TORONTO_CKAN_BASE%"
+if errorlevel 1 goto :warn
 
 echo.
-echo Setup complete. Next try:
-echo .\.venv\Scripts\huf --help
-echo.
-echo Markham demo:
-echo .\.venv\Scripts\huf markham --xlsx cases\markham2018\inputs\2018-Budget-Allocation-of-Revenue-and-Expenditure-by-Fund.xlsx --out out\markham2018
-echo.
-echo Toronto traffic demo:
-echo .\.venv\Scripts\huf traffic --csv cases\traffic_phase\inputs\toronto_traffic_signals_phase_status.csv --out out\traffic_phase
-echo.
-echo Planck guidance:
-echo .\.venv\Scripts\python scripts\fetch_data.py --planck-guide
+echo ✅ Setup + data fetch complete.
+echo Next:
+echo   .\.venv\Scripts\huf --help
+echo   huf markham --xlsx cases\markham2018\inputs\2018-Budget-Allocation-of-Revenue-and-Expenditure-by-Fund.xlsx --out out\markham2018
+echo   huf traffic --csv cases\traffic_phase\inputs\toronto_traffic_signals_phase_status.csv --out out\traffic_phase
+echo   .\.venv\Scripts\python scripts\fetch_data.py --planck-guide
 echo.
 pause
+exit /b 0
+
+:warn
+echo.
+echo ⚠ One of the fetch steps reported an error.
+echo If Toronto still fails, try running this in PowerShell from the repo root:
+echo   .\.venv\Scripts\python scripts\fetch_data.py --toronto --yes --toronto-ckan "https://ckan0.cf.opendata.inter.prod-toronto.ca/api/3/action"
+echo.
+echo You can also download the Toronto CSV manually in a browser and save it to:
+echo   cases\traffic_phase\inputs\toronto_traffic_signals_phase_status.csv
+echo.
+pause
+exit /b 1
+
+:error
+echo.
+echo ❌ Bootstrap failed.
+echo Open the console output above for the exact error.
+echo.
+pause
+exit /b 1

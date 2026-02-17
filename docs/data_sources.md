@@ -85,20 +85,15 @@ make planck-guide
 
 ## City of Toronto (Ontario) — traffic signal phase status
 
-**Case(s):** `cases/traffic_phase/`, `cases/traffic_anomaly/`
+### Toronto Open Data (traffic signals)
 
-**Input expected:**
-- `cases/traffic_phase/inputs/toronto_traffic_signals_phase_status.csv`
-- `cases/traffic_anomaly/inputs/toronto_traffic_signals_phase_status.csv`
+HUF uses the City of Toronto Open Data portal (CKAN).
 
-**Source:**
-- City of Toronto Open Data portal: https://open.toronto.ca/
+CKAN Action API base:
+`https://ckan0.cf.opendata.inter.prod-toronto.ca/api/3/action`
 
-**Notes:**
-- This input may vary in size depending on the export window. It is intentionally excluded.
-- The Traffic adapters treat **(TCS × PHASE_BAND)** as verifiable finite elements and can optionally restrict to anomaly subsets.
-- The automated fetcher uses the portal’s public CKAN Action API endpoint:
-  - https://open.toronto.ca/api/3/action/
+HUF fetch helper:
+`python scripts/fetch_data.py --toronto --yes --toronto-ckan "https://ckan0.cf.opendata.inter.prod-toronto.ca/api/3/action"`
 
 ---
 
