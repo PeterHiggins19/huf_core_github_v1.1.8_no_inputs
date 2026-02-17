@@ -25,13 +25,11 @@ huf = "huf_core.cli:main"
 # This repo contains top-level folders like `cases/` and `schemas/` that are NOT
 # Python packages. Setuptools flat-layout auto-discovery refuses to build when
 # multiple top-level directories exist, so we explicitly ship only `huf_core`.
+# ---- Packaging: ship only the real python package (huf_core) ----
 [tool.setuptools]
 include-package-data = false
 
 [tool.setuptools.packages.find]
 where = ["."]
 include = ["huf_core*"]
-
-[tool.setuptools]
-include-package-data = false
-packages = { find = { where = ["."], include = ["huf_core*"], exclude = ["cases*", "schemas*", "GET_STARTED*"], namespaces = false } }
+exclude = ["cases*", "schemas*", "GET_STARTED*"]
