@@ -1,0 +1,131 @@
+Metadata-Version: 2.4
+Name: huf-core
+Version: 1.1.8
+Summary: HUF Core: unity-budgeted hierarchy contract + artifact emission.
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy>=1.24
+Requires-Dist: pandas>=2.0
+Requires-Dist: openpyxl>=3.1
+Provides-Extra: dev
+Requires-Dist: pytest>=8.0; extra == "dev"
+Requires-Dist: ruff>=0.4; extra == "dev"
+Provides-Extra: planck
+Requires-Dist: astropy>=6.0; extra == "planck"
+Requires-Dist: healpy>=1.17.3; extra == "planck"
+Dynamic: license-file
+
+# HUF Core
+
+HUF Core is a contract-first library for **auditable reduction under a unity budget**.
+
+## New to GitHub?
+
+If you’re starting from **zero GitHub knowledge**, begin here:
+
+- **Start here (Markdown):** `docs/start_here.md`
+- **Start here (DOCX record copy):** `docs/start_here.docx`
+
+One‑click setup scripts (in repo root):
+
+- Windows: `START_HERE_WINDOWS.bat`
+- macOS: `START_HERE_MAC.command`
+- Linux: `start_here_linux.sh`
+
+These will create a local Python environment, install dependencies, and fetch **Markham + Toronto** inputs.
+Planck is guided/manual because the FITS files are very large.
+
+## The HUF system (three parts)
+
+1) **Handbook**: `docs/handbook.md` (contract + invariants + required artifacts)  
+2) **Reference Manual**: `docs/reference_manual.md` (worked examples + real runs)  
+3) **GitHub package**: this repo (library + CLI + tests + cases + artifacts)
+
+**Data statement:** all Markham data is real, all Planck data is real, and all Toronto traffic data is real.
+
+## DOCX exports (record-keeping)
+
+For users who aren’t GitHub-native, this release also includes **DOCX** copies of the key docs:
+
+- `docs/handbook.docx`
+- `docs/reference_manual.docx`
+- `docs/data_sources.docx`
+- `docs/gui_quickstart.docx`
+
+These are generated from the Markdown sources and intended for record retention and offline sharing.
+
+
+## GUI Quickstart (non‑GitHub‑native users)
+
+If you prefer GUI tools (GitHub Desktop, Word/Excel), start here:
+- `docs/gui_quickstart.md`
+
+For the fastest setup from a fresh clone/unzip:
+```bash
+python scripts/bootstrap.py
+```
+
+## 5‑minute start
+
+```bash
+pip install -e ".[dev]"
+pytest -q
+huf --help
+```
+
+## Run the real-data demos (inputs not bundled)
+
+Inputs are excluded to keep downloads small. See `DATA_SOURCES.md` for public download locations and exact expected paths.
+
+### Fetch Markham + Toronto inputs (automatic)
+
+```bash
+make fetch-data
+# or: python scripts/fetch_data.py --markham --toronto
+
+# Non-interactive Toronto (auto-pick best match):
+make fetch-toronto-yes
+# or: python scripts/fetch_data.py --toronto --yes
+```
+
+(Planck remains manual due to size; run `make planck-guide` for download instructions.)
+
+### Markham 2018 budget
+
+```bash
+huf markham   --xlsx cases/markham2018/inputs/2018-Budget-Allocation-of-Revenue-and-Expenditure-by-Fund.xlsx   --out out/markham2018   --tau-global 0.005   --tau-local 0.02
+```
+
+### Toronto traffic phase-band compression
+
+```bash
+huf traffic   --csv cases/traffic_phase/inputs/toronto_traffic_signals_phase_status.csv   --out out/traffic_phase   --tau-local 0.05
+```
+
+### Toronto traffic anomaly diagnostic
+
+```bash
+huf traffic-anomaly   --csv cases/traffic_anomaly/inputs/toronto_traffic_signals_phase_status.csv   --out out/traffic_anomaly   --status "Green Termination"
+```
+
+## Contract (non-negotiable)
+
+Every run must emit the mandatory artifacts:
+
+- `artifact_1_coherence_map.csv`
+- `artifact_2_active_set.csv`
+- `artifact_3_trace_report.jsonl`
+- `artifact_4_error_budget.json`
+- `run_stamp.json`
+
+If an artifact is missing, the run is invalid.
+
+## Notes on Planck
+
+The Planck demo uses a real Planck LFI 70 GHz FITS map. The input is large (~480–500 MB) and is **not included**. Download it from public sources (ESA PLA or NASA/IPAC IRSA; see `DATA_SOURCES.md`), place it under `cases/planck70/inputs/`, then install optional dependencies:
+
+```bash
+pip install -e ".[planck]"
+huf planck --fits cases/planck70/inputs/LFI_SkyMap_070_1024_R3.00_full.fits --out out/planck70 --retained-target 0.97 --nside-out 64
+```
