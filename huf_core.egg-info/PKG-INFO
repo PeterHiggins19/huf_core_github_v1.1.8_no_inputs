@@ -20,112 +20,60 @@ Dynamic: license-file
 
 HUF Core is a contract-first library for **auditable reduction under a unity budget**.
 
+<!-- Simple "button" links for GUI users -->
+<p>
+  <a href="https://github.com/PeterHIggins19/huf_core_github_v1.1.8_no_inputs/releases/latest"
+     style="display:inline-block;padding:10px 14px;margin:6px 6px 6px 0;background:#2da44e;color:white;border-radius:8px;text-decoration:none;">
+    ⬇️ Download Latest Release (ZIP)
+  </a>
+
+  <a href="https://github.com/PeterHIggins19/huf_core_github_v1.1.8_no_inputs/blob/main/docs/gui_quickstart.md"
+     style="display:inline-block;padding:10px 14px;margin:6px 6px 6px 0;background:#0969da;color:white;border-radius:8px;text-decoration:none;">
+    🖱️ GUI Quickstart (read)
+  </a>
+
+  <a href="https://github.com/PeterHIggins19/huf_core_github_v1.1.8_no_inputs/raw/main/docs/gui_quickstart.docx"
+     style="display:inline-block;padding:10px 14px;margin:6px 6px 6px 0;background:#6e40c9;color:white;border-radius:8px;text-decoration:none;">
+    🗂️ GUI Quickstart (DOCX download)
+  </a>
+</p>
+
+---
+
 ## New to GitHub?
 
-If you’re starting from **zero GitHub knowledge**, begin here:
+Start here:
 
-- **Start here (Markdown):** `docs/start_here.md`
-- **Start here (DOCX record copy):** `docs/start_here.docx`
+- **Start here (Markdown):**  
+  https://github.com/PeterHIggins19/huf_core_github_v1.1.8_no_inputs/blob/main/docs/start_here.md
 
-One‑click setup scripts (in repo root):
+- **Start here (DOCX record copy):**  
+  https://github.com/PeterHIggins19/huf_core_github_v1.1.8_no_inputs/raw/main/docs/start_here.docx
 
-- Windows: `START_HERE_WINDOWS.bat`
-- macOS: `START_HERE_MAC.command`
-- Linux: `start_here_linux.sh`
+One-click setup scripts (in repo root):
 
-These will create a local Python environment, install dependencies, and fetch **Markham + Toronto** inputs.
+- **Windows:**  
+  https://github.com/PeterHIggins19/huf_core_github_v1.1.8_no_inputs/blob/main/START_HERE_WINDOWS.bat
+
+- **macOS:**  
+  https://github.com/PeterHIggins19/huf_core_github_v1.1.8_no_inputs/blob/main/START_HERE_MAC.command
+
+- **Linux:**  
+  https://github.com/PeterHIggins19/huf_core_github_v1.1.8_no_inputs/blob/main/start_here_linux.sh
+
+These create a local Python environment, install dependencies, and fetch **Markham + Toronto** inputs.
 Planck is guided/manual because the FITS files are very large.
+
+---
 
 ## The HUF system (three parts)
 
-1) **Handbook**: `docs/handbook.md` (contract + invariants + required artifacts)  
-2) **Reference Manual**: `docs/reference_manual.md` (worked examples + real runs)  
-3) **GitHub package**: this repo (library + CLI + tests + cases + artifacts)
+1) **Handbook:**  
+   https://github.com/PeterHIggins19/huf_core_github_v1.1.8_no_inputs/blob/main/docs/handbook.md
+
+2) **Reference Manual:**  
+   https://github.com/PeterHIggins19/huf_core_github_v1.1.8_no_inputs/blob/main/docs/reference_manual.md
+
+3) **GitHub package:** this repo (library + CLI + tests + cases + artifacts)
 
 **Data statement:** all Markham data is real, all Planck data is real, and all Toronto traffic data is real.
-
-## DOCX exports (record-keeping)
-
-For users who aren’t GitHub-native, this release also includes **DOCX** copies of the key docs:
-
-- `docs/handbook.docx`
-- `docs/reference_manual.docx`
-- `docs/data_sources.docx`
-- `docs/gui_quickstart.docx`
-
-These are generated from the Markdown sources and intended for record retention and offline sharing.
-
-
-## GUI Quickstart (non‑GitHub‑native users)
-
-If you prefer GUI tools (GitHub Desktop, Word/Excel), start here:
-- `docs/gui_quickstart.md`
-
-For the fastest setup from a fresh clone/unzip:
-```bash
-python scripts/bootstrap.py
-```
-
-## 5‑minute start
-
-```bash
-pip install -e ".[dev]"
-pytest -q
-huf --help
-```
-
-## Run the real-data demos (inputs not bundled)
-
-Inputs are excluded to keep downloads small. See `DATA_SOURCES.md` for public download locations and exact expected paths.
-
-### Fetch Markham + Toronto inputs (automatic)
-
-```bash
-make fetch-data
-# or: python scripts/fetch_data.py --markham --toronto
-
-# Non-interactive Toronto (auto-pick best match):
-make fetch-toronto-yes
-# or: python scripts/fetch_data.py --toronto --yes
-```
-
-(Planck remains manual due to size; run `make planck-guide` for download instructions.)
-
-### Markham 2018 budget
-
-```bash
-huf markham   --xlsx cases/markham2018/inputs/2018-Budget-Allocation-of-Revenue-and-Expenditure-by-Fund.xlsx   --out out/markham2018   --tau-global 0.005   --tau-local 0.02
-```
-
-### Toronto traffic phase-band compression
-
-```bash
-huf traffic   --csv cases/traffic_phase/inputs/toronto_traffic_signals_phase_status.csv   --out out/traffic_phase   --tau-local 0.05
-```
-
-### Toronto traffic anomaly diagnostic
-
-```bash
-huf traffic-anomaly   --csv cases/traffic_anomaly/inputs/toronto_traffic_signals_phase_status.csv   --out out/traffic_anomaly   --status "Green Termination"
-```
-
-## Contract (non-negotiable)
-
-Every run must emit the mandatory artifacts:
-
-- `artifact_1_coherence_map.csv`
-- `artifact_2_active_set.csv`
-- `artifact_3_trace_report.jsonl`
-- `artifact_4_error_budget.json`
-- `run_stamp.json`
-
-If an artifact is missing, the run is invalid.
-
-## Notes on Planck
-
-The Planck demo uses a real Planck LFI 70 GHz FITS map. The input is large (~480–500 MB) and is **not included**. Download it from public sources (ESA PLA or NASA/IPAC IRSA; see `DATA_SOURCES.md`), place it under `cases/planck70/inputs/`, then install optional dependencies:
-
-```bash
-pip install -e ".[planck]"
-huf planck --fits cases/planck70/inputs/LFI_SkyMap_070_1024_R3.00_full.fits --out out/planck70 --retained-target 0.97 --nside-out 64
-```
