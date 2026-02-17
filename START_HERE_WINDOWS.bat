@@ -1,4 +1,8 @@
 @echo off
+chcp 65001 >nul
+setlocal EnableExtensions
+
+@echo off
 setlocal EnableExtensions
 
 REM Always run from the repo root (where this .bat lives)
