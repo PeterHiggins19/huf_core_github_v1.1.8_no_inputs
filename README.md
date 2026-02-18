@@ -1,47 +1,31 @@
-# HUF System (Markdown-only, docs + cases)
+# HUF System (Markdown-only: docs + cases)
 
-This package is the **HUF system without the GitHub codebase**:
+This repo is a **portable, documentation-first** snapshot of HUF Core:
+- **Docs** are in `docs/` (Markdown + DOCX exports)
+- **Cases** (example inputs + runnable demos) are in `cases/`
+- **CLI** entrypoint is `huf`
 
-## New to GitHub?
+## Start here (clickable)
 
-If you’re starting from **zero GitHub knowledge**, begin here:
+- Windows quickstart: [START_HERE_WINDOWS.bat](START_HERE_WINDOWS.bat)
+- Mac quickstart: [START_HERE_MAC.command](START_HERE_MAC.command)
+- Linux quickstart: [start_here_linux.sh](start_here_linux.sh)
 
-- **Start here (Markdown):** `docs/start_here.md`
-- **Start here (DOCX record copy):** `docs/start_here.docx`
+## Documentation (clickable)
 
-One‑click setup scripts (in repo root):
+- Start Here (Markdown): [docs/start_here.md](docs/start_here.md)  
+  Start Here (DOCX): [docs/start_here.docx](docs/start_here.docx)
+- Handbook (Markdown): [docs/handbook.md](docs/handbook.md)  
+  Handbook (DOCX): [docs/handbook.docx](docs/handbook.docx)
+- Reference Manual (Markdown): [docs/reference_manual.md](docs/reference_manual.md)  
+  Reference Manual (DOCX): [docs/reference_manual.docx](docs/reference_manual.docx)
+- GUI Quickstart (DOCX): [docs/gui_quickstart.docx](docs/gui_quickstart.docx)
+- Data Sources (Markdown): [DATA_SOURCES.md](DATA_SOURCES.md)  
+  Data Sources (DOCX): [docs/data_sources.docx](docs/data_sources.docx)
 
-- Windows: `START_HERE_WINDOWS.bat`
-- macOS: `START_HERE_MAC.command`
-- Linux: `start_here_linux.sh`
+## Data downloads
 
-These will create a local Python environment, install dependencies, and fetch **Markham + Toronto** inputs.
-Planck is guided/manual because the FITS files are very large.
+- Toronto + Markham downloader: [scripts/fetch_data.py](scripts/fetch_data.py)
+- Bootstrap helper (Windows): [scripts/bootstrap.py](scripts/bootstrap.py)
 
-1) **Handbook**: `docs/handbook.md`
-2) **Reference Manual**: `docs/reference_manual.md`
-3) **Cases**: `cases/*` (reference artifacts + run stamps + meta)
-
-## DOCX exports (record-keeping)
-
-For users who aren’t GitHub-native, this release also includes **DOCX** copies of the key docs:
-
-- `docs/handbook.docx`
-- `docs/reference_manual.docx`
-- `docs/data_sources.docx`
-- `docs/gui_quickstart.docx`
-
-These are generated from the Markdown sources and intended for record retention and offline sharing.
-
-## GUI Quickstart
-
-If you prefer GUI tools (Word/Excel, GitHub Desktop), start with:
-- `docs/gui_quickstart.md`
-
-## Inputs policy
-Upstream inputs (Planck FITS / Markham workbook / Toronto traffic CSV) are **real public data** but are **not bundled**.
-
-See `DATA_SOURCES.md` for where to download them and the exact expected paths.
-
-## GitHub package (library + CLI)
-The codebase is distributed separately as a “GitHub package” zip (or via the actual repo). Use it if you want to run the demos or build new adapters.
+> Tip: If Toronto CKAN ever changes, set `HUF_TORONTO_CKAN` or pass `--toronto-ckan`.

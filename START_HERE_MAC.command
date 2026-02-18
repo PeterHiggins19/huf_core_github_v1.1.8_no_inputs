@@ -1,5 +1,6 @@
 #!/bin/bash
 set -e
+export HUF_TORONTO_CKAN="${HUF_TORONTO_CKAN:-https://ckan0.cf.opendata.inter.prod-toronto.ca/api/3/action}"
 cd "$(dirname "$0")"
 
 echo

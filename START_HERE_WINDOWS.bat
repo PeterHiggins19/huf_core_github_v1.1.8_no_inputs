@@ -1,4 +1,5 @@
 @echo off
+if "%HUF_TORONTO_CKAN%"=="" set "HUF_TORONTO_CKAN=https://ckan0.cf.opendata.inter.prod-toronto.ca/api/3/action"
 setlocal EnableExtensions
 cd /d "%~dp0"
 chcp 65001 >nul
