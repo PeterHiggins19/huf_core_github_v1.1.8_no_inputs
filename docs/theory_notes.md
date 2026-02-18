@@ -6,7 +6,7 @@ This repo is deliberately **artifact-first**: you can run real datasets and insp
 
 If you *do* want the formal structure (definitions, taxonomy, and expanded proofs), see:
 
-- **`docs/The_Higgins_Unity_Framework.docx`** (full theoretical handbook)
+- **`docs/The_Higgins_Unity_Framework.md`** (full theoretical handbook)
 - **Handbook** (conceptual + case-study narrative)
 
 ---

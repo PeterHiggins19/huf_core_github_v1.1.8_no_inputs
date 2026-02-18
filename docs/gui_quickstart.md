@@ -10,10 +10,10 @@ If you don’t want Git at all:
 
 1. Download the latest **release ZIP** from GitHub (look for **Releases** on the right side of the repo page).
 2. Unzip it to a folder like `Documents/HUF/`.
-3. Open the DOCX record copies in `docs/`:
-   - `docs/handbook.docx`
-   - `docs/reference_manual.docx`
-   - `docs/data_sources.docx`
+3. Open the Markdown record copies in `docs/`:
+   - `docs/handbook.md`
+   - `docs/reference_manual.md`
+   - `docs/data_sources.md`
 
 You can still run the CLI from this unzipped folder (see below).
 

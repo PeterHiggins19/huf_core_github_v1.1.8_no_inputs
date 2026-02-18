@@ -7,7 +7,7 @@ This package is the **HUF system without the GitHub codebase**:
 If you’re starting from **zero GitHub knowledge**, begin here:
 
 - **Start here (Markdown):** `docs/start_here.md`
-- **Start here (DOCX record copy):** `docs/start_here.docx`
+- **Start here (Markdown record copy):** `docs/start_here.md`
 
 One‑click setup scripts (in repo root):
 
@@ -22,14 +22,14 @@ Planck is guided/manual because the FITS files are very large.
 2) **Reference Manual**: `docs/reference_manual.md`
 3) **Cases**: `cases/*` (reference artifacts + run stamps + meta)
 
-## DOCX exports (record-keeping)
+## Markdown exports (record-keeping)
 
-For users who aren’t GitHub-native, this release also includes **DOCX** copies of the key docs:
+For users who aren’t GitHub-native, this release also includes **Markdown** copies of the key docs:
 
-- `docs/handbook.docx`
-- `docs/reference_manual.docx`
-- `docs/data_sources.docx`
-- `docs/gui_quickstart.docx`
+- `docs/handbook.md`
+- `docs/reference_manual.md`
+- `docs/data_sources.md`
+- `docs/gui_quickstart.md`
 
 These are generated from the Markdown sources and intended for record retention and offline sharing.
 

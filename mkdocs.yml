@@ -1,22 +1,20 @@
-site_name: HUF Core
-
+site_name: "HUF Core (Higgins Unity Framework)"
 theme:
   name: material
-
-markdown_extensions:
-  - attr_list
-  - admonition
-  - toc:
-      permalink: true
-
 nav:
   - Home: index.md
-  - Start Here: start_here.md
-  - Reference Manual: reference_manual.md
-  - Handbook: handbook.md
-  - Data Sources: data_sources.md
-  - Troubleshooting: troubleshooting.md
-  - GitHub for Beginners: github_for_beginners.md
-  - GUI Quickstart: gui_quickstart.md
-  - Theory Notes: theory_notes.md
-  - Cases: cases.md
+  - Learning Path: learning_path.md
+  - Getting Started:
+      - Get Started (Zero GitHub): get_started_zero_github.md
+      - Start Here (Developer): start_here.md
+      - Data Sources & Fetching: data_sources.md
+      - Cases: cases.md
+      - Troubleshooting: troubleshooting.md
+  - Background:
+      - What is HUF?: The_Higgins_Unity_Framework.md
+      - Theory Notes: theory_notes.md
+      - Handbook: handbook.md
+  - Reference:
+      - Reference Manual: reference_manual.md
+      - GUI Quickstart: gui_quickstart.md
+      - GitHub for Beginners: github_for_beginners.md

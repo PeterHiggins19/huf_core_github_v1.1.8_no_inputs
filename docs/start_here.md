@@ -147,12 +147,13 @@ Outputs and artifacts are written under the `out/` folder.
 
 ---
 
-## Where are the “record copies” (DOCX)?
+## Documentation
 
-Look in:
-- `docs/handbook.docx`
-- `docs/reference_manual.docx`
-- `docs/data_sources.docx`
+All docs are kept in **Markdown (`.md`)** for easy reading on GitHub.
+
+Recommended:
+- [Learning Path](learning_path.md)
+- [Get Started (Zero GitHub)](get_started_zero_github.md)
 
 ---
 

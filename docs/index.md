@@ -1,33 +1,22 @@
-# HUF Core
+# Higgins Unity Framework (HUF) — Documentation
 
-[Start Here](start_here/){ .md-button .md-button--primary }
-[Reference Manual](reference_manual/){ .md-button }
-[Handbook](handbook/){ .md-button }
-[Data Sources](data_sources/){ .md-button }
-[GitHub for Beginners](github_for_beginners/){ .md-button }
+Welcome! This site is meant to help **non‑technical users** get HUF running first, then learn the rest in small steps.
 
----
+## Start here
 
-## Get the project
+- ✅ **Beginner (no GitHub knowledge required):** [Get Started (Zero GitHub)](get_started_zero_github.md)
+- 🧭 **Recommended reading order:** [Learning Path](learning_path.md)
+- 📦 **Download data (Markham + Toronto):** [Data Sources & Fetching](data_sources.md)
+- ▶️ **Run examples (“cases”):** [Cases](cases.md)
+- 🆘 **Fix common problems:** [Troubleshooting](troubleshooting.md)
 
-[Download latest release (ZIP)](https://github.com/PeterHIggins19/huf_core_github_v1.1.8_no_inputs/releases/latest){ .md-button .md-button--primary }
-[View on GitHub](https://github.com/PeterHIggins19/huf_core_github_v1.1.8_no_inputs){ .md-button }
+## What is HUF?
 
----
+If you want the big picture in plain English:
+- [What is the Higgins Unity Framework?](The_Higgins_Unity_Framework.md)
 
-## One-minute demo commands (after running Start Here)
+## For developers
 
-Markham:
-```powershell
-.\.venv\Scripts\huf markham --xlsx cases\markham2018\inputs\2018-Budget-Allocation-of-Revenue-and-Expenditure-by-Fund.xlsx --out out\markham2018
-```
-
-Toronto traffic:
-```powershell
-.\.venv\Scripts\huf traffic --csv cases\traffic_phase\inputs\toronto_traffic_signals_phase_status.csv --out out\traffic_phase
-```
-
-Planck guidance:
-```powershell
-.\.venv\Scripts\python scripts\fetch_data.py --planck-guide
-```
+- [Reference Manual](reference_manual.md)
+- [Theory Notes (optional)](theory_notes.md)
+- [GitHub for Beginners](github_for_beginners.md)

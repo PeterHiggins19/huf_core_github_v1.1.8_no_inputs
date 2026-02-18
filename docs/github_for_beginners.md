@@ -89,12 +89,12 @@ If you are just running the demos, you can ignore these.
 
 ---
 
-## Where are the “record copies” (DOCX)?
+## Where are the “record copies” ?
 
-- `docs/handbook.docx`
-- `docs/reference_manual.docx`
-- `docs/data_sources.docx`
-- `docs/start_here.docx`
+- `docs/handbook.md`
+- `docs/reference_manual.md`
+- `docs/data_sources.md`
+- `docs/start_here.md`
 
 These are included for users who keep formal records outside GitHub.
 
