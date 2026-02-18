@@ -6,6 +6,7 @@ huf_core/adapters.py
 huf_core/cli.py
 huf_core/core.py
 huf_core/io.py
+huf_core/vector_db_adapter.py
 huf_core.egg-info/PKG-INFO
 huf_core.egg-info/SOURCES.txt
 huf_core.egg-info/dependency_links.txt
