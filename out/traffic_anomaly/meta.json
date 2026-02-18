@@ -1,0 +1,12 @@
+{
+  "dataset_id": "e7be6fd355d02627",
+  "anomaly_status": [
+    "Green Termination",
+    "Green Termination"
+  ],
+  "include_call_text": false,
+  "rows_in_subset": 7690,
+  "elements": 3393,
+  "regimes": 837,
+  "note": "Conditional budget: unity is over the anomaly subset only (diagnostic regime)."
+}
