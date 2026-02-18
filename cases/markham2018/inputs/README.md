@@ -1,20 +1,24 @@
-# Inputs (not bundled)
+# Inputs (Markham 2018)
 
-This case uses a **real City of Markham** budget workbook. The input workbook is not bundled so the distribution stays small and because Markham publishes it publicly.
+This case reads the Markham 2018 *fund × account* expenditure workbook.
 
-## Required file
-Place the workbook at:
+In this repo snapshot, a small **sample** workbook is already present at:
 
 - `cases/markham2018/inputs/2018-Budget-Allocation-of-Revenue-and-Expenditure-by-Fund.xlsx`
 
-## Where to download
-Download the document “2018 Corporate-Wide Budget – Allocation of Revenue & Expenditure by Fund” from the City of Markham Open Data catalogue.
+If you want the original City of Markham workbook instead, see `DATA_SOURCES.md` (repo root) for download links and replace the file at the same path.
 
-See `DATA_SOURCES.md` (repo root) for links.
-
-## After download
-Run:
+## Run
+From the repo root:
 
 ```bash
-huf markham2018 --input cases/markham2018/inputs/2018-Budget-Allocation-of-Revenue-and-Expenditure-by-Fund.xlsx
+huf markham \
+  --xlsx cases/markham2018/inputs/2018-Budget-Allocation-of-Revenue-and-Expenditure-by-Fund.xlsx \
+  --out out/markham2018
+```
+
+Optional thresholds:
+
+```bash
+huf markham --xlsx cases/markham2018/inputs/2018-Budget-Allocation-of-Revenue-and-Expenditure-by-Fund.xlsx --out out/markham2018 --tau-global 0.005 --tau-local 0.02
 ```

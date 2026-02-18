@@ -1,25 +1,26 @@
-# Inputs (not bundled)
+# Inputs (Toronto traffic phase status)
 
-These cases use **real City of Toronto** traffic-signal phase status data exported from the City’s Open Data portal.
+This case uses City of Toronto traffic-signal **phase status** data.
 
-The full CSV can be several MB+ depending on the export window, so it is **not included** here.
-
-## Required file
-Place the CSV at:
+In this repo snapshot, a representative CSV is already included at:
 
 - `cases/traffic_phase/inputs/toronto_traffic_signals_phase_status.csv`
 
-## Where to download
-1. Go to the City of Toronto Open Data portal.
-2. Search the catalogue for **Traffic Signal Phase Status** (or similar wording).
-3. Download/export as CSV.
-4. Rename to match the required filename above (or update your CLI `--input`).
+You can replace it with your own export (just keep the same filename, or point `--csv` at your file).
 
-See `DATA_SOURCES.md` (repo root) for links.
+See `DATA_SOURCES.md` (repo root) for catalogue links.
 
-## After download
-Run:
+## Run
+From the repo root:
 
 ```bash
-huf traffic-phase --input cases/traffic_phase/inputs/toronto_traffic_signals_phase_status.csv
+huf traffic \
+  --csv cases/traffic_phase/inputs/toronto_traffic_signals_phase_status.csv \
+  --out out/traffic_phase
+```
+
+Optional threshold (default shown):
+
+```bash
+huf traffic --csv cases/traffic_phase/inputs/toronto_traffic_signals_phase_status.csv --out out/traffic_phase --tau-local 0.05
 ```

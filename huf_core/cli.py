@@ -32,7 +32,7 @@ def main(argv=None) -> int:
     p_an = sub.add_parser("traffic-anomaly", help="Run traffic anomaly diagnostic adapter.")
     p_an.add_argument("--csv", required=True, type=Path)
     p_an.add_argument("--out", required=True, type=Path)
-    p_an.add_argument("--tau-global", type=float, default=0.005)
+    p_an.add_argument("--tau-global", type=float, default=0.0005, help="Global exclusion threshold. Note: 0.005 can exclude all elements on the bundled Toronto CSV; 0.0005 is a safer default.")
     p_an.add_argument("--status", action="append", default=["Green Termination"])
     p_an.add_argument("--include-call-text", action="store_true")
 
