@@ -1,3 +1,28 @@
+# HUF Core
+
+## Start here (GUI-friendly)
+
+- **Download the latest release ZIP (recommended):**
+  https://github.com/PeterHIggins19/huf_core_github_v1.1.8_no_inputs/releases/tag/HUF_v1.1.8
+
+- **GUI Quickstart (read online):**
+  https://raw.githubusercontent.com/PeterHIggins19/huf_core_github_v1.1.8_no_inputs/main/docs/gui_quickstart.md
+
+- **DOCX record copies (download):**
+  - Handbook (DOCX): https://github.com/PeterHIggins19/huf_core_github_v1.1.8_no_inputs/raw/main/docs/handbook.docx
+  - Reference Manual (DOCX): https://github.com/PeterHIggins19/huf_core_github_v1.1.8_no_inputs/raw/main/docs/reference_manual.docx
+  - Data Sources (DOCX): https://github.com/PeterHIggins19/huf_core_github_v1.1.8_no_inputs/raw/main/docs/data_sources.docx
+  - Start Here (DOCX): https://github.com/PeterHIggins19/huf_core_github_v1.1.8_no_inputs/raw/main/docs/start_here.docx
+
+---
+
+## New to GitHub?
+
+If you want **zero GitHub knowledge** and just want to run HUF:
+1) Download the Release ZIP
+2) Unzip it
+3) Run `START_HERE_WINDOWS.bat`
+
 # HUF Core (GUI-friendly)
 
 Welcome. This repo is meant to be usable even if you’re **not GitHub-native**.
