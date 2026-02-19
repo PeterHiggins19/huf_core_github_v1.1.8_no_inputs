@@ -1,33 +1,37 @@
 site_name: HUF Core Snapshot
 site_url: https://peterhiggins19.github.io/huf_core_github_v1.1.8_no_inputs/
-repo_url: https://github.com/PeterHIggins19/huf_core_github_v1.1.8_no_inputs
+
 repo_name: PeterHIggins19/huf_core_github_v1.1.8_no_inputs
+repo_url: https://github.com/PeterHIggins19/huf_core_github_v1.1.8_no_inputs
 edit_uri: edit/main/docs/
+
+docs_dir: docs
+site_dir: site
+use_directory_urls: true
 
 theme:
   name: material
   icon:
     repo: fontawesome/brands/github
   features:
-    # Keep the learning flow in the LEFT sidebar (no top tabs)
+    # LEFT sidebar learning flow (no top tabs)
     - navigation.sections
     - navigation.expand
     - navigation.path
     - navigation.indexes
     - toc.follow
+
+    - navigation.instant
+    - navigation.tracking
+
     - search.suggest
     - search.highlight
-    # Restore the code-block copy button
+
+    # code-block copy button
     - content.code.copy
-  palette:
-    - scheme: default
-      toggle:
-        icon: material/weather-night
-        name: Switch to dark mode
-    - scheme: slate
-      toggle:
-        icon: material/weather-sunny
-        name: Switch to light mode
+
+    # "Edit this page" link
+    - content.action.edit
 
 plugins:
   - search
@@ -36,23 +40,19 @@ markdown_extensions:
   - admonition
   - attr_list
   - md_in_html
-  - tables
   - footnotes
+  - tables
   - pymdownx.details
   - pymdownx.superfences
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.inlinehilite
-  - pymdownx.tabbed:
-      alternate_style: true
-  - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - toc:
       permalink: true
 
 nav:
   - Home: index.md
+
   - Learning path: learning_path.md
   - Quick run: quick_run.md
 
@@ -67,6 +67,7 @@ nav:
       - Included cases: cases.md
       - Markham worked example: markham_worked_example.md
       - Traffic phase worked example: traffic_phase_worked_example.md
+      - Planck: planck.md
 
   - Adapters:
       - Vector DB coherence: vector_db_coherence.md
@@ -82,6 +83,5 @@ nav:
       - GUI quickstart: gui_quickstart.md
       - GitHub for beginners: github_for_beginners.md
       - HUF overview (legacy notes): The_Higgins_Unity_Framework.md
-      - Data sources (legacy path): docs/data_sources.md
 
   - Contributing: contributing.md
