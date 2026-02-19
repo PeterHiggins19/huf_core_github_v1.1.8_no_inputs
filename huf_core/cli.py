@@ -14,6 +14,33 @@ from .adapters import (
     traffic_anomaly_elements
 )
 
+
+def _print_done(cmd: str, out_dir: Path, artifacts: dict, extra: dict | None = None) -> None:
+    """Small human-friendly summary after a successful run."""
+    try:
+        cm = artifacts.get("coherence_map")
+        n_cm = len(cm) if hasattr(cm, "__len__") else 0
+    except Exception:
+        n_cm = 0
+    try:
+        n_active = len(artifacts.get("active_set", []))
+    except Exception:
+        n_active = 0
+    err = artifacts.get("error_budget", {}) or {}
+    discarded = err.get("discarded_budget_global", err.get("discarded_budget", None))
+
+    msg = f"[done] {cmd} -> {out_dir} | active_set={n_active} coherence_rows={n_cm}"
+    if discarded is not None:
+        try:
+            msg += f" discarded_global={float(discarded):.6g}"
+        except Exception:
+            msg += f" discarded_global={discarded}"
+    print(msg)
+    if extra:
+        for k, v in extra.items():
+            print(f"       {k}: {v}")
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(prog="huf", description="HUF Core runner (contract + artifacts).")
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -32,7 +59,7 @@ def main(argv=None) -> int:
     p_an = sub.add_parser("traffic-anomaly", help="Run traffic anomaly diagnostic adapter.")
     p_an.add_argument("--csv", required=True, type=Path)
     p_an.add_argument("--out", required=True, type=Path)
-    p_an.add_argument("--tau-global", type=float, default=0.0005, help="Global exclusion threshold. Note: 0.005 can exclude all elements on the bundled Toronto CSV; 0.0005 is a safer default.")
+    p_an.add_argument("--tau-global", type=float, default=0.0005, help="Global exclusion threshold. 0.005 may exclude all elements on the bundled Toronto CSV; 0.0005 is a safer default.")
     p_an.add_argument("--status", action="append", default=["Green Termination"])
     p_an.add_argument("--include-call-text", action="store_true")
 
@@ -45,6 +72,13 @@ def main(argv=None) -> int:
     args = ap.parse_args(argv)
 
     if args.cmd == "planck":
+        if not args.fits.exists():
+            raise FileNotFoundError(
+                f"Missing FITS file: {args.fits}\n"
+                "Download (IRSA PR3):\n"
+                "  https://irsa.ipac.caltech.edu/data/Planck/release_3/all-sky-maps/maps/LFI_SkyMap_070_1024_R3.00_full.fits\n"
+                "Then re-run this command."
+            )
         elements, meta = planck_lfi70_pixel_energy_elements(args.fits, nside_out=args.nside_out)
         # Determine tau from retained-target (keep the smallest rho among the kept set)
         tmp = elements.copy()
@@ -68,6 +102,7 @@ def main(argv=None) -> int:
         sp = core.stability_packet(cfg, sweep)
         sp.to_csv(args.out / "stability_packet.csv", index=False)
         (args.out / "meta.json").write_text(json.dumps(meta, indent=2), encoding="utf-8")
+        _print_done("planck", args.out, artifacts, extra={"dataset_id": meta.get("dataset_id"), "tau": tau, "nside_out": args.nside_out})
         return 0
 
     if args.cmd == "traffic":
@@ -93,6 +128,7 @@ def main(argv=None) -> int:
         sp = core.stability_packet(cfg, sweep)
         sp.to_csv(args.out / "stability_packet.csv", index=False)
         (args.out / "meta.json").write_text(json.dumps(meta, indent=2), encoding="utf-8")
+        _print_done("planck", args.out, artifacts, extra={"dataset_id": meta.get("dataset_id"), "tau": tau, "nside_out": args.nside_out})
         return 0
 
     if args.cmd == "traffic-anomaly":
@@ -105,6 +141,7 @@ def main(argv=None) -> int:
         sp = core.stability_packet(cfg, sweep)
         sp.to_csv(args.out / "stability_packet.csv", index=False)
         (args.out / "meta.json").write_text(json.dumps(meta, indent=2), encoding="utf-8")
+        _print_done("planck", args.out, artifacts, extra={"dataset_id": meta.get("dataset_id"), "tau": tau, "nside_out": args.nside_out})
         return 0
 
     if args.cmd == "markham":
@@ -134,6 +171,7 @@ def main(argv=None) -> int:
         sp = core.stability_packet(cfg, sweep)
         sp.to_csv(args.out / "stability_packet.csv", index=False)
         (args.out / "meta.json").write_text(json.dumps(artifacts["meta"], indent=2), encoding="utf-8")
+        _print_done("markham", args.out, artifacts, extra={"dataset_id": meta.get("dataset_id"), "tau_global": float(args.tau_global), "tau_local": float(args.tau_local)})
         return 0
 
 
