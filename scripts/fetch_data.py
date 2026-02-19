@@ -271,7 +271,7 @@ def _print_planck_guide() -> None:
     rel_ps = str(PLANCK_DEST).replace("/", "\\")   # for PowerShell examples
     dest_abs = (root / PLANCK_DEST).as_posix()
 
-    msg = f"""
+    msg = rf"""
     Planck input is intentionally NOT downloaded automatically.
 
     Why: the LFI 70 GHz PR3 map FITS is large (~480–500MB) and users often choose
