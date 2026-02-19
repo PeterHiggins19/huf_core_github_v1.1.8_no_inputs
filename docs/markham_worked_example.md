@@ -155,8 +155,25 @@ Here’s the story for this workbook:
 
 ---
 
-## 8) Explore further (copy/paste)
+## 8) Explore further (PowerShell-safe)
 
+Those snippets are **Python**, so don’t paste them directly into the PowerShell prompt.
+
+### Option A (recommended): run the helper script
+
+Windows PowerShell (repo root):
+```powershell
+.\.venv\Scripts\python scripts\inspect_markham_artifacts.py --out out\markham2018
+```
+
+### Option B: run interactively in Python
+
+1) Start Python:
+```powershell
+.\.venv\Scripts\python
+```
+
+2) Paste this into the Python prompt:
 ```python
 import pandas as pd
 

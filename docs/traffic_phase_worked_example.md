@@ -250,3 +250,18 @@ This is how you keep the analysis auditable when you change thresholds.
 
 - Want to build your own “outlier report”?
   Use `artifact_2_active_set.csv` as the authoritative retained set, and join to your own intersection metadata.
+---
+
+## 10) Rebuild the “outlier lists” automatically
+
+If you want the tables on this page to come from **your own run output** (instead of reading the static numbers here), run:
+
+Windows PowerShell (repo root):
+```powershell
+.\.venv\Scripts\python scripts\inspect_traffic_phase_artifacts.py --out out\traffic_phase --csv cases\traffic_phase\inputs\toronto_traffic_signals_phase_status.csv
+```
+
+It prints:
+- global band totals (MajorEven / MinorOdd / Other)
+- top intersections by global share (from `artifact_1_coherence_map.csv`)
+- most MinorOdd-heavy + Other-heavy intersections (from `artifact_2_active_set.csv`)
