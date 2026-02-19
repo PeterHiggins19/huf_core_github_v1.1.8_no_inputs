@@ -46,3 +46,12 @@ nav:
   - Reference Manual: reference_manual.md
   - Vector DB Coherence: vector_db_coherence.md
   - GitHub for Beginners: github_for_beginners.md
+
+theme:
+  name: material
+  features:
+    - content.code.copy
+    - navigation.sections
+    - navigation.expand
+plugins:
+  - search
