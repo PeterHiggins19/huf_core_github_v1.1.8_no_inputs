@@ -256,8 +256,20 @@ def _download_toronto_csv(
 # ----------------------------- Planck guide -----------------------------
 
 def _print_planck_guide() -> None:
+    """
+    Print manual download instructions for the Planck LFI 70 GHz PR3 map.
+
+    Notes:
+    - We intentionally do NOT download this automatically (large file, users may choose sources).
+    - On Windows PowerShell 5.x, `curl` is an alias for Invoke-WebRequest. Use `curl.exe` if you
+      want real curl flags like -L and -o.
+    """
     root = _repo_root()
-    dest = root / PLANCK_DEST
+
+    # Prefer showing portable, repo-relative paths in the printed guide.
+    rel_posix = PLANCK_DEST.as_posix()              # e.g. cases/planck70/inputs/...
+    rel_ps = str(PLANCK_DEST).replace("/", "\\")   # for PowerShell examples
+    dest_abs = (root / PLANCK_DEST).as_posix()
 
     msg = f"""
     Planck input is intentionally NOT downloaded automatically.
@@ -266,18 +278,21 @@ def _print_planck_guide() -> None:
     between ESA PLA and NASA/IPAC IRSA (and sometimes different products/releases).
 
     Expected local path for this repo:
-      {PLANCK_DEST.as_posix()}
+      {rel_posix}
 
     Option A (NASA/IPAC IRSA) — direct download:
       1) Open the preview page and click "Download HEALPix FITS file":
          {IRSA_PLANCK70_PREVIEW_URL}
-      2) Or download directly with curl/wget (resume-friendly):
 
-         curl -L -o "{dest.as_posix()}" "{IRSA_PLANCK70_FITS_URL}"
+      2) Direct download (Mac/Linux or real curl):
+         curl -L -o "{rel_posix}" "{IRSA_PLANCK70_FITS_URL}"
 
-      3) PowerShell (Windows) BITS download:
+         Windows PowerShell note: in Windows PowerShell, `curl` is an alias for Invoke-WebRequest.
+         Use curl.exe instead:
+         curl.exe -L -o "{rel_posix}" "{IRSA_PLANCK70_FITS_URL}"
 
-         $dest = "{dest.as_posix()}"
+      3) PowerShell (Windows) BITS download (recommended on Windows):
+         $dest = Join-Path $PWD "{rel_ps}"
          New-Item -ItemType Directory -Force (Split-Path $dest) | Out-Null
          $src  = "{IRSA_PLANCK70_FITS_URL}"
          Start-BitsTransfer -Source $src -Destination $dest
@@ -289,9 +304,11 @@ def _print_planck_guide() -> None:
       1) Visit PLA and browse/select PR3 products in the Maps section:
          {ESA_PLA_URL}
 
-    After placing the FITS, run:
-      pip install -e ".[planck]"
-      huf planck --fits "{PLANCK_DEST.as_posix()}" --out out/planck70 --retained-target 0.97 --nside-out 64
+    After placing the FITS, run (Windows-safe, uses the repo venv):
+      .\.venv\Scripts\python -m pip install astropy
+      .\.venv\Scripts\huf planck --fits "{rel_posix}" --out out/planck70 --retained-target 0.97 --nside-out 64
+
+    (If you are not using the repo venv, make sure `astropy` is installed in the Python that runs `huf`.)
     """
 
     print(textwrap.dedent(msg).strip() + "\n")
@@ -377,7 +394,7 @@ def main(argv: Optional[List[str]] = None) -> int:
             print(f"  - {e}")
         return 1
 
-    print(f"\nDone. (Fetched on {_dt.date.today().isoformat()})")
+    print(f"\nDone. ({'Guide printed' if (args.planck_guide and not (args.toronto or args.markham)) else 'Fetched'} on {_dt.date.today().isoformat()})")
     return 0
 
 
