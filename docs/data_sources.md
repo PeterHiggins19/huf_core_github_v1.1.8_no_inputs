@@ -87,5 +87,5 @@ Start-BitsTransfer -Source $src -Destination $dest
 ## Docs preview
 
 ```powershell
-.\.venv\Scripts\python -m .\.venv\Scripts\python -m mkdocs serve
+.\.venv\Scripts\python -m mkdocs serve
 ```

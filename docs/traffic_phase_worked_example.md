@@ -15,7 +15,7 @@ Goal: show what HUF reveals that a typical “count rows / pivot table” workfl
 
 Windows PowerShell (from repo root):
 ```powershell
-huf traffic --csv cases\traffic_phase\inputs\toronto_traffic_signals_phase_status.csv --out out\traffic_phase
+.\.venv\Scripts\huf traffic --csv cases\traffic_phase\inputs\toronto_traffic_signals_phase_status.csv --out out\traffic_phase
 ```
 
 You should see something like:

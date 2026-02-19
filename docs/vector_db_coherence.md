@@ -85,3 +85,7 @@ Tip: For quick inspection without notebooks, use the helper script (if present):
 ```powershell
 .\.venv\Scripts\python scripts\inspect_vector_db_artifacts.py --out out\vector_db_demo
 ```
+
+!!! note "Windows JSONL + BOM"
+    If you generate `retrieval.jsonl` using Windows PowerShell `Set-Content`, it may include a UTF‑8 BOM.
+    HUF’s vector DB adapter reads JSONL using `utf-8-sig` so a BOM won’t break parsing.

@@ -70,3 +70,11 @@ Run fetch first:
 
 Then run the case commands.
 
+
+## MkDocs command not found
+
+If `mkdocs` isn’t on your PATH, run it via the repo venv:
+
+```powershell
+.\.venv\Scripts\python -m mkdocs serve
+```

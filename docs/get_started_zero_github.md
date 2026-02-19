@@ -106,7 +106,7 @@ If you ever see:
 Use this (it bypasses PATH issues):
 
 ```powershell
-.\.venv\Scripts\python -m .\.venv\Scripts\python -m mkdocs serve
+.\.venv\Scripts\python -m mkdocs serve
 ```
 
 Then open the local URL it prints.

@@ -5,7 +5,7 @@ These cases are **ready-to-run** from a fresh clone.
 **Inputs**
 - ✅ Markham XLSX: shipped in `cases/markham2018/inputs/`
 - ✅ Toronto traffic CSVs: shipped in `cases/traffic_phase/inputs/` and `cases/traffic_anomaly/inputs/`
-- ❌ Planck FITS: **not shipped** (large). Use `python scripts/fetch_data.py --planck-guide` for a copy/paste download guide.
+- ❌ Planck FITS: **not shipped** (large). Use `.\.venv\Scripts\python scripts/fetch_data.py --planck-guide` for a copy/paste download guide.
 
 **Outputs**
 - New runs write to `out/<case_name>/` (recommended).
@@ -27,17 +27,17 @@ Fetch (optional refresh of shipped inputs):
 
 Run Markham:
 ```powershell
-huf markham --xlsx cases\markham2018\inputs\2018-Budget-Allocation-of-Revenue-and-Expenditure-by-Fund.xlsx --out out\markham2018
+.\.venv\Scripts\huf markham --xlsx cases\markham2018\inputs\2018-Budget-Allocation-of-Revenue-and-Expenditure-by-Fund.xlsx --out out\markham2018
 ```
 
 Run Traffic Phase:
 ```powershell
-huf traffic --csv cases\traffic_phase\inputs\toronto_traffic_signals_phase_status.csv --out out\traffic_phase
+.\.venv\Scripts\huf traffic --csv cases\traffic_phase\inputs\toronto_traffic_signals_phase_status.csv --out out\traffic_phase
 ```
 
 Run Traffic Anomaly:
 ```powershell
-huf traffic-anomaly --csv cases\traffic_anomaly\inputs\toronto_traffic_signals_phase_status.csv --out out\traffic_anomaly --status "Green Termination"
+.\.venv\Scripts\huf traffic-anomaly --csv cases\traffic_anomaly\inputs\toronto_traffic_signals_phase_status.csv --out out\traffic_anomaly --status "Green Termination"
 ```
 
 Planck guide (prints download steps, does **not** download automatically):

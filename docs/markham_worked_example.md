@@ -15,7 +15,7 @@ Goal: show what HUF reveals that a normal “sum + chart” spreadsheet workflow
 
 Windows PowerShell (from repo root):
 ```powershell
-huf markham --xlsx cases\markham2018\inputs\2018-Budget-Allocation-of-Revenue-and-Expenditure-by-Fund.xlsx --out out\markham2018
+.\.venv\Scripts\huf markham --xlsx cases\markham2018\inputs\2018-Budget-Allocation-of-Revenue-and-Expenditure-by-Fund.xlsx --out out\markham2018
 ```
 
 You should see something like:
