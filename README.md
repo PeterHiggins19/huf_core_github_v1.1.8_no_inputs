@@ -31,7 +31,7 @@ python -m venv .venv
 
 ```powershell
 .\.venv\Scripts\python -m pip install mkdocs mkdocs-material
-mkdocs serve
+.\.venv\Scripts\python -m mkdocs serve
 ```
 
 Open: http://127.0.0.1:8000/
