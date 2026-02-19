@@ -15,40 +15,32 @@ Provides-Extra: planck
 Requires-Dist: astropy>=6.0; extra == "planck"
 Dynamic: license-file
 
-# HUF Core (docs + runnable cases)
+# HUF Core Snapshot (docs + cases)
 
-## Quick start (Windows PowerShell)
+Everything here is **Markdown-first** so links work on GitHub + GitHub Pages.
 
-```powershell
-# 1) Create venv + install deps
-python scripts\bootstrap.py
+## Do this first
 
-# 2) Fetch public inputs (Markham + Toronto)
-.\.venv\Scripts\python scripts\fetch_data.py --markham --toronto --yes
+- **Quick Run (copy/paste):** `docs/quick_run.md`
+- **Learning Path:** `docs/learning_path.md`
+- **Beginner (no GitHub):** `docs/get_started_zero_github.md`
 
-# 3) Run demos
-.\.venv\Scripts\huf markham --xlsx cases\markham2018\inputs\2018-Budget-Allocation-of-Revenue-and-Expenditure-by-Fund.xlsx --out out\markham2018
-.\.venv\Scripts\huf traffic --csv cases\traffic_phase\inputs\toronto_traffic_signals_phase_status.csv --out out\traffic_phase
-.\.venv\Scripts\huf traffic-anomaly --csv cases\traffic_anomaly\inputs\toronto_traffic_signals_phase_status.csv --out out\traffic_anomaly --status "Green Termination" --tau-global 0.0005
-```
+## One‑click starters (run locally from the repo root)
 
-## Planck (optional)
+- Windows: `START_HERE_WINDOWS.bat`
+- macOS: `START_HERE_MAC.command`
+- Linux: `start_here_linux.sh`
 
-Planck only needs **astropy** on this branch.
+These create a local `.venv/`, install dependencies, and fetch **Markham + Toronto** inputs.
 
-```powershell
-.\.venv\Scripts\python -m pip install astropy
-.\.venv\Scripts\huf planck --fits cases\planck70\inputs\LFI_SkyMap_070_1024_R3.00_full.fits --out out\planck70 --retained-target 0.97 --nside-out 64
-```
+## Planck is manual (large FITS)
 
-## Notes
+See:
+- `docs/data_sources.md` (Planck section)
+- `python scripts/fetch_data.py --planck-guide` (prints exact URLs + expected path)
 
-- On Windows, `make` is not installed by default. Use the Python scripts above.
-- If you have Anaconda/Miniconda open, prefer explicit venv commands (`.\.venv\Scripts\...`) so you don’t accidentally run `huf.exe` from the conda environment.
+## Reference docs
 
-
-## Docs
-
-- Handbook: `docs/handbook.md`
-- Reference manual: `docs/reference_manual.md`
-- Cases: `cases/`
+- `docs/reference_manual.md`
+- `docs/handbook.md`
+- `docs/cases.md`
