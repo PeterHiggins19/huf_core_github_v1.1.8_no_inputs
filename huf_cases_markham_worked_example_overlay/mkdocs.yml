@@ -1,0 +1,47 @@
+site_name: HUF Core Snapshot
+repo_name: PeterHIggins19/huf_core_github_v1.1.8_no_inputs
+repo_url: https://github.com/PeterHIggins19/huf_core_github_v1.1.8_no_inputs
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - navigation.top
+    - content.code.copy
+    - content.action.edit
+    - search.suggest
+    - search.highlight
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Getting Started:
+      - Learning Path: learning_path.md
+      - Start Here (Zero GitHub Knowledge): get_started_zero_github.md
+      - Start Here (Developer): start_here.md
+      - Quick Run (All Cases): quick_run.md
+      - Data Sources & Fetching: data_sources.md
+      - Cases:
+          - Included Cases: cases.md
+          - Markham worked example: markham_worked_example.md
+      - Troubleshooting: troubleshooting.md
+  - Reference Manual: reference_manual.md
+  - Vector DB Coherence: vector_db_coherence.md
+  - GitHub for Beginners: github_for_beginners.md
