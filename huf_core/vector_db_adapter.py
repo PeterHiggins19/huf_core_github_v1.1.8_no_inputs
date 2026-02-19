@@ -65,9 +65,9 @@ def vector_db_results_to_elements(
 
     if path.suffix.lower() == ".jsonl":
         rows: List[Dict[str, Any]] = []
-        with path.open("r", encoding="utf-8") as f:
+        with path.open("r", encoding="utf-8-sig") as f:
             for line in f:
-                line = line.strip()
+                line = line.lstrip("\ufeff").strip()
                 if not line:
                     continue
                 rows.append(json.loads(line))
