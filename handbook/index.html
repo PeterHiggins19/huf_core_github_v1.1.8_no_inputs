@@ -1,0 +1,1027 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://peterhiggins19.github.io/huf_core_github_v1.1.8_no_inputs/handbook/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+    
+    
+      
+        <title>Higgins Unity Framework (HUF) Handbook - HUF Core Snapshot</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#higgins-unity-framework-huf-handbook" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="HUF Core Snapshot" class="md-header__button md-logo" aria-label="HUF Core Snapshot" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            HUF Core Snapshot
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Higgins Unity Framework (HUF) Handbook
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/PeterHIggins19/huf_core_github_v1.1.8_no_inputs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    PeterHIggins19/huf_core_github_v1.1.8_no_inputs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="HUF Core Snapshot" class="md-nav__button md-logo" aria-label="HUF Core Snapshot" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    HUF Core Snapshot
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/PeterHIggins19/huf_core_github_v1.1.8_no_inputs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    PeterHIggins19/huf_core_github_v1.1.8_no_inputs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quick_run/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Run
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../start_here/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start Here (Developer)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../get_started_zero_github/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start Here (Zero GitHub Knowledge)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data_sources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Sources & Fetching
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Worked examples
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Worked examples
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../markham_worked_example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Markham
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../traffic_phase_worked_example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Traffic phase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vector_db_coherence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vector DB coherence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jupyter_demos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Jupyter demos (optional)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#origins-why-this-exists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Origins (why this exists)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="higgins-unity-framework-huf-handbook">Higgins Unity Framework (HUF) Handbook<a class="headerlink" href="#higgins-unity-framework-huf-handbook" title="Permanent link">&para;</a></h1>
+<p><strong>Edition:</strong> v1.1.8 (docs refresh)<br />
+<strong>Updated:</strong> 2026-02-17  </p>
+<p>This handbook is the <em>conceptual and contractual</em> description of HUF: what the Unity-Budgeted Hierarchy (UBH) is, how HUF emits auditable artifacts, and how to interpret stability sweeps.</p>
+<p><strong>Real-data demos included in this repo:</strong>
+- <strong>Markham (2018 budget)</strong> — real Excel input fetched from the City of Markham open data site.
+- <strong>Toronto (traffic signals timing)</strong> — real CSV derived from the City of Toronto open data “Traffic signals timing” ZIP.
+- <strong>Planck (70 GHz all-sky map)</strong> — real FITS map <em>not shipped in the repo</em> (too large). You fetch it from PLA or IRSA (guided in <code>scripts/fetch_data.py --planck-guide</code>).</p>
+<p><strong>Synthetic data:</strong> only small “toy” examples (used for quick sanity checks) are synthetic. The headline demos above are real data.</p>
+<hr />
+<h2 id="origins-why-this-exists">Origins (why this exists)<a class="headerlink" href="#origins-why-this-exists" title="Permanent link">&para;</a></h2>
+<p>HUF grew out of a very practical question: how to <strong>solve diffraction and dispersion</strong> problems in loudspeakers well enough that the “why” became impossible to ignore.<br />
+The working path was:</p>
+<ol>
+<li>solve the physical problem (dispersion / diffraction) <em>empirically</em></li>
+<li>notice an “energy budget” invariant when moving from <strong>2π to 4π radiation equalization</strong></li>
+<li>formalize the invariant as an <strong>isotropic budget / unity constraint</strong></li>
+<li>generalize it into a contract for hierarchies → the <strong>Unity‑Budgeted Hierarchy (UBH)</strong></li>
+<li>treat every run as a reproducible artifact emitter → HUF</li>
+</ol>
+<p>That’s the reason the framework is written like a lab protocol: it is designed to let people verify “is this real?” before debating “is this beautiful?”.</p>
+<hr />
+<p>Higgins Unity Framework (HUF)
+Handbook</p>
+<p>A contract-first method for unity‑budgeted hierarchies,
+auditable reduction, and stable anomaly localization</p>
+<p>Handbook Edition • Version 1.0
+February 2026</p>
+<p>Peter Higgins</p>
+<h1 id="front-matter">Front matter<a class="headerlink" href="#front-matter" title="Permanent link">&para;</a></h1>
+<p>This handbook replaces the earlier ‘meeting spec’ lineage. It is written to be implementable, teachable, and hard to misread. The tone is intentionally contract‑driven: if you cannot verify finite elements, conserve a declared unity budget, emit the required artifacts, and pass stability checks, then you are not doing HUF — you are doing storytelling.</p>
+<p>The handbook contains two comprehensive, real-data case studies (Planck 70 GHz and City of Markham public data) and a third operational case study (traffic signal telemetry) as an anomaly‑localization template.</p>
+<h2 id="how-to-use-this-handbook">How to use this handbook<a class="headerlink" href="#how-to-use-this-handbook" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>If you need the method: read Part I and implement the contract (required artifacts + stability packet).</p>
+</li>
+<li>
+<p>If you need proof: read Part II and reproduce the reference runs (Planck and Markham).</p>
+</li>
+<li>
+<p>If you need to teach or deploy: read Part III (implementation patterns, templates, and training exercises).</p>
+</li>
+</ul>
+<h1 id="table-of-contents">Table of contents<a class="headerlink" href="#table-of-contents" title="Permanent link">&para;</a></h1>
+<p>In Word: Right‑click the TOC → Update Field → Update entire table.</p>
+<h1 id="part-i-huf-core-normative">Part I — HUF Core (Normative)<a class="headerlink" href="#part-i-huf-core-normative" title="Permanent link">&para;</a></h1>
+<h2 id="1-definition-in-one-page-the-core-stripped">1. Definition in one page (the core, stripped)<a class="headerlink" href="#1-definition-in-one-page-the-core-stripped" title="Permanent link">&para;</a></h2>
+<p>HUF defines a system as a unity‑budgeted hierarchy with auditable finite elements.</p>
+<ol>
+<li>
+<p>Finite elements: verifiable units that contribute to a conserved budget.</p>
+</li>
+<li>
+<p>Regimes: named groupings of finite elements (nestable) used for interpretability.</p>
+</li>
+<li>
+<p>Unity budget: a declared conserved quantity (mass/weight or energy/power) with total sum exactly 1.0.</p>
+</li>
+<li>
+<p>Locked cycle: Normalize → Propagate → Aggregate → Exclude → Renormalize.</p>
+</li>
+<li>
+<p>Contract: a run is invalid unless it emits the required artifacts and passes declared stability checks.</p>
+</li>
+</ol>
+<h2 id="2-motivation-the-shortest-honest-version">2. Motivation (the shortest honest version)<a class="headerlink" href="#2-motivation-the-shortest-honest-version" title="Permanent link">&para;</a></h2>
+<p>Every serious system ends up doing some form of reduction: compressing models, pruning portfolios, prioritizing interventions, or summarizing telemetry. The failure mode is consistent: reduction happens, but the justification is ad hoc. HUF exists to make reduction auditable.</p>
+<p>HUF does not promise ‘truth.’ It promises four things you can test: (1) unity conservation, (2) explicit retained set, (3) explicit discarded budget, and (4) backward trace to finite elements. That’s the entire game.</p>
+<h2 id="3-primitives-and-invariants">3. Primitives and invariants<a class="headerlink" href="#3-primitives-and-invariants" title="Permanent link">&para;</a></h2>
+<p>3.1 Finite element</p>
+<p>A finite element is the smallest unit you agree to audit. It must have: a unique identifier, a repeatable method of computing its contribution, and stored provenance.</p>
+<p>Minimum finite-element record:</p>
+<ul>
+<li>
+<p>id: stable string key (do not recycle IDs across runs)</p>
+</li>
+<li>
+<p>inputs: pointers to measured data, logs, or upstream artifacts</p>
+</li>
+<li>
+<p>contribution: a non-negative scalar (or paired positive/negative extension) used by the unity budget</p>
+</li>
+<li>
+<p>provenance: hash or stamp sufficient to reproduce the number</p>
+</li>
+</ul>
+<p>3.2 Regime</p>
+<p>A regime is a partition (or nested partition) used to contextualize budget. A regime answers: ‘where did the budget go?’ Regimes must not double-count contributions. If an element belongs to multiple regimes, you must explicitly split its budget.</p>
+<p>3.3 Unity budget</p>
+<p>Unity is the only invariant HUF treats as sacred: after normalization, the sum of contributions equals 1.0 globally. Local unity (within a regime) may be enforced for a local view, but the global unity must always be satisfied.</p>
+<h2 id="4-budget-semantics-choose-once-dont-cheat">4. Budget semantics (choose once; don’t cheat)<a class="headerlink" href="#4-budget-semantics-choose-once-dont-cheat" title="Permanent link">&para;</a></h2>
+<p>HUF is ruthless about budget semantics. Declare one of the following and never mix them mid-run:</p>
+<ul>
+<li>
+<p>Mass/weight budget: ρᵢ ≥ 0 and Σρᵢ = 1. Examples: expenditure shares, portfolio weights, probability mass.</p>
+</li>
+<li>
+<p>Energy/power budget: ρᵢ = eᵢ / Σe with eᵢ = |xᵢ|² or another Parseval-consistent energy under a declared orthogonal basis.</p>
+</li>
+</ul>
+<p>If your domain has cancellation (signed contributions), do not fake it by allowing negative ρ. Use a paired-budget extension (track positive and negative magnitudes separately) or an explicitly signed framework with stability proofs.</p>
+<h2 id="5-the-locked-cycle-and-what-each-step-is-allowed-to-do">5. The locked cycle and what each step is allowed to do<a class="headerlink" href="#5-the-locked-cycle-and-what-each-step-is-allowed-to-do" title="Permanent link">&para;</a></h2>
+<p>Figure 1. The locked HUF cycle. You may extend steps, but you may not reorder them without breaking audit expectations.</p>
+<p>Normalize</p>
+<p>Normalize converts raw contributions into a unity budget. For mass budgets: ρᵢ = wᵢ / Σw. For energy budgets: ρᵢ = |xᵢ|² / Σ|x|². Normalization must be deterministic and logged.</p>
+<p>Propagate</p>
+<p>Propagation moves budget between representations (e.g., from fine pixels to coarse blocks, from categories to wards, from events to root causes). Propagation is admissible only if it is conservative and traceable.</p>
+<ul>
+<li>
+<p>Conservation check: |Σρ_out − Σρ_in| ≤ ε (declare ε).</p>
+</li>
+<li>
+<p>Traceability check: every output element stores a map back to input elements with weights.</p>
+</li>
+<li>
+<p>No hidden state: propagation must be a pure function of inputs + declared parameters (seeded if stochastic).</p>
+</li>
+</ul>
+<p>Aggregate</p>
+<p>Aggregation merges elements to reduce complexity while preserving the budget. Examples: cluster similar items, sum within a regime, downsample by known hierarchical structure.</p>
+<p>Exclude</p>
+<p>Exclusion removes elements below a threshold τ or keeps the smallest set reaching a retained budget target. Exclusion must emit a discard ledger (what was removed and how much budget it carried).</p>
+<p>Renormalize and validate</p>
+<p>Renormalize after exclusion (and after any operation that may introduce floating-point drift). Then validate the contract: unity checks, trace completeness, artifact emission, and stability packet results.</p>
+<h2 id="6-the-contract-required-artifacts">6. The contract (required artifacts)<a class="headerlink" href="#6-the-contract-required-artifacts" title="Permanent link">&para;</a></h2>
+<p>Contract: a HUF run is invalid unless it emits all artifacts</p>
+<h2 id="7-artifact-schemas-minimum-workable-forms">7. Artifact schemas (minimum workable forms)<a class="headerlink" href="#7-artifact-schemas-minimum-workable-forms" title="Permanent link">&para;</a></h2>
+<p>HUF does not mandate file formats, but it does mandate fields. Minimal schemas:</p>
+<p>Schema A — Active set</p>
+<p>Schema B — Backward trace (per retained element)</p>
+<p>Schema C — Error/Budget report</p>
+<h2 id="8-stability-packet-required-anti-brittleness-tests">8. Stability packet (required anti-brittleness tests)<a class="headerlink" href="#8-stability-packet-required-anti-brittleness-tests" title="Permanent link">&para;</a></h2>
+<p>Minimum stability packet</p>
+<h2 id="9-deployment-hazards-the-things-critics-correctly-attack">9. Deployment hazards (the things critics correctly attack)<a class="headerlink" href="#9-deployment-hazards-the-things-critics-correctly-attack" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Semantics drift: changing what unity means mid-run (e.g., mixing weight and energy).</p>
+</li>
+<li>
+<p>Black-box propagation: learned or heuristic mapping with no trace and no conservation validation.</p>
+</li>
+<li>
+<p>Double counting: elements belonging to overlapping regimes without explicit splitting.</p>
+</li>
+<li>
+<p>Unstable thresholds: large near-τ mass and low overlap across sweeps.</p>
+</li>
+<li>
+<p>Overfitting the narrative: tuning τ until your preferred story appears.</p>
+</li>
+</ul>
+<p>HUF’s job is to make these failures visible. If your run fails, that is not ‘HUF failing’; that is the system refusing to be compressed honestly.</p>
+<h1 id="part-ii-comprehensive-reference-runs-real-data">Part II — Comprehensive Reference Runs (Real Data)<a class="headerlink" href="#part-ii-comprehensive-reference-runs-real-data" title="Permanent link">&para;</a></h1>
+<h2 id="10-case-study-a-planck-lfi-70-ghz-healpix-nside1024">10. Case Study A — Planck LFI 70 GHz (HEALPix, nside=1024)<a class="headerlink" href="#10-case-study-a-planck-lfi-70-ghz-healpix-nside1024" title="Permanent link">&para;</a></h2>
+<p>This case demonstrates energy‑budget HUF on a large scientific dataset. Input file: LFI_SkyMap_070_1024_R3.00_full.fits. We use the Stokes I column (I_STOKES). The finite elements are pixels; the energy contribution is I².</p>
+<h3 id="101-data-model">10.1 Data model<a class="headerlink" href="#101-data-model" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Raw finite elements: nside=1024 pixels (12×1024² = 12,582,912 elements).</p>
+</li>
+<li>
+<p>Aggregation: NESTED parent blocks at nside=64 (12×64² = 49,152 coarse elements), each covering 256 child pixels.</p>
+</li>
+<li>
+<p>Regimes: 12 HEALPix base faces (each face = 4,096 coarse blocks).</p>
+</li>
+<li>
+<p>Budget: energy share ρᵢ = eᵢ / Σe, with eᵢ = Σchild I² (for coarse blocks).</p>
+</li>
+</ul>
+<h3 id="102-run-configuration">10.2 Run configuration<a class="headerlink" href="#102-run-configuration" title="Permanent link">&para;</a></h3>
+<p>Aggregation: nside 1024 → 64 (ratio 16; 256 children per parent).</p>
+<p>Retain target: 0.97 of total energy.</p>
+<p>Outcome: K = 18,198 retained coarse blocks out of 49,152. Threshold τ = 1.66e-06.</p>
+<p>Energy retained = 0.9700; discarded = 0.0300.</p>
+<p>Pixel‑basis RMSE under keep‑or‑zero reconstruction = 7.6942e-05 (same units as I_STOKES).</p>
+<h3 id="103-coherence-map">10.3 Coherence map<a class="headerlink" href="#103-coherence-map" title="Permanent link">&para;</a></h3>
+<p>Figure 2. Planck 70 GHz — global retained vs discarded energy share.</p>
+<p>Figure 3. Planck 70 GHz — per‑face unity bars (faces as regimes).</p>
+<p>Figure 4. Planck 70 GHz — active‑set growth curve (sorted by ρ).</p>
+<p>Table 10‑A. Per‑face energy shares (global ρ)</p>
+<p>Table 10‑B. Top retained coarse blocks (traceable sample)</p>
+<h3 id="104-traceability-how-to-audit-a-retained-block">10.4 Traceability (how to audit a retained block)<a class="headerlink" href="#104-traceability-how-to-audit-a-retained-block" title="Permanent link">&para;</a></h3>
+<p>Because the map uses HEALPix NESTED ordering, each nside=64 parent block corresponds to a contiguous range of 256 nside=1024 child pixels. For a retained parent with index p, the child range is [256p, 256p+255]. This makes backward traces compact and exact.</p>
+<p>Example: a compact backward trace for an aggregated HEALPix block</p>
+<h3 id="105-stability-packet-retaintarget-sweep">10.5 Stability packet (retain‑target sweep)<a class="headerlink" href="#105-stability-packet-retaintarget-sweep" title="Permanent link">&para;</a></h3>
+<p>Table 10‑C. Sweep points (target → K, τ)</p>
+<p>Table 10‑D. Active‑set overlap (Jaccard) between sweep points</p>
+<p>Table 10‑E. Regime ranking stability (faces) across sweep points</p>
+<h3 id="106-what-this-run-teaches-and-what-it-does-not">10.6 What this run teaches (and what it does not)<a class="headerlink" href="#106-what-this-run-teaches-and-what-it-does-not" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>HUF can reduce 49,152 coarse blocks to ~18k while retaining 97% pixel-basis energy, with exact accounting.</p>
+</li>
+<li>
+<p>Per-regime views (faces) remain stable across threshold sweeps: the ‘where’ of energy is robust.</p>
+</li>
+<li>
+<p>The discard fraction is a quantitative error bound under the declared reconstruction.</p>
+</li>
+<li>
+<p>This is not cosmological inference. HUF is an auditable reduction layer; domain science still happens above it.</p>
+</li>
+</ul>
+<h2 id="11-case-study-b-city-of-markham-2018-budget-civic-layers">11. Case Study B — City of Markham (2018 budget + civic layers)<a class="headerlink" href="#11-case-study-b-city-of-markham-2018-budget-civic-layers" title="Permanent link">&para;</a></h2>
+<p>This case demonstrates mass/weight HUF on municipal public data. The conserved quantity is money. Primary budget workbook: 2018-Budget-Allocation-of-Revenue-and-Expenditure-by-Fund.xlsx (values in $000). We focus on expenditures (the allocation of outgoing funds), then show a propagation example onto wards using census population as a proxy.</p>
+<h3 id="111-data-inventory-what-we-used">11.1 Data inventory (what we used)<a class="headerlink" href="#111-data-inventory-what-we-used" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>2018-Budget-Allocation-of-Revenue-and-Expenditure-by-Fund.xlsx — fund-level revenues/expenditures by category.</p>
+</li>
+<li>
+<p>2018-Operating-Budget-by-Account.xlsx — operating revenue/expense categories and year comparisons.</p>
+</li>
+<li>
+<p>2016-Tax-Rates.xlsx and 2018-Tax-Rates.xlsx — rate context (not used as budget, used for narrative checks).</p>
+</li>
+<li>
+<p>GIS layers: WARD.geojson, Parks.geojson, Fire_Stations.geojson, City_Facilities.geojson (used for a propagation demo).</p>
+</li>
+<li>
+<p>Census DA layer (Age/Sex) for Markham — used only to compute ward population shares (proxy).</p>
+</li>
+</ul>
+<h3 id="112-budget-declaration-and-finite-elements">11.2 Budget declaration and finite elements<a class="headerlink" href="#112-budget-declaration-and-finite-elements" title="Permanent link">&para;</a></h3>
+<p>Global budget: total 2018 expenditures across all funds = 456,171 ($000). Unity budget is ‘share of total expenditures’.</p>
+<p>Finite element for the primary run: (Fund × ExpenditureCategory). Regimes: Funds. This gives a clean ‘where does the city spend money’ decomposition.</p>
+<h3 id="113-primary-run-results-fundcategory">11.3 Primary run results (Fund×Category)<a class="headerlink" href="#113-primary-run-results-fundcategory" title="Permanent link">&para;</a></h3>
+<p>Retain target: 0.97. Outcome: K = 23 retained elements out of 67. Threshold τ = 0.004. Retained = 0.9710; discarded = 0.0290.</p>
+<p>Figure 5. Markham 2018 expenditures — global retained vs discarded budget share.</p>
+<p>Figure 6. Markham 2018 expenditures — per-fund unity bars (funds as regimes).</p>
+<p>Figure 7. Markham 2018 expenditures — active-set growth curve (Fund×Category).</p>
+<p>Table 11‑A. Fund regimes: totals and global shares</p>
+<p>Table 11‑B. Largest spending contributors (Fund×Category)</p>
+<h3 id="114-stability-packet">11.4 Stability packet<a class="headerlink" href="#114-stability-packet" title="Permanent link">&para;</a></h3>
+<p>Table 11‑C. Sweep points (target → K, τ)</p>
+<p>Table 11‑D. Active-set overlap (Jaccard) across sweep points</p>
+<h3 id="115-backward-trace-example-auditing-a-spending-line">11.5 Backward trace example (auditing a spending line)<a class="headerlink" href="#115-backward-trace-example-auditing-a-spending-line" title="Permanent link">&para;</a></h3>
+<p>In this run, the backward trace is trivial but non‑negotiable: each retained element points back to a specific worksheet row/column (Fund, Category, cell location) plus workbook hash. If you can’t point to the cell, you can’t claim the number.</p>
+<p>Example: backward trace record for a budget line</p>
+<h3 id="116-propagation-demo-operating-fund-to-wards-proxy-allocation">11.6 Propagation demo — Operating Fund to wards (proxy allocation)<a class="headerlink" href="#116-propagation-demo-operating-fund-to-wards-proxy-allocation" title="Permanent link">&para;</a></h3>
+<p>This section demonstrates propagation constraints on civic geography. We do NOT claim this is the real ward budget — the city budget is not ward‑allocated in this dataset. We demonstrate a conservative, auditable proxy mapping.</p>
+<p>Propagation map: allocate Operating Fund expenditures to wards proportional to 2016 census population share. This is admissible as a mapping only if it is declared as a proxy, conservative (sums match), and traceable.</p>
+<p>Figure 8. Markham wards — population shares (proxy weights for propagation).</p>
+<p>Figure 9. Operating Fund propagated to wards — per-regime unity bars (retained vs discarded at target 0.97).</p>
+<p>Table 11‑E. Ward proxy table: population, facilities counts, and Operating Fund allocation ($M)</p>
+<p>Why include facilities counts? Not as causal claims — as audit context. They provide additional regimes for future propagation (e.g., allocate a parks-maintenance budget proportional to park count or area). Any such mapping must be declared and tested for stability.</p>
+<h3 id="117-what-dominates-and-what-to-do-next">11.7 What dominates and what to do next<a class="headerlink" href="#117-what-dominates-and-what-to-do-next" title="Permanent link">&para;</a></h3>
+<p>The Fund×Category decomposition typically reveals (a) how concentrated spending is, (b) whether one fund dominates the budget narrative, and (c) which categories are ‘structural’ versus ‘tail.’ This run is a starting point.</p>
+<ul>
+<li>
+<p>Next expansion: link operating categories to performance measures (if definitions match).</p>
+</li>
+<li>
+<p>Next expansion: add revenues as a parallel budget and compare structural mismatch (revenue concentration vs expenditure concentration).</p>
+</li>
+<li>
+<p>Next expansion: incorporate capital project lists and apply HUF to project portfolios (true finite elements with trace to project IDs).</p>
+</li>
+</ul>
+<h2 id="12-case-study-c-traffic-signal-telemetry-anomaly-localization-template">12. Case Study C — Traffic signal telemetry (anomaly localization template)<a class="headerlink" href="#12-case-study-c-traffic-signal-telemetry-anomaly-localization-template" title="Permanent link">&para;</a></h2>
+<p>This case shows how HUF behaves on operational event streams. The goal is not ‘compress for beauty’ — it is: what dominates anomalies, and where should you look first?</p>
+<h3 id="121-finite-element-and-budget-definition-recommended">12.1 Finite element and budget definition (recommended)<a class="headerlink" href="#121-finite-element-and-budget-definition-recommended" title="Permanent link">&para;</a></h3>
+<p>Recommended finite element for anomaly work:
+Finite element = TCS × PHASE × PHASE_STATUS_TEXT (optionally × PHASE_CALL_TEXT)
+Budget = event share or severity‑weighted share (declare weights)
+Output = which intersections/phases dominate drops/terminations/clearance with full trace to raw rows.</p>
+<p>In this run we define a simple severity budget: Dropped calls weight 3, Termination statuses weight 2, everything else weight 1, then restrict the anomaly view to rows with severity &gt; 1.</p>
+<h3 id="122-compressed-phase-activity-distribution-what-dominates-anomalies">12.2 Compressed phase activity distribution (what dominates anomalies)<a class="headerlink" href="#122-compressed-phase-activity-distribution-what-dominates-anomalies" title="Permanent link">&para;</a></h3>
+<p>Figure 10. Traffic telemetry — anomaly severity budget by intersection (top contributors).</p>
+<p>Figure 11. Traffic telemetry — anomaly severity budget by phase.</p>
+<p>Figure 12. Traffic telemetry — anomaly severity budget by status.</p>
+<p>Table 12‑A. Top intersections by anomaly severity budget share</p>
+<p>Table 12‑B. Phases dominating the anomaly budget</p>
+<p>Table 12‑C. Status distribution within anomaly budget</p>
+<h3 id="123-traceability-and-actionability">12.3 Traceability and actionability<a class="headerlink" href="#123-traceability-and-actionability" title="Permanent link">&para;</a></h3>
+<p>A practical HUF anomaly run ends with a short, actionable list: top intersections, top phases, and the raw event rows supporting them. Backward traces should include timestamp ranges and source row IDs so an engineer can replay the evidence.</p>
+<ul>
+<li>
+<p>If one intersection dominates: inspect controller configuration and detector health first.</p>
+</li>
+<li>
+<p>If one phase dominates across many intersections: inspect phase timing policy or coordination logic.</p>
+</li>
+<li>
+<p>If one status dominates: inspect the semantic definition (what exactly triggers ‘Termination’ in your system).</p>
+</li>
+</ul>
+<h1 id="part-iii-implementation-extension-and-training">Part III — Implementation, extension, and training<a class="headerlink" href="#part-iii-implementation-extension-and-training" title="Permanent link">&para;</a></h1>
+<h2 id="13-reference-implementation-patterns">13. Reference implementation patterns<a class="headerlink" href="#13-reference-implementation-patterns" title="Permanent link">&para;</a></h2>
+<p>A handbook is useless if it can’t be implemented. This section defines the minimal architecture that prevents HUF from collapsing back into prose.</p>
+<ul>
+<li>
+<p>Core data model: Element(id, rho, regime_path, trace).</p>
+</li>
+<li>
+<p>Adapters: domain-specific loaders and propagators that output the same element schema.</p>
+</li>
+<li>
+<p>I/O: artifact writers (CSV/JSON) that always include run stamps and file hashes.</p>
+</li>
+<li>
+<p>Tests: each reference run must have an automated test that checks unity, artifact emission, and stability packet generation.</p>
+</li>
+</ul>
+<p>Listing 13‑A. Reference core (excerpt, huf_core/core.py)</p>
+<p>(Full source is intended for the accompanying repository/package; this excerpt is included for handbook completeness.)</p>
+<h2 id="14-how-huf-prunes-itself-expansion-contraction-as-a-method">14. How HUF prunes itself (expansion → contraction as a method)<a class="headerlink" href="#14-how-huf-prunes-itself-expansion-contraction-as-a-method" title="Permanent link">&para;</a></h2>
+<p>The development history that produced this handbook is not a shameful detour — it is the method. You expand to explore, then you contract to ship. HUF applies to itself:</p>
+<ol>
+<li>
+<p>Expansion phase: explore candidate operations, artifacts, and narratives to discover what actually matters in practice.</p>
+</li>
+<li>
+<p>Contraction phase: declare the contract, delete optionality from the core, and move everything else into extensions.</p>
+</li>
+<li>
+<p>Stability phase: treat the framework definition as a system under HUF — track which sections survive pruning across reviewer critiques.</p>
+</li>
+</ol>
+<p>A useful internal exercise: assign a unity budget to sections of your draft (by reader time, by risk, or by implementation cost), then run HUF to see which sections dominate confusion or contribute little. That is ‘HUF on HUF.’</p>
+<h2 id="15-training-exercises-from-toy-to-real">15. Training exercises (from toy to real)<a class="headerlink" href="#15-training-exercises-from-toy-to-real" title="Permanent link">&para;</a></h2>
+<p>Exercises are designed to build the habit of declaring budgets, regimes, and traces before you compute.</p>
+<ol>
+<li>
+<p>Take any spreadsheet with line items. Define finite elements and a mass budget. Produce the four artifacts.</p>
+</li>
+<li>
+<p>Repeat with two regime partitions (by department vs by fund). Compare regime stability across thresholds.</p>
+</li>
+<li>
+<p>Take an event log. Define anomaly budget weights. Produce a top‑N actionable list with backward traces to row IDs.</p>
+</li>
+<li>
+<p>Design a propagation map (e.g., cost → ward) and prove conservation + traceability in one paragraph.</p>
+</li>
+<li>
+<p>Perform a stability sweep and write the two-sentence interpretation of the stability packet.</p>
+</li>
+</ol>
+<h1 id="appendix-a-data-samples-print-friendly-excerpts">Appendix A — Data samples (print-friendly excerpts)<a class="headerlink" href="#appendix-a-data-samples-print-friendly-excerpts" title="Permanent link">&para;</a></h1>
+<p>A1. Planck sample (first 5 coarse blocks; energies are in I² units)</p>
+<p>A2. Markham sample (top 10 Fund×Category elements)</p>
+<p>A3. Traffic sample (first 12 telemetry rows; severity weights shown)</p>
+<h1 id="appendix-b-artifact-checklists-what-a-reviewer-will-ask-for">Appendix B — Artifact checklists (what a reviewer will ask for)<a class="headerlink" href="#appendix-b-artifact-checklists-what-a-reviewer-will-ask-for" title="Permanent link">&para;</a></h1>
+<ul>
+<li>
+<p>Unity checks: global Σρ=1.0 after every normalization and renormalization step (log the tolerance).</p>
+</li>
+<li>
+<p>Discard ledger: list of excluded elements with their ρ; discarded sum must match 1−retained.</p>
+</li>
+<li>
+<p>Trace completeness: every retained element has a backward trace to finite elements (no null traces).</p>
+</li>
+<li>
+<p>Stability packet: sweep points, overlap metrics, regime rank stability, near‑τ band.</p>
+</li>
+<li>
+<p>Repro stamp: file hashes, code version, run_id, parameters (τ/target, seeds).</p>
+</li>
+</ul>
+<h1 id="appendix-c-glossary-minimal">Appendix C — Glossary (minimal)<a class="headerlink" href="#appendix-c-glossary-minimal" title="Permanent link">&para;</a></h1>
+<p>Glossary</p>
+<h1 id="appendix-d-reproducibility-stamps-recommended-minimum">Appendix D — Reproducibility stamps (recommended minimum)<a class="headerlink" href="#appendix-d-reproducibility-stamps-recommended-minimum" title="Permanent link">&para;</a></h1>
+<p>Run stamp</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "toc.follow", "search.highlight", "search.suggest"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
