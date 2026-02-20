@@ -119,6 +119,113 @@ That’s the same concentration headline used in the long-tail demo.
 
 ---
 
+## Example output interpretation (screenshot-style walkthrough)
+
+Think of this as “what you’d point at on a screenshot” when teaching someone how to read the artifacts.
+
+### Step 0 — sanity check (folder has the contract)
+In File Explorer (or `dir`), confirm you see at least:
+
+- `artifact_1_coherence_map.csv`
+- `artifact_2_active_set.csv`
+- `artifact_4_error_budget.json`
+
+If any are missing, treat the run as **not comparable**.
+
+### Step 1 — open `artifact_1_coherence_map.csv` (the regime ranking)
+
+Open the CSV in Excel. You’re looking for a table that feels like:
+
+```
+regime_id          rho_global_post   rho_global_pre   ... (discard columns)
+namespace=kb       0.61              0.58
+namespace=tickets  0.39              0.42
+...
+```
+
+**What to do (Excel “screenshot steps”):**
+
+1. Click the header row.
+2. Turn on a filter (Data → Filter).
+3. Sort **descending** by `rho_global_post`.
+
+**What that means:**
+
+- `regime_id` (or `regime_label`) is the group you chose (e.g., `namespace=...`).
+- `rho_global_post` is **share after pruning + renormalization**.
+- `rho_global_pre` (if present) is **share before pruning**.
+
+**What to look for (the “aha” moments):**
+
+- **Dominance:** does the top regime have >0.50 share?
+  - If yes, your retrieval results are heavily dominated by that group.
+- **Concentration:** do the top 3 regimes cover most of the mass?
+  - Add a temporary Excel column: cumulative sum of `rho_global_post`.
+- **Tail cut:** if you have a discarded column (names vary), does one regime lose much more than others?
+  - That regime is where the “borderline” results live.
+
+**If you only read one artifact first, read this one.**
+It answers: “Who dominated my result set?”
+
+### Step 2 — open `artifact_2_active_set.csv` (the retained items)
+
+Now open the active set. It will feel like:
+
+```
+item_id   regime_id           rho_global_post  rho_local_post  score  ...
+doc_001   namespace=kb        0.092            0.151           0.82
+doc_101   namespace=tickets   0.087            0.224           0.77
+...
+```
+
+**What to do (Excel “screenshot steps”):**
+
+1. Filter/sort descending by `rho_global_post`.
+2. Then sort descending by `rho_local_post` (within the top regime).
+
+**What those columns mean:**
+
+- `rho_global_post` → “How important is this item overall (after pruning)?”
+- `rho_local_post` → “How dominant is this item inside its regime?”
+  - This is the “top hits inside namespace=kb”.
+
+**Two useful reads:**
+
+- **Global triage list:** sort by `rho_global_post` and take the top 20.
+  - That’s your “review list” across all namespaces.
+- **Within-regime triage:** filter to one `regime_id` and sort by `rho_local_post`.
+  - That’s “what dominates inside this namespace.”
+
+### Step 3 — the “90% coverage” headline (concentration in one number)
+
+This is the same “proof line” used in the long-tail demo.
+
+In Excel:
+
+1. Sort active set by `rho_global_post` descending.
+2. Add a cumulative sum column.
+3. Find the first row where cumulative sum ≥ 0.90.
+
+That row number is **items_to_cover_90pct**.
+
+Interpretation:
+
+- smaller number → more concentrated (fewer items explain most mass)
+- bigger number → more diffuse (mass spread across many results)
+
+### Step 4 — cross-check discarded budget (`artifact_4_error_budget.json`)
+
+Open the JSON. Look for a key like:
+
+- `discarded_budget_global`
+
+Interpretation:
+
+- near 0.00 → you retained almost everything (little pruning)
+- larger → pruning is doing real work (be deliberate about `tau` / targets)
+
+---
+
 ## Quick dashboard (no notebooks)
 
 Inspect any output folder:
