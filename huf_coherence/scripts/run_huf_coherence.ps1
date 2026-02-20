@@ -14,8 +14,7 @@
     & $py -m pip install -r requirements.txt
 
     # Install HUF Core directly from GitHub (public repo).
-    # NOTE: owner string includes a capital 'I' after the H: PeterHIggins19
-    & $py -m pip install "git+https://github.com/PeterHIggins19/huf_core_github_v1.1.8_no_inputs.git"
+    & $py -m pip install "git+https://github.com/PeterHiggins19/huf_core_github_v1.1.8_no_inputs.git"
 
     $out = "out\demo"
     New-Item -ItemType Directory -Force $out | Out-Null

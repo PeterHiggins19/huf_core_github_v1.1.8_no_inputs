@@ -8,7 +8,6 @@
 
 
     def _iter_dicts(obj: Any) -> List[Dict[str, Any]]:
-        # Walk a JSON object and return all dict nodes.
         out: List[Dict[str, Any]] = []
 
         def walk(x: Any) -> None:
@@ -34,17 +33,6 @@
 
 
     def _pick_score(rec: Dict[str, Any], prefer: str = "score", distance_to_score: str = "inv1p") -> Optional[float]:
-        # Choose a numeric score from a record.
-        # Priority:
-        #   1) rec[prefer]
-        #   2) rec["_additional"][prefer]
-        #   3) rec["_additional"]["certainty"]
-        #   4) rec["_additional"]["distance"] -> converted to score
-        #
-        # distance_to_score:
-        #   - inv1p: 1/(1+distance)
-        #   - neg:  -distance
-
         if prefer in rec:
             v = _to_float(rec.get(prefer))
             if v is not None:
@@ -74,13 +62,10 @@
         ap = argparse.ArgumentParser(description="Convert saved Weaviate JSON -> JSONL (id, score, regime field).")
         ap.add_argument("--in", dest="in_path", required=True, type=Path, help="Saved Weaviate JSON response file.")
         ap.add_argument("--out", dest="out_path", required=True, type=Path, help="Output .jsonl path.")
-        ap.add_argument("--prefer-score-field", type=str, default="score",
-                        help="Prefer this numeric key if present (score/certainty/etc).")
-        ap.add_argument("--distance-to-score", choices=["inv1p", "neg"], default="inv1p",
-                        help="If only distance is available: inv1p => 1/(1+distance); neg => -distance.")
-        ap.add_argument("--regime-field", type=str, default="collection",
-                        help="If present, copied as this field (used later as --regime-field).")
-        ap.add_argument("--regime-default", type=str, default="Global", help="Fallback regime value.")
+        ap.add_argument("--prefer-score-field", type=str, default="score")
+        ap.add_argument("--distance-to-score", choices=["inv1p", "neg"], default="inv1p")
+        ap.add_argument("--regime-field", type=str, default="collection")
+        ap.add_argument("--regime-default", type=str, default="Global")
         args = ap.parse_args()
 
         obj = json.loads(args.in_path.read_text(encoding="utf-8"))
