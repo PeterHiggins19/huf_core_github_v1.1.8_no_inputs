@@ -1,0 +1,10 @@
+{
+  "dataset_id": "c811ac0ac02502cc",
+  "query_label": "query",
+  "source_file": "retrieval.jsonl",
+  "rows_loaded": 4,
+  "regimes": 2,
+  "nonneg_mode": "clip",
+  "min_score_original": 0.12,
+  "note": "Interpret vector DB retrieval scores as a unity budget for auditability. HUF normalizes internally and emits artifacts explaining dominance and exclusions."
+}
