@@ -1,0 +1,5 @@
+[tail] items_to_cover_90pct=3
+Top regimes by rho_global_post:
+  1. kb  rho_post=0.619658
+  2. tickets  rho_post=0.380342
+[budget] discarded_budget_global=0
