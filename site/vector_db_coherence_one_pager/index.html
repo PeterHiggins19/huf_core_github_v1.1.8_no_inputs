@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#vector-db-coherence-adapter-one-page-brief" class="md-skip">
+        <a href="#vector-db-coherence-one-page-brief" class="md-skip">
           Skip to content
         </a>
       
@@ -529,8 +529,6 @@
       
         
       
-        
-      
     
     
     
@@ -649,34 +647,6 @@
     
   
     Traffic phase worked example
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../planck/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Planck LFI 70 GHz guide
   
 
     
@@ -852,32 +822,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-you-get-in-one-sentence" class="md-nav__link">
+  <a href="#what-you-get" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What you get (in one sentence)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#canonical-links" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Canonical links
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#proof-line-the-one-number" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Proof line (the one number)
+        What you get
       
     </span>
   </a>
@@ -1443,32 +1391,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-you-get-in-one-sentence" class="md-nav__link">
+  <a href="#what-you-get" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What you get (in one sentence)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#canonical-links" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Canonical links
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#proof-line-the-one-number" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Proof line (the one number)
+        What you get
       
     </span>
   </a>
@@ -1576,30 +1502,24 @@
   
 
 
-<h1 id="vector-db-coherence-adapter-one-page-brief">Vector DB coherence adapter (one-page brief)<a class="headerlink" href="#vector-db-coherence-adapter-one-page-brief" title="Permanent link">&para;</a></h1>
+<h1 id="vector-db-coherence-one-page-brief">Vector DB coherence (one-page brief)<a class="headerlink" href="#vector-db-coherence-one-page-brief" title="Permanent link">&para;</a></h1>
 <blockquote>
 <p><strong>No live vector DB required:</strong> export retrieval results (JSONL/CSV/TSV) and audit <strong>composition</strong>.</p>
 </blockquote>
-<h2 id="what-you-get-in-one-sentence">What you get (in one sentence)<a class="headerlink" href="#what-you-get-in-one-sentence" title="Permanent link">&para;</a></h2>
-<p>A repeatable audit that shows <strong>which regimes dominate</strong>, <strong>how concentrated the kept set is</strong>, and <strong>what was discarded (declared)</strong>.</p>
-<h2 id="canonical-links">Canonical links<a class="headerlink" href="#canonical-links" title="Permanent link">&para;</a></h2>
+<h2 id="what-you-get">What you get<a class="headerlink" href="#what-you-get" title="Permanent link">&para;</a></h2>
+<p>A repeatable audit that shows:</p>
 <ul>
-<li><strong>HUF repo:</strong> https://github.com/PeterHiggins19/huf_core_github_v1.1.8_no_inputs</li>
-<li><strong>Docs:</strong> https://peterhiggins19.github.io/huf_core_github_v1.1.8_no_inputs/</li>
-<li><strong>Full walkthrough:</strong> <code>vector_db_coherence.md</code></li>
+<li>which regimes dominate (<code>rho_global_post</code>)</li>
+<li>how concentrated the kept set is (<code>items_to_cover_90pct</code>)</li>
+<li>what was discarded (error budget)</li>
 </ul>
-<h2 id="proof-line-the-one-number">Proof line (the one number)<a class="headerlink" href="#proof-line-the-one-number" title="Permanent link">&para;</a></h2>
-<p><code>items_to_cover_90pct = k</code><br />
-The top <strong>k</strong> retained items explain <strong>90%</strong> of the post-normalized mass.</p>
-<p>Smaller <code>k</code> ⇒ more concentrated ⇒ a tiny set dominates retrieval.</p>
 <h2 id="artifacts-open-in-this-order">Artifacts (open in this order)<a class="headerlink" href="#artifacts-open-in-this-order" title="Permanent link">&para;</a></h2>
 <p>1) <code>artifact_1_coherence_map.csv</code> — regime ranking<br />
    Sort by <code>rho_global_post</code> ⇒ which regimes dominate
 2) <code>artifact_2_active_set.csv</code> — ranked review list<br />
    Sort by <code>rho_global_post</code> ⇒ which items matter most overall
 3) <code>artifact_4_error_budget.json</code> — declared discards<br />
-   Look for <code>discarded_budget_global</code>
-4) <code>artifact_3_trace_report.jsonl</code> — why retained (audit trail)</p>
+   Look for <code>discarded_budget_global</code></p>
 <h2 id="60-second-run-windows-repo-venv">60-second run (Windows / repo venv)<a class="headerlink" href="#60-second-run-windows-repo-venv" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nv">$py</span>  <span class="p">=</span> <span class="s2">&quot;.\.venv\Scripts\python.exe&quot;</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nv">$in</span>  <span class="p">=</span> <span class="s2">&quot;cases/vector_db/inputs/retrieval.jsonl&quot;</span>
@@ -1625,7 +1545,6 @@ The top <strong>k</strong> retained items explain <strong>90%</strong> of the po
 <p>Example:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Concentration increased: items_to_cover_90pct 37 -&gt; 12
 </code></pre></div>
-<p>If you want the “how to interpret in Excel” walkthrough, see <code>vector_db_coherence.md</code>.</p>
 
 
 

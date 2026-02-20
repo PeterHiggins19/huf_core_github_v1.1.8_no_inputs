@@ -11,7 +11,7 @@
         <link rel="canonical" href="https://peterhiggins19.github.io/huf_core_github_v1.1.8_no_inputs/vector_db_coherence/">
       
       
-        <link rel="prev" href="../planck/">
+        <link rel="prev" href="../traffic_phase_worked_example/">
       
       
         <link rel="next" href="../vector_db_coherence_one_pager/">
@@ -529,8 +529,6 @@
       
         
       
-        
-      
     
     
     
@@ -649,34 +647,6 @@
     
   
     Traffic phase worked example
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../planck/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Planck LFI 70 GHz guide
   
 
     
@@ -835,26 +805,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#when-to-use-this" class="md-nav__link">
+  <a href="#concepts" class="md-nav__link">
     <span class="md-ellipsis">
       
-        When to use this
+        Concepts
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#concepts-the-minimum-you-need" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Concepts (the minimum you need)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Concepts (the minimum you need)">
+    <nav class="md-nav" aria-label="Concepts">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -968,22 +927,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-read-the-artifacts-screenshot-style-walkthrough" class="md-nav__link">
+  <a href="#example-output-interpretation-screenshot-style" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How to read the artifacts (screenshot-style walkthrough)
+        Example output interpretation (screenshot-style)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="How to read the artifacts (screenshot-style walkthrough)">
+    <nav class="md-nav" aria-label="Example output interpretation (screenshot-style)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#step-0-sanity-check" class="md-nav__link">
+  <a href="#1-artifact_1_coherence_mapcsv-regime-ranking" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 0 — sanity check
+        1) artifact_1_coherence_map.csv (regime ranking)
       
     </span>
   </a>
@@ -991,10 +950,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-1-artifact_1_coherence_mapcsv-regime-ranking" class="md-nav__link">
+  <a href="#2-artifact_2_active_setcsv-ranked-review-list" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1 — artifact_1_coherence_map.csv (regime ranking)
+        2) artifact_2_active_set.csv (ranked review list)
       
     </span>
   </a>
@@ -1002,32 +961,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-2-artifact_2_active_setcsv-the-ranked-review-list" class="md-nav__link">
+  <a href="#3-artifact_4_error_budgetjson-declared-discards" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 2 — artifact_2_active_set.csv (the ranked review list)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-3-artifact_4_error_budgetjson-declared-discards" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 3 — artifact_4_error_budget.json (declared discards)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-4-artifact_3_trace_reportjsonl-why-retained" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 4 — artifact_3_trace_report.jsonl (why retained)
+        3) artifact_4_error_budget.json (declared discards)
       
     </span>
   </a>
@@ -1040,13 +977,63 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#common-patterns-what-youll-see-in-real-systems" class="md-nav__link">
+  <a href="#patterns-youll-care-about-later-future-interest" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Common patterns (what you’ll see in real systems)
+        Patterns you’ll care about later (future interest)
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Patterns you’ll care about later (future interest)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#regime-drift-over-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Regime drift over time
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-tenant-isolation-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multi-tenant isolation checks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ci-guardrails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CI guardrails
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accounting-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Accounting mapping
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1063,21 +1050,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#i-typed-huf-traffic-and-got-syntaxerror" class="md-nav__link">
+  <a href="#i-typed-huf-and-got-syntaxerror" class="md-nav__link">
     <span class="md-ellipsis">
       
-        “I typed huf traffic ... and got SyntaxError”
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#my-scores-are-distances-lower-is-better" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        “My scores are distances (lower is better)”
+        “I typed huf ... and got SyntaxError”
       
     </span>
   </a>
@@ -1086,17 +1062,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#where-this-goes-next-future-interest" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Where this goes next (future interest)
-      
-    </span>
-  </a>
   
 </li>
       
@@ -1665,26 +1630,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#when-to-use-this" class="md-nav__link">
+  <a href="#concepts" class="md-nav__link">
     <span class="md-ellipsis">
       
-        When to use this
+        Concepts
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#concepts-the-minimum-you-need" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Concepts (the minimum you need)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Concepts (the minimum you need)">
+    <nav class="md-nav" aria-label="Concepts">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1798,22 +1752,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-read-the-artifacts-screenshot-style-walkthrough" class="md-nav__link">
+  <a href="#example-output-interpretation-screenshot-style" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How to read the artifacts (screenshot-style walkthrough)
+        Example output interpretation (screenshot-style)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="How to read the artifacts (screenshot-style walkthrough)">
+    <nav class="md-nav" aria-label="Example output interpretation (screenshot-style)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#step-0-sanity-check" class="md-nav__link">
+  <a href="#1-artifact_1_coherence_mapcsv-regime-ranking" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 0 — sanity check
+        1) artifact_1_coherence_map.csv (regime ranking)
       
     </span>
   </a>
@@ -1821,10 +1775,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-1-artifact_1_coherence_mapcsv-regime-ranking" class="md-nav__link">
+  <a href="#2-artifact_2_active_setcsv-ranked-review-list" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1 — artifact_1_coherence_map.csv (regime ranking)
+        2) artifact_2_active_set.csv (ranked review list)
       
     </span>
   </a>
@@ -1832,32 +1786,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-2-artifact_2_active_setcsv-the-ranked-review-list" class="md-nav__link">
+  <a href="#3-artifact_4_error_budgetjson-declared-discards" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 2 — artifact_2_active_set.csv (the ranked review list)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-3-artifact_4_error_budgetjson-declared-discards" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 3 — artifact_4_error_budget.json (declared discards)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-4-artifact_3_trace_reportjsonl-why-retained" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 4 — artifact_3_trace_report.jsonl (why retained)
+        3) artifact_4_error_budget.json (declared discards)
       
     </span>
   </a>
@@ -1870,13 +1802,63 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#common-patterns-what-youll-see-in-real-systems" class="md-nav__link">
+  <a href="#patterns-youll-care-about-later-future-interest" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Common patterns (what you’ll see in real systems)
+        Patterns you’ll care about later (future interest)
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Patterns you’ll care about later (future interest)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#regime-drift-over-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Regime drift over time
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-tenant-isolation-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multi-tenant isolation checks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ci-guardrails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CI guardrails
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accounting-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Accounting mapping
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1893,21 +1875,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#i-typed-huf-traffic-and-got-syntaxerror" class="md-nav__link">
+  <a href="#i-typed-huf-and-got-syntaxerror" class="md-nav__link">
     <span class="md-ellipsis">
       
-        “I typed huf traffic ... and got SyntaxError”
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#my-scores-are-distances-lower-is-better" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        “My scores are distances (lower is better)”
+        “I typed huf ... and got SyntaxError”
       
     </span>
   </a>
@@ -1916,17 +1887,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#where-this-goes-next-future-interest" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Where this goes next (future interest)
-      
-    </span>
-  </a>
   
 </li>
       
@@ -2010,7 +1970,7 @@
 <p>No live vector DB required. You provide a JSONL/CSV/TSV export of retrieval results.</p>
 </blockquote>
 <p><strong>Disambiguation:</strong> this is <em>not</em> “ML class imbalance.”<br />
-Here “long tail” means <strong>mass distribution + exception reweighting</strong> — exactly how logs/ledgers/budgets become more concentrated when you filter to exceptions.</p>
+Here “long tail” means <strong>mass distribution + exception reweighting</strong> — the accounting move: baseline P&amp;L → exception-only P&amp;L → ranked variance review.</p>
 <div class="admonition warning">
 <p class="admonition-title">PowerShell vs Python: run commands in the shell</p>
 <p>If your prompt looks like <code>&gt;&gt;&gt;</code>, you are <strong>inside Python</strong>.<br />
@@ -2018,24 +1978,12 @@ Exit back to PowerShell with <strong><code>exit()</code></strong> (or <strong>Ct
 </div>
 <hr />
 <h2 id="start-here">Start here<a class="headerlink" href="#start-here" title="Permanent link">&para;</a></h2>
-<p>If you want the shortest entry, see:</p>
 <ul>
-<li><strong>Vector DB coherence adapter (one-page brief)</strong>: <code>vector_db_coherence_one_pager.md</code></li>
+<li><strong>One-page brief:</strong> <code>vector_db_coherence_one_pager.md</code></li>
+<li><strong>This page:</strong> full walkthrough + “what to look for” + future extension patterns</li>
 </ul>
-<p>If you want the full walkthrough and “what to look for,” you are on the right page.</p>
 <hr />
-<h2 id="when-to-use-this">When to use this<a class="headerlink" href="#when-to-use-this" title="Permanent link">&para;</a></h2>
-<p>Use this when you want to answer questions like:</p>
-<ul>
-<li>“Are results dominated by one namespace / one tenant / one collection?”</li>
-<li>“Is my retrieval <strong>too concentrated</strong> (a tiny set dominates)?”</li>
-<li>“After filtering to an exception (one tenant/namespace), did the ranking regime change?”</li>
-<li>“If I tighten the threshold, does concentration increase?”</li>
-</ul>
-<p>This pairs naturally with <strong>Traffic Phase vs Traffic Anomaly</strong> (teaches baseline → exception-only → ranked review).<br />
-It also pairs with <strong>Long tail (accounting lens)</strong>: baseline view → exception view → ranked variance review.</p>
-<hr />
-<h2 id="concepts-the-minimum-you-need">Concepts (the minimum you need)<a class="headerlink" href="#concepts-the-minimum-you-need" title="Permanent link">&para;</a></h2>
+<h2 id="concepts">Concepts<a class="headerlink" href="#concepts" title="Permanent link">&para;</a></h2>
 <h3 id="regimes">Regimes<a class="headerlink" href="#regimes" title="Permanent link">&para;</a></h3>
 <p>A <strong>regime</strong> is the grouping you care about: <code>namespace</code>, <code>collection</code>, <code>tenant</code>, <code>source</code>, etc.</p>
 <p>You choose it via <code>--regime-field</code>.</p>
@@ -2068,7 +2016,7 @@ It also pairs with <strong>Long tail (accounting lens)</strong>: baseline view �
 <li><code>tenant</code></li>
 <li><code>index</code></li>
 </ul>
-<p>Example (<code>cases/vector_db/inputs/retrieval.jsonl</code>):</p>
+<p>Example:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;doc_001&quot;</span><span class="p">,</span><span class="nt">&quot;score&quot;</span><span class="p">:</span><span class="mf">0.82</span><span class="p">,</span><span class="nt">&quot;namespace&quot;</span><span class="p">:</span><span class="s2">&quot;kb&quot;</span><span class="p">,</span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="s2">&quot;handbook&quot;</span><span class="p">}</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;doc_002&quot;</span><span class="p">,</span><span class="nt">&quot;score&quot;</span><span class="p">:</span><span class="mf">0.63</span><span class="p">,</span><span class="nt">&quot;namespace&quot;</span><span class="p">:</span><span class="s2">&quot;kb&quot;</span><span class="p">,</span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="s2">&quot;manual&quot;</span><span class="p">}</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="p">{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;doc_101&quot;</span><span class="p">,</span><span class="nt">&quot;score&quot;</span><span class="p">:</span><span class="mf">0.77</span><span class="p">,</span><span class="nt">&quot;namespace&quot;</span><span class="p">:</span><span class="s2">&quot;tickets&quot;</span><span class="p">,</span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="s2">&quot;ops&quot;</span><span class="p">}</span>
@@ -2099,40 +2047,26 @@ It also pairs with <strong>Long tail (accounting lens)</strong>: baseline view �
 <a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>
 <a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="p">&amp;</span> <span class="nv">$py</span> <span class="n">scripts</span><span class="p">/</span><span class="n">inspect_huf_artifacts</span><span class="p">.</span><span class="n">py</span> <span class="p">-</span><span class="n">-out</span> <span class="nv">$out</span>
 </code></pre></div>
-<p>Expected console output looks like:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>[tail] items_to_cover_90pct=3
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>Top regimes by rho_global_post:
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>  1. kb       rho_post=0.619658
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>  2. tickets  rho_post=0.380342
-</code></pre></div>
-<p>Interpretation:</p>
-<ul>
-<li><code>kb</code> dominates (~62%) but <code>tickets</code> is still significant (~38%).</li>
-<li><code>items_to_cover_90pct=3</code> ⇒ <strong>high concentration</strong> (top 3 retained items explain 90% of mass).</li>
-</ul>
 <hr />
 <h2 id="two-tau-delta-the-repeatable-headline">Two-tau delta (the repeatable headline)<a class="headerlink" href="#two-tau-delta-the-repeatable-headline" title="Permanent link">&para;</a></h2>
 <p>Sometimes you want one line a teammate can repeat:</p>
 <blockquote>
 <p><strong>Concentration increased: items_to_cover_90pct X -&gt; Y</strong></p>
 </blockquote>
-<p>Run the same input twice (tau A and tau B):</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nv">$py</span>  <span class="p">=</span> <span class="s2">&quot;.\.venv\Scripts\python.exe&quot;</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nv">$in</span>  <span class="p">=</span> <span class="s2">&quot;cases/vector_db/inputs/retrieval.jsonl&quot;</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nv">$out</span> <span class="p">=</span> <span class="s2">&quot;out/vector_db_delta&quot;</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="p">&amp;</span> <span class="nv">$py</span> <span class="n">scripts</span><span class="p">/</span><span class="n">run_vector_db_concentration_delta</span><span class="p">.</span><span class="n">py</span> <span class="p">`</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>  <span class="p">-</span><span class="n">-in</span> <span class="nv">$in</span> <span class="p">`</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>  <span class="p">-</span><span class="n">-out</span> <span class="nv">$out</span> <span class="p">`</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>  <span class="p">-</span><span class="n">-tau-a</span> <span class="n">0</span><span class="p">.</span><span class="n">005</span> <span class="p">`</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>  <span class="p">-</span><span class="n">-tau-b</span> <span class="n">0</span><span class="p">.</span><span class="n">02</span> <span class="p">`</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>  <span class="p">-</span><span class="n">-regime-field</span> <span class="n">namespace</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nv">$py</span>  <span class="p">=</span> <span class="s2">&quot;.\.venv\Scripts\python.exe&quot;</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nv">$in</span>  <span class="p">=</span> <span class="s2">&quot;cases/vector_db/inputs/retrieval.jsonl&quot;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nv">$out</span> <span class="p">=</span> <span class="s2">&quot;out/vector_db_delta&quot;</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="p">&amp;</span> <span class="nv">$py</span> <span class="n">scripts</span><span class="p">/</span><span class="n">run_vector_db_concentration_delta</span><span class="p">.</span><span class="n">py</span> <span class="p">`</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>  <span class="p">-</span><span class="n">-in</span> <span class="nv">$in</span> <span class="p">`</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>  <span class="p">-</span><span class="n">-out</span> <span class="nv">$out</span> <span class="p">`</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>  <span class="p">-</span><span class="n">-tau-a</span> <span class="n">0</span><span class="p">.</span><span class="n">005</span> <span class="p">`</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>  <span class="p">-</span><span class="n">-tau-b</span> <span class="n">0</span><span class="p">.</span><span class="n">02</span> <span class="p">`</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>  <span class="p">-</span><span class="n">-regime-field</span> <span class="n">namespace</span>
 </code></pre></div>
-<p>Example headline output:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Concentration increased: items_to_cover_90pct 37 -&gt; 12
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Concentration increased: items_to_cover_90pct 37 -&gt; 12
 </code></pre></div>
-<p>Interpretation: fewer retained items explain 90% of post-normalized mass (<strong>more concentrated</strong>).</p>
 <hr />
 <h2 id="artifacts-the-contract">Artifacts (the contract)<a class="headerlink" href="#artifacts-the-contract" title="Permanent link">&para;</a></h2>
 <p>A valid run folder should contain at least:</p>
@@ -2147,88 +2081,60 @@ It also pairs with <strong>Long tail (accounting lens)</strong>: baseline view �
 <li><code>meta.json</code>, <code>run_stamp.json</code></li>
 </ul>
 <hr />
-<h2 id="how-to-read-the-artifacts-screenshot-style-walkthrough">How to read the artifacts (screenshot-style walkthrough)<a class="headerlink" href="#how-to-read-the-artifacts-screenshot-style-walkthrough" title="Permanent link">&para;</a></h2>
-<p>Think of this as “what you would point at on a screenshot.”</p>
-<h3 id="step-0-sanity-check">Step 0 — sanity check<a class="headerlink" href="#step-0-sanity-check" title="Permanent link">&para;</a></h3>
-<p>In File Explorer (or <code>dir</code>), confirm the contract files exist.<br />
-If any are missing, treat the run as <strong>not comparable</strong>.</p>
-<h3 id="step-1-artifact_1_coherence_mapcsv-regime-ranking">Step 1 — <code>artifact_1_coherence_map.csv</code> (regime ranking)<a class="headerlink" href="#step-1-artifact_1_coherence_mapcsv-regime-ranking" title="Permanent link">&para;</a></h3>
+<h2 id="example-output-interpretation-screenshot-style">Example output interpretation (screenshot-style)<a class="headerlink" href="#example-output-interpretation-screenshot-style" title="Permanent link">&para;</a></h2>
+<p>Think of this as “what you would circle in a screenshot.”</p>
+<h3 id="1-artifact_1_coherence_mapcsv-regime-ranking">1) artifact_1_coherence_map.csv (regime ranking)<a class="headerlink" href="#1-artifact_1_coherence_mapcsv-regime-ranking" title="Permanent link">&para;</a></h3>
 <p>Open in Excel and sort <strong>descending</strong> by <code>rho_global_post</code>.</p>
-<p>You’re looking for rows like:</p>
+<p>Look for:</p>
 <ul>
-<li><code>regime_id</code> (e.g., <code>kb</code>, <code>tickets</code>)</li>
-<li><code>rho_global_post</code> (post-normalized mass share)</li>
+<li>Top regime &gt; 0.50 (dominance)</li>
+<li>Top 2–3 regimes cover most of the mass (regime concentration)</li>
 </ul>
-<p>What to look for:</p>
+<h3 id="2-artifact_2_active_setcsv-ranked-review-list">2) artifact_2_active_set.csv (ranked review list)<a class="headerlink" href="#2-artifact_2_active_setcsv-ranked-review-list" title="Permanent link">&para;</a></h3>
+<p>Sort <strong>descending</strong> by <code>rho_global_post</code>:</p>
 <ul>
-<li><strong>Dominance:</strong> does the top regime exceed 0.50?</li>
-<li><strong>Regime concentration:</strong> do top 2–3 regimes cover most of the mass?</li>
-<li><strong>Tail cut:</strong> if discard columns exist, did one regime lose far more than others?</li>
+<li>This is your global “review list” (what actually matters).</li>
 </ul>
-<p>This answers: <strong>“Which groups dominate my retrieval results?”</strong></p>
-<h3 id="step-2-artifact_2_active_setcsv-the-ranked-review-list">Step 2 — <code>artifact_2_active_set.csv</code> (the ranked review list)<a class="headerlink" href="#step-2-artifact_2_active_setcsv-the-ranked-review-list" title="Permanent link">&para;</a></h3>
-<p>Open in Excel and sort <strong>descending</strong> by <code>rho_global_post</code>.</p>
-<p>What to do:</p>
+<p>Then filter by <code>regime_id</code> and sort by <code>rho_local_post</code>:</p>
 <ul>
-<li>Sort by <code>rho_global_post</code> ⇒ global “review list”</li>
-<li>Filter to one <code>regime_id</code>, then sort by <code>rho_local_post</code> ⇒ top items <em>within</em> a regime</li>
+<li>Top items inside a regime.</li>
 </ul>
-<p>This answers: <strong>“Which retained items matter most overall, and within each regime?”</strong></p>
-<h3 id="step-3-artifact_4_error_budgetjson-declared-discards">Step 3 — <code>artifact_4_error_budget.json</code> (declared discards)<a class="headerlink" href="#step-3-artifact_4_error_budgetjson-declared-discards" title="Permanent link">&para;</a></h3>
-<p>Open the JSON and look for:</p>
+<h3 id="3-artifact_4_error_budgetjson-declared-discards">3) artifact_4_error_budget.json (declared discards)<a class="headerlink" href="#3-artifact_4_error_budgetjson-declared-discards" title="Permanent link">&para;</a></h3>
+<p>Look for:</p>
 <ul>
-<li><code>discarded_budget_global</code> (or similar key)</li>
+<li><code>discarded_budget_global</code> (or similarly named key)</li>
 </ul>
-<p>This answers: <strong>“How much mass did we discard, explicitly?”</strong><br />
-If this is large, your threshold is doing substantial pruning.</p>
-<h3 id="step-4-artifact_3_trace_reportjsonl-why-retained">Step 4 — <code>artifact_3_trace_report.jsonl</code> (why retained)<a class="headerlink" href="#step-4-artifact_3_trace_reportjsonl-why-retained" title="Permanent link">&para;</a></h3>
-<p>Use this when someone asks:</p>
-<ul>
-<li>“Why did this item make the cut?”</li>
-<li>“Which fields influenced grouping / trace?”</li>
-</ul>
-<p>This is the audit trail.</p>
+<p>Large discard means tau is aggressively pruning.</p>
 <hr />
-<h2 id="common-patterns-what-youll-see-in-real-systems">Common patterns (what you’ll see in real systems)<a class="headerlink" href="#common-patterns-what-youll-see-in-real-systems" title="Permanent link">&para;</a></h2>
+<h2 id="patterns-youll-care-about-later-future-interest">Patterns you’ll care about later (future interest)<a class="headerlink" href="#patterns-youll-care-about-later-future-interest" title="Permanent link">&para;</a></h2>
+<h3 id="regime-drift-over-time">Regime drift over time<a class="headerlink" href="#regime-drift-over-time" title="Permanent link">&para;</a></h3>
+<p>Run the same query daily and watch:</p>
 <ul>
-<li><strong>Tenant bleed / namespace monopoly:</strong> one regime quietly dominates most results.</li>
-<li><strong>Over-concentration:</strong> <code>items_to_cover_90pct</code> becomes very small (risk: staleness of top chunks).</li>
-<li><strong>Regime drift:</strong> top regime changes after filtering, or over time (new content, new index behavior).</li>
-<li><strong>Tail collapse under strict tau:</strong> tightening <code>tau</code> shrinks the review list sharply.</li>
+<li>top regimes change</li>
+<li><code>items_to_cover_90pct</code> trend down (concentration risk) or up (dispersion)</li>
+</ul>
+<h3 id="multi-tenant-isolation-checks">Multi-tenant isolation checks<a class="headerlink" href="#multi-tenant-isolation-checks" title="Permanent link">&para;</a></h3>
+<p>Use <code>--regime-field tenant</code> and look for:</p>
+<ul>
+<li>one tenant dominating another tenant’s query output</li>
+</ul>
+<h3 id="ci-guardrails">CI guardrails<a class="headerlink" href="#ci-guardrails" title="Permanent link">&para;</a></h3>
+<p>After any retrieval pipeline change:</p>
+<ul>
+<li>run coherence on a fixed set of queries</li>
+<li>fail if concentration spikes or a regime monopolizes results</li>
+</ul>
+<h3 id="accounting-mapping">Accounting mapping<a class="headerlink" href="#accounting-mapping" title="Permanent link">&para;</a></h3>
+<p>Treat regimes like cost centers:</p>
+<ul>
+<li>baseline P&amp;L = full retrieval results</li>
+<li>exception-only P&amp;L = tighter tau</li>
+<li>ranked variance review = active set sorted by <code>rho_global_post</code></li>
 </ul>
 <hr />
 <h2 id="common-issues">Common issues<a class="headerlink" href="#common-issues" title="Permanent link">&para;</a></h2>
-<h3 id="i-typed-huf-traffic-and-got-syntaxerror">“I typed <code>huf traffic ...</code> and got <code>SyntaxError</code>”<a class="headerlink" href="#i-typed-huf-traffic-and-got-syntaxerror" title="Permanent link">&para;</a></h3>
-<p>If you see:</p>
-<ul>
-<li><code>&gt;&gt;&gt; huf traffic ...</code></li>
-<li><code>SyntaxError: invalid syntax</code></li>
-</ul>
-<p>…you typed a <strong>shell command inside Python</strong>.</p>
-<p>Fix: exit Python (<code>exit()</code>), then run in PowerShell:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">.\.</span><span class="n">venv</span><span class="p">\</span><span class="n">Scripts</span><span class="p">\</span><span class="n">huf</span> <span class="n">traffic</span> <span class="p">-</span><span class="n">-csv</span> <span class="n">cases</span><span class="p">/</span><span class="n">traffic_phase</span><span class="p">/</span><span class="n">inputs</span><span class="p">/</span><span class="n">toronto_traffic_signals_phase_status</span><span class="p">.</span><span class="n">csv</span> <span class="p">-</span><span class="n">-out</span> <span class="n">out</span><span class="p">/</span><span class="n">traffic_phase</span>
-</code></pre></div>
-<h3 id="my-scores-are-distances-lower-is-better">“My scores are distances (lower is better)”<a class="headerlink" href="#my-scores-are-distances-lower-is-better" title="Permanent link">&para;</a></h3>
-<p>HUF assumes <strong>higher score = better</strong>. If your tool emits distance where lower is better, transform it <em>explicitly</em> before auditing, e.g.:</p>
-<ul>
-<li><code>score = 1 / (1 + distance)</code></li>
-<li>or <code>score = -distance</code> (only if your adapter allows negatives)</li>
-</ul>
-<p>Keep the transform explicit so the audit trail stays honest.</p>
-<hr />
-<h2 id="where-this-goes-next-future-interest">Where this goes next (future interest)<a class="headerlink" href="#where-this-goes-next-future-interest" title="Permanent link">&para;</a></h2>
-<p>If you care about this topic long-term, the natural next steps are:</p>
-<ul>
-<li><strong>Multi-run comparisons:</strong> compare yesterday vs today (regime drift, concentration drift).</li>
-<li><strong>Per-tenant audit packs:</strong> same query across tenants → detect isolation failures.</li>
-<li><strong>Evaluation hooks:</strong> run coherence after each retrieval call in CI (regression detection).</li>
-<li><strong>Math appendix mapping:</strong> jump from formula → artifact column (e.g., <code>rho_global_post</code>).</li>
-</ul>
-<p>See also:</p>
-<ul>
-<li><strong>HUF math form and function</strong> (derivations + column mapping)</li>
-<li><strong>Long tail (accounting lens)</strong> (baseline → exception-only → ranked variance review)</li>
-</ul>
+<h3 id="i-typed-huf-and-got-syntaxerror">“I typed <code>huf ...</code> and got SyntaxError”<a class="headerlink" href="#i-typed-huf-and-got-syntaxerror" title="Permanent link">&para;</a></h3>
+<p>If you see <code>&gt;&gt;&gt;</code>, you’re inside Python. Exit with <code>exit()</code> and run in PowerShell.</p>
 
 
 
