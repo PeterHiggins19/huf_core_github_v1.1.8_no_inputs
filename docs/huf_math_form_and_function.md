@@ -49,14 +49,16 @@ Discarded budget (explicitly reported in `artifact_4_error_budget.json`):
 \delta(\tau) = 1 - \sum_i T_\tau(\rho)_i
 \]
 
+Let \(K(\tau) = \{ i : \rho_i \ge \tau \}\) be the retained set and \(Z(\tau)=\sum_{k\in K(\tau)}\rho_k = 1-\delta(\tau)\).
+
 Renormalized retained distribution:
 \[
-\hat\rho_i(\tau) = \frac{T_\tau(\rho)_i}{\sum_k T_\tau(\rho)_k}
+\hat\rho_i(\tau) = \frac{\rho_i}{Z(\tau)} \quad \text{for } i \in K(\tau)
 \]
 
 **Proof sketch (renormalized unity):**
 \[
-\sum_i \hat\rho_i(\tau) = \frac{\sum_i T_\tau(\rho)_i}{\sum_k T_\tau(\rho)_k} = 1
+\sum_{i \in K(\tau)} \hat\rho_i(\tau) = \frac{\sum_{i \in K(\tau)} \rho_i}{Z(\tau)} = 1
 \]
 
 This is why HUF can be “compression + audit”: you can *discard* mass, but you must (1) declare it, and (2) renormalize what remains.
@@ -131,6 +133,86 @@ HUF’s elevator pitch is not “math for math’s sake.” It’s math that *fo
 - **Trace report** → provenance map (why each kept item is kept, and what it came from)
 
 If you can’t show all three, you’re not doing HUF — you’re doing storytelling.
+
+---
+
+## Math appendix: artifact columns ↔ formulas
+
+This section lets you jump from an artifact column name to the math above.
+
+**Important notes:**
+- Column presence varies by adapter, but these names are common across HUF runs.
+- Suffix meanings are consistent:
+  - `*_pre` → computed on the **original unity budget** \(\rho\)
+  - `*_post` → computed after exclusions + renormalization on the **retained** distribution \(\hat\rho\)
+- Let \(K\) be the retained set, \(Z=\sum_{k\in K}\rho_k=1-\delta\).
+
+### A) Element-level columns (typical in `artifact_2_active_set.csv`)
+
+| Column | Formula | Meaning |
+|---|---|---|
+| `rho_global_pre` | \(\rho_i\) | Element’s share of the original unity budget |
+| `rho_global_post` | \(\hat\rho_i=\rho_i/Z\) for \(i\in K\) | Element’s share **after** exclusion + renormalization |
+| `rho_local_pre` | \(\rho_i / \rho(R)\) where \(i\in R\) | Element’s share **within its regime** (pre) |
+| `rho_local_post` | \(\hat\rho_i / \hat\rho(R)\) | Element’s share **within its regime** (post) |
+
+Where:
+- \(\rho(R)=\sum_{j\in R}\rho_j\)
+- \(\hat\rho(R)=\sum_{j\in R\cap K}\hat\rho_j = \frac{\sum_{j\in R\cap K}\rho_j}{Z}\)
+
+A useful simplification:
+\[
+\rho\_local\_post(i\in R) = \frac{\rho_i}{\sum_{j\in R\cap K}\rho_j}
+\]
+(renormalization cancels \(Z\) inside the regime).
+
+**Practical reading:** `rho_global_post` answers “how important is this element overall (after pruning)?”  
+`rho_local_post` answers “how dominant is this element inside its regime?”
+
+### B) Regime-level columns (typical in `artifact_1_coherence_map.csv`)
+
+| Column | Formula | Meaning |
+|---|---|---|
+| `rho_global_pre` | \(\rho(R)=\sum_{i\in R}\rho_i\) | Regime share in the original distribution |
+| `rho_global_post` | \(\hat\rho(R)=\sum_{i\in R\cap K}\rho_i/Z\) | Regime share after exclusion + renormalization |
+| `rho_discarded_pre` | \(\sum_{i\in R\setminus K}\rho_i\) | Amount of original mass discarded inside the regime |
+
+So the coherence map can be read as:
+- **who dominates now** (`rho_global_post`)
+- **how much tail was cut away** (`rho_discarded_pre`)
+
+### C) Error budget (`artifact_4_error_budget.json`)
+
+Common keys and their math:
+
+| Key | Formula | Meaning |
+|---|---|---|
+| `discarded_budget_global` (or similar) | \(\delta = 1 - \sum_{i\in K}\rho_i\) | Total mass discarded globally |
+| `retained_budget_global` (if present) | \(Z = \sum_{i\in K}\rho_i = 1-\delta\) | Total mass retained before renormalization |
+
+### D) The “items to cover 90%” headline (used in demos)
+
+Given active set rows sorted by `rho_global_post` descending, define:
+\[
+k_{0.90} = \min \left\{k : \sum_{i=1}^k \rho^{post}_{(i)} \ge 0.90 \right\}
+\]
+
+This is what the demo prints as:
+
+- `items_to_cover_90pct baseline -> exception`
+
+If \(k_{0.90}\) shrinks in the exception view, you can legitimately say:
+> “Concentration increased.”
+
+### E) Trace report (`artifact_3_trace_report.jsonl`)
+
+The trace report isn’t one formula; it’s the **provenance map** for each retained item:
+- which input rows/cells formed the finite element,
+- what regime labels were assigned,
+- what exclusions applied,
+- what post-normalized shares were computed.
+
+Think of it as a serialized proof object that supports the numbers above.
 
 ## Next
 - For the accounting‑facing explanation and the baseline→exception→variance flow, see:
