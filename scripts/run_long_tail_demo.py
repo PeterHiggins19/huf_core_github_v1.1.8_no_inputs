@@ -1,3 +1,4 @@
+\
 #!/usr/bin/env python3
 """Run Traffic Phase + Traffic Anomaly and print a long-tail comparison."""
 
@@ -9,7 +10,12 @@ import sys
 from pathlib import Path
 from typing import List, Tuple
 
-from scripts.inspect_huf_artifacts import summarize, print_dashboard
+# ✅ Make `import scripts.*` work when running: python scripts/run_long_tail_demo.py
+REPO_ROOT = Path(__file__).resolve().parents[1]
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
+
+from scripts.inspect_huf_artifacts import summarize, print_dashboard  # noqa: E402
 
 
 def _find_huf_argv() -> List[str]:

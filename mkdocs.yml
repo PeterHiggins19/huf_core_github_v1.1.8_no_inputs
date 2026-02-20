@@ -10,6 +10,8 @@ use_directory_urls: true
 
 theme:
   name: material
+  icon:
+    repo: fontawesome/brands/github
   features:
     # Keep the learning flow in the LEFT sidebar (no top tabs)
     - navigation.sections
@@ -19,8 +21,21 @@ theme:
     - search.highlight
     - search.suggest
     - content.code.copy
-  icon:
-    repo: fontawesome/brands/github
+
+  # ✅ Reinstate light/dark mode toggle (top-right moon/sun)
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
 
 plugins:
   - search
