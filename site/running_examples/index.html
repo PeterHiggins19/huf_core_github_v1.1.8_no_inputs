@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://peterhiggins19.github.io/huf_core_github_v1.1.8_no_inputs/planck/">
+        <link rel="canonical" href="https://peterhiggins19.github.io/huf_core_github_v1.1.8_no_inputs/running_examples/">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>Planck 70 GHz worked example - HUF Core Snapshot</title>
+        <title>Running examples on Windows, macOS, and Linux - HUF Core Snapshot</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#planck-70-ghz-worked-example" class="md-skip">
+        <a href="#running-examples-on-windows-macos-and-linux" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Planck 70 GHz worked example
+              Running examples on Windows, macOS, and Linux
             
           </span>
         </div>
@@ -1389,10 +1389,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#why-run-this" class="md-nav__link">
+  <a href="#which-terminal-should-i-use" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why run this
+        Which terminal should I use?
       
     </span>
   </a>
@@ -1400,10 +1400,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-you-need" class="md-nav__link">
+  <a href="#shell-vs-python-how-to-tell-what-youre-typing-into" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What you need
+        Shell vs Python: how to tell what you’re typing into
       
     </span>
   </a>
@@ -1411,22 +1411,44 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#run" class="md-nav__link">
+  <a href="#recommended-pattern-run-the-provided-scripts-not-pasted-python" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Run
+        Recommended pattern: run the provided scripts (not pasted Python)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Run">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multiline-python-snippets-when-you-really-need-them" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multi‑line Python snippets (when you really need them)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Multi‑line Python snippets (when you really need them)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#what-you-should-see" class="md-nav__link">
+  <a href="#option-a-recommended-save-a-py-file" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What you should see
+        Option A (recommended): save a .py file
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-b-pipe-a-herestring-heredoc-into-python-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option B: pipe a here‑string / heredoc into python -
       
     </span>
   </a>
@@ -1439,21 +1461,60 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#inspect-the-artifacts" class="md-nav__link">
+  <a href="#worked-examples" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Inspect the artifacts
+        Worked examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Worked examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-vector-db-coherence-retrieval-audit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 1 — Vector DB coherence (retrieval audit)
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#optional-plots" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#example-2-concentration-delta-tau-sensitivity" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Optional plots
+        Example 2 — Concentration delta (tau sensitivity)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-3-planck-70-ghz-fits-huf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 3 — Planck 70 GHz (FITS → HUF)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plots-and-visual-sanity-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Plots and visual sanity checks
       
     </span>
   </a>
@@ -1488,111 +1549,155 @@
   
 
 
-<h1 id="planck-70-ghz-worked-example">Planck 70 GHz worked example<a class="headerlink" href="#planck-70-ghz-worked-example" title="Permanent link">&para;</a></h1>
-<p>This example runs HUF on a real scientific dataset (a Planck 70 GHz sky map in FITS format).</p>
-<h2 id="why-run-this">Why run this<a class="headerlink" href="#why-run-this" title="Permanent link">&para;</a></h2>
+<h1 id="running-examples-on-windows-macos-and-linux">Running examples on Windows, macOS, and Linux<a class="headerlink" href="#running-examples-on-windows-macos-and-linux" title="Permanent link">&para;</a></h1>
+<p>This project is <strong>cross‑platform</strong>, but the <em>shell syntax</em> is not. Most “it broke when I pasted it” problems come from mixing:</p>
 <ul>
-<li>Demonstrates the pipeline on <strong>non‑toy data</strong>.</li>
-<li>Produces artifacts you can inspect (and plot) to confirm you’re looking at real structure rather than a “demo UI”.</li>
+<li><strong>PowerShell commands</strong> (Windows) vs <strong>bash/zsh commands</strong> (macOS/Linux)</li>
+<li><strong>Shell commands</strong> vs the <strong>Python REPL</strong> (<code>&gt;&gt;&gt;</code> prompt)</li>
 </ul>
-<h2 id="what-you-need">What you need<a class="headerlink" href="#what-you-need" title="Permanent link">&para;</a></h2>
-<ul>
-<li>A working virtual environment (<code>.venv</code>) with HUF installed.</li>
-<li>
-<p>The FITS input file:</p>
-</li>
-<li>
-<p><code>cases/planck70/inputs/LFI_SkyMap_070_1024_R3.00_full.fits</code></p>
-</li>
-<li>
-<p><code>astropy</code> (for FITS I/O):</p>
-</li>
-</ul>
+<p>This page gives copy/paste‑safe patterns and explains <em>why</em> each one exists.</p>
+<hr />
+<h2 id="which-terminal-should-i-use">Which terminal should I use?<a class="headerlink" href="#which-terminal-should-i-use" title="Permanent link">&para;</a></h2>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Windows</label><label for="__tabbed_1_2">macOS / Linux</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">&amp;</span> <span class="p">.\.</span><span class="n">venv</span><span class="p">\</span><span class="n">Scripts</span><span class="p">\</span><span class="n">python</span><span class="p">.</span><span class="n">exe</span> <span class="n">-m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">astropy</span>
+<p>Recommended:</p>
+<ul>
+<li><strong>Windows Terminal</strong> + <strong>PowerShell 7+</strong> (best copy/paste behavior)</li>
+<li>PowerShell 5.1 also works, but line continuations and paste handling are fussier.</li>
+</ul>
+<p>If pasting turns <code>.</code> into <code>[</code> or auto‑enters mid‑paste, update PSReadLine (this fixes most “weird paste” bugs):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">Install-Module</span> <span class="n">PSReadLine</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span> <span class="n">-Force</span> <span class="n">-AllowClobber</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c"># close the terminal completely, then open a NEW PowerShell session</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>./.venv/bin/python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>astropy
+<p>Use your default terminal with <strong>bash</strong> or <strong>zsh</strong>.</p>
+<ul>
+<li>Most docs and one‑liners online assume bash/zsh.</li>
+<li><code>python - &lt;&lt;'PY' ... PY</code> (heredoc) works here, <strong>not</strong> in PowerShell.</li>
+</ul>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="shell-vs-python-how-to-tell-what-youre-typing-into">Shell vs Python: how to tell what you’re typing into<a class="headerlink" href="#shell-vs-python-how-to-tell-what-youre-typing-into" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>If your prompt looks like:</p>
+</li>
+<li>
+<p><code>PS C:\...&gt;</code> → you are in <strong>PowerShell</strong></p>
+</li>
+<li><code>$</code> → you are in <strong>bash/zsh</strong></li>
+<li><code>&gt;&gt;&gt;</code> → you are in <strong>Python</strong> (the REPL)</li>
+</ul>
+<p><strong>Rule:</strong></p>
+<ul>
+<li>Run <code>huf ...</code> and <code>python some_script.py ...</code> <strong>in the shell</strong>.</li>
+<li>Run <code>import ...</code> and <code>print(...)</code> <strong>inside Python</strong>, or via <code>python -c</code> / a script.</li>
+</ul>
+<p>Why this matters:</p>
+<ul>
+<li>In PowerShell, <code>print</code> is <em>not</em> Python — it’s a shell command/alias that tries to print to a printer (the “PRN” device), which is why you saw:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Unable to initialize device PRN
 </code></pre></div>
-</div>
-</div>
-</div>
-<h2 id="run">Run<a class="headerlink" href="#run" title="Permanent link">&para;</a></h2>
+<hr />
+<h2 id="recommended-pattern-run-the-provided-scripts-not-pasted-python">Recommended pattern: run the provided scripts (not pasted Python)<a class="headerlink" href="#recommended-pattern-run-the-provided-scripts-not-pasted-python" title="Permanent link">&para;</a></h2>
+<p>The repo includes helper scripts like:</p>
+<ul>
+<li><code>scripts/inspect_huf_artifacts.py</code> (quick dashboard)</li>
+<li><code>scripts/run_vector_db_concentration_delta.py</code> (compare tau settings)</li>
+</ul>
+<p>These are intentionally <strong>paste‑friendly</strong> and avoid REPL confusion.</p>
+<hr />
+<h2 id="multiline-python-snippets-when-you-really-need-them">Multi‑line Python snippets (when you really need them)<a class="headerlink" href="#multiline-python-snippets-when-you-really-need-them" title="Permanent link">&para;</a></h2>
+<h3 id="option-a-recommended-save-a-py-file">Option A (recommended): save a <code>.py</code> file<a class="headerlink" href="#option-a-recommended-save-a-py-file" title="Permanent link">&para;</a></h3>
+<p>This is the most reliable approach for beginners and teams.</p>
+<h3 id="option-b-pipe-a-herestring-heredoc-into-python-">Option B: pipe a here‑string / heredoc into <code>python -</code><a class="headerlink" href="#option-b-pipe-a-herestring-heredoc-into-python-" title="Permanent link">&para;</a></h3>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Windows (PowerShell)</label><label for="__tabbed_2_2">macOS / Linux (bash/zsh)</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">.\.</span><span class="n">venv</span><span class="p">\</span><span class="n">Scripts</span><span class="p">\</span><span class="n">huf</span><span class="p">.</span><span class="n">exe</span> <span class="n">planck</span> <span class="p">`</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>  <span class="p">-</span><span class="n">-fits</span> <span class="s2">&quot;cases/planck70/inputs/LFI_SkyMap_070_1024_R3.00_full.fits&quot;</span> <span class="p">`</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>  <span class="p">-</span><span class="n">-out</span> <span class="s2">&quot;out/planck70&quot;</span> <span class="p">`</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>  <span class="p">-</span><span class="n">-retained-target</span> <span class="n">0</span><span class="p">.</span><span class="n">97</span> <span class="p">`</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>  <span class="p">-</span><span class="n">-nside-out</span> <span class="n">64</span>
+<p>PowerShell does <strong>not</strong> support bash heredocs (<code>&lt;&lt;'PY'</code>). Use a <strong>here‑string</strong> piped into Python:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nv">$py</span> <span class="p">=</span> <span class="s2">&quot;.\\.venv\\Scripts\\python.exe&quot;</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="sh">@&#39;</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="sh">import sys</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="sh">print(&quot;Hello from stdin&quot;, sys.version)</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="sh">&#39;@</span> <span class="p">|</span> <span class="p">&amp;</span> <span class="nv">$py</span> <span class="p">-</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>./.venv/bin/huf<span class="w"> </span>planck<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span>--fits<span class="w"> </span><span class="s2">&quot;cases/planck70/inputs/LFI_SkyMap_070_1024_R3.00_full.fits&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span>--out<span class="w"> </span><span class="s2">&quot;out/planck70&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span>--retained-target<span class="w"> </span><span class="m">0</span>.97<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span>--nside-out<span class="w"> </span><span class="m">64</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>./.venv/bin/python<span class="w"> </span>-<span class="w"> </span><span class="s">&lt;&lt;&#39;PY&#39;</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="s">import sys</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="s">print(&quot;Hello from stdin&quot;, sys.version)</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="s">PY</span>
 </code></pre></div>
 </div>
 </div>
 </div>
-<h3 id="what-you-should-see">What you should see<a class="headerlink" href="#what-you-should-see" title="Permanent link">&para;</a></h3>
-<p>A successful run prints a short summary like:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>[done] planck -&gt; out\planck70 | active_set=18198 coherence_rows=12 discarded_global=0.0299995
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>       dataset_id: 1494a5d87d37b5b3
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>       tau: 1.6627253164644175e-06
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>       retained_target: 0.97
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>       nside_out: 64
-</code></pre></div>
-<h2 id="inspect-the-artifacts">Inspect the artifacts<a class="headerlink" href="#inspect-the-artifacts" title="Permanent link">&para;</a></h2>
-<p><strong>Important:</strong> don’t paste raw Python (<code>import ...</code>, <code>print(...)</code>) directly into PowerShell.</p>
+<p>What to expect:</p>
 <ul>
-<li>In PowerShell you’re still in the shell, not Python.</li>
-<li>Use the inspection script instead.</li>
+<li><code>python -</code> means “read the program from <strong>stdin</strong>”.</li>
+<li>If you see syntax errors <em>before</em> Python starts, it’s a shell syntax mismatch.</li>
 </ul>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Windows (PowerShell)</label><label for="__tabbed_3_2">macOS / Linux (bash/zsh)</label></div>
+<hr />
+<h2 id="worked-examples">Worked examples<a class="headerlink" href="#worked-examples" title="Permanent link">&para;</a></h2>
+<p>Below are the three examples most people start with. Each one has:</p>
+<ul>
+<li><strong>Why run it</strong> (what question it answers)</li>
+<li><strong>How to run it</strong> (Windows + macOS/Linux)</li>
+<li><strong>What you should see</strong> (expected outputs)</li>
+<li><strong>How to inspect/plot results</strong></li>
+</ul>
+<hr />
+<h3 id="example-1-vector-db-coherence-retrieval-audit">Example 1 — Vector DB coherence (retrieval audit)<a class="headerlink" href="#example-1-vector-db-coherence-retrieval-audit" title="Permanent link">&para;</a></h3>
+<p><strong>Why run it:</strong></p>
+<ul>
+<li>Check whether a retrieval result set is dominated by one <strong>namespace/source/tenant</strong>.</li>
+<li>Quantify <em>concentration</em> (“how many items explain 90% of the mass?”).</li>
+</ul>
+<p>See the full walkthrough: <strong><a href="../vector_db_coherence/">Vector DB coherence</a></strong>.</p>
+<hr />
+<h3 id="example-2-concentration-delta-tau-sensitivity">Example 2 — Concentration delta (tau sensitivity)<a class="headerlink" href="#example-2-concentration-delta-tau-sensitivity" title="Permanent link">&para;</a></h3>
+<p><strong>Why run it:</strong></p>
+<ul>
+<li>Compare two <code>tau</code> settings to see if concentration is stable or sensitive.</li>
+</ul>
+<p>What you should expect:</p>
+<ul>
+<li>It runs two sub‑runs (A and B) and reports whether the “items_to_cover_90pct” headline changes.</li>
+</ul>
+<hr />
+<h3 id="example-3-planck-70-ghz-fits-huf">Example 3 — Planck 70 GHz (FITS → HUF)<a class="headerlink" href="#example-3-planck-70-ghz-fits-huf" title="Permanent link">&para;</a></h3>
+<p><strong>Why run it:</strong></p>
+<ul>
+<li>A “real physics” example that produces a non‑toy output and demonstrates the pipeline on scientific data.</li>
+</ul>
+<p>See the worked page: <strong><a href="../planck/">Planck 70 GHz worked example</a></strong>.</p>
+<hr />
+<h2 id="plots-and-visual-sanity-checks">Plots and visual sanity checks<a class="headerlink" href="#plots-and-visual-sanity-checks" title="Permanent link">&para;</a></h2>
+<p>If you want charts (recommended when presenting results), install matplotlib:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Windows</label><label for="__tabbed_3_2">macOS / Linux</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nv">$py</span> <span class="p">=</span> <span class="s2">&quot;.\\.venv\\Scripts\\python.exe&quot;</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="p">&amp;</span> <span class="nv">$py</span> <span class="n">scripts</span><span class="p">/</span><span class="n">inspect_huf_artifacts</span><span class="p">.</span><span class="n">py</span> <span class="p">-</span><span class="n">-out</span> <span class="n">out</span><span class="p">/</span><span class="n">planck70</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">&amp;</span> <span class="p">.\.</span><span class="n">venv</span><span class="p">\</span><span class="n">Scripts</span><span class="p">\</span><span class="n">python</span><span class="p">.</span><span class="n">exe</span> <span class="n">-m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">matplotlib</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>./.venv/bin/python<span class="w"> </span>scripts/inspect_huf_artifacts.py<span class="w"> </span>--out<span class="w"> </span>out/planck70
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>./.venv/bin/python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>matplotlib
 </code></pre></div>
 </div>
 </div>
 </div>
-<p>What you should see:</p>
+<p>Then generate plots from any output folder:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>python<span class="w"> </span>scripts/plot_huf_artifacts.py<span class="w"> </span>--out<span class="w"> </span>out/vector_db_demo
+</code></pre></div>
+<p>Outputs (saved under <code>&lt;out&gt;/plots/</code>):</p>
 <ul>
-<li>The output folder path</li>
-<li>A small “tail” headline (e.g., <code>items_to_cover_90pct=...</code>)</li>
-<li>A ranked list of regimes by <code>rho_global_post</code></li>
-</ul>
-<h2 id="optional-plots">Optional plots<a class="headerlink" href="#optional-plots" title="Permanent link">&para;</a></h2>
-<p>If you want charts, install matplotlib and generate plots from the artifact CSVs:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Windows</label><label for="__tabbed_4_2">macOS / Linux</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">&amp;</span> <span class="p">.\.</span><span class="n">venv</span><span class="p">\</span><span class="n">Scripts</span><span class="p">\</span><span class="n">python</span><span class="p">.</span><span class="n">exe</span> <span class="n">-m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">matplotlib</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="p">&amp;</span> <span class="p">.\.</span><span class="n">venv</span><span class="p">\</span><span class="n">Scripts</span><span class="p">\</span><span class="n">python</span><span class="p">.</span><span class="n">exe</span> <span class="n">scripts</span><span class="p">/</span><span class="n">plot_huf_artifacts</span><span class="p">.</span><span class="n">py</span> <span class="p">-</span><span class="n">-out</span> <span class="n">out</span><span class="p">/</span><span class="n">planck70</span>
-</code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>./.venv/bin/python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>matplotlib
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>./.venv/bin/python<span class="w"> </span>scripts/plot_huf_artifacts.py<span class="w"> </span>--out<span class="w"> </span>out/planck70
-</code></pre></div>
-</div>
-</div>
-</div>
-<p>This writes images under:</p>
-<ul>
-<li><code>out/planck70/plots/</code></li>
+<li><code>coherence_by_regime.png</code> — bar chart of <code>rho_global_post</code> by regime</li>
+<li><code>concentration_curve.png</code> — cumulative coverage curve + the 90% cutoff</li>
 </ul>
 
 
