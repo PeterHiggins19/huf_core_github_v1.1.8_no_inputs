@@ -1,12 +1,42 @@
 # Troubleshooting
 
-**Updated:** 2026-02-17
-
 This page collects common “Windows reality” problems people hit when they’re new to Python tooling.
 
 ---
 
-## 1) “.venv exists but commands run the wrong Python”
+## “I typed `huf ...` and got `SyntaxError`”
+
+If you see this:
+
+- `>>> huf traffic ...`
+- `SyntaxError: invalid syntax`
+
+…you typed a **shell command inside Python**.
+
+Fix:
+
+1) exit Python: type `exit()` (or Ctrl+Z then Enter)  
+2) run the command in PowerShell:
+
+```powershell
+.\.venv\Scripts\huf --help
+```
+
+---
+
+## “`make` is not recognized”
+
+Windows does not ship `make`.
+
+For the Planck download guide, use:
+
+```powershell
+.\.venv\Scripts\python scripts/fetch_data.py --planck-guide
+```
+
+---
+
+## “.venv exists but commands run the wrong Python”
 
 If you see paths like `miniconda3\Scripts\huf.exe`, you’re running a *global* install, not the repo venv.
 
@@ -19,35 +49,11 @@ Use the venv explicitly:
 
 ---
 
-## 2) SSL certificate errors (CERTIFICATE_VERIFY_FAILED)
+## SSL certificate errors (CERTIFICATE_VERIFY_FAILED)
 
 Fix:
 
 ```powershell
 .\.venv\Scripts\python -m pip install certifi
 .\.venv\Scripts\python scripts/fetch_data.py --toronto --yes
-```
-
----
-
-## 3) Toronto fetch gets HTTP 404
-
-Use the default CKAN base:
-
-- `https://open.toronto.ca/api/3/action`
-
-Explicit override:
-
-```powershell
-.\.venv\Scripts\python scripts/fetch_data.py --toronto --yes --toronto-ckan https://open.toronto.ca/api/3/action
-```
-
----
-
-## 4) “File not found” for case inputs
-
-Run fetch first:
-
-```powershell
-.\.venv\Scripts\python scripts/fetch_data.py --markham --toronto --yes
 ```

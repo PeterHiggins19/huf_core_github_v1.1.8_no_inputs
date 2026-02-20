@@ -8,6 +8,10 @@ This adapter turns **vector retrieval results** into a HUF run so you can audit:
 
 It does **not** require a live vector database. You provide a **JSONL export** of retrieval results.
 
+!!! warning "PowerShell vs Python: run commands in the shell"
+    If your prompt looks like `>>>`, you are **inside Python**.  
+    Exit back to PowerShell with **`exit()`** or **Ctrl+Z then Enter**, then run the commands below.
+
 ---
 
 ## When to use this
@@ -83,39 +87,36 @@ New-Item -ItemType Directory -Force $out | Out-Null
 dir $out
 ```
 
-If your repo uses a different adapter entrypoint, run:
+---
+
+## Quick dashboard (no notebooks)
+
+Inspect the output folder:
 
 ```powershell
-.\.venv\Scripts\python -m pip show huf_core
-.\.venv\Scripts\huf --help
+.\.venv\Scripts\python scripts/inspect_huf_artifacts.py --out out/vector_db_demo
 ```
 
-…and use the adapter that matches your install.
+Backward-compatible alias:
 
----
-
-## Run (macOS / Linux)
-
-```bash
-./.venv/bin/python examples/run_vector_db_demo.py --in cases/vector_db/inputs/retrieval.jsonl --out out/vector_db_demo --tau-global 0.02 --regime-field namespace
+```powershell
+.\.venv\Scripts\python scripts/inspect_vector_db_artifacts.py --out out/vector_db_demo
 ```
 
----
+Expected console output looks like:
 
-## What to open first (artifacts)
+```
+[tail] items_to_cover_90pct=3
 
-In `out/vector_db_demo/`:
+Top regimes by rho_global_post:
+  1. kb       rho_post=0.619658
+  2. tickets  rho_post=0.380342
+```
 
-1) `artifact_1_coherence_map.csv` — **Which regimes dominate?** (sorted by `rho_global_post`)
-2) `artifact_2_active_set.csv` — retained items with global + local shares (`rho_*`)
-3) `artifact_3_trace_report.jsonl` — per-item reasoning: pre/post mass, exclusions, ranks
-4) `artifact_4_error_budget.json` — how much mass you discarded globally
+Interpretation (in plain English):
 
-A good first question:
-
-- “How many items explain 90% of the retained mass?”
-
-That’s the same concentration headline used in the long-tail demo.
+- `kb` dominates the result mass (~62%) but `tickets` is still significant (~38%).
+- `items_to_cover_90pct=3` means the **top 3 retained items explain 90%** of the post-normalized mass → **high concentration**.
 
 ---
 
@@ -124,6 +125,7 @@ That’s the same concentration headline used in the long-tail demo.
 Think of this as “what you’d point at on a screenshot” when teaching someone how to read the artifacts.
 
 ### Step 0 — sanity check (folder has the contract)
+
 In File Explorer (or `dir`), confirm you see at least:
 
 - `artifact_1_coherence_map.csv`
@@ -138,8 +140,8 @@ Open the CSV in Excel. You’re looking for a table that feels like:
 
 ```
 regime_id          rho_global_post   rho_global_pre   ... (discard columns)
-namespace=kb       0.61              0.58
-namespace=tickets  0.39              0.42
+kb                 0.619658          0.????
+tickets            0.380342          0.????
 ...
 ```
 
@@ -149,56 +151,31 @@ namespace=tickets  0.39              0.42
 2. Turn on a filter (Data → Filter).
 3. Sort **descending** by `rho_global_post`.
 
-**What that means:**
+**What to look for:**
 
-- `regime_id` (or `regime_label`) is the group you chose (e.g., `namespace=...`).
-- `rho_global_post` is **share after pruning + renormalization**.
-- `rho_global_pre` (if present) is **share before pruning**.
+- **Dominance:** does the top regime have >0.50?
+- **Concentration across regimes:** do the top 2–3 regimes cover most of the mass?
+- **Tail cut:** if there’s a discarded column (names vary), did one regime lose a lot more?
 
-**What to look for (the “aha” moments):**
-
-- **Dominance:** does the top regime have >0.50 share?
-  - If yes, your retrieval results are heavily dominated by that group.
-- **Concentration:** do the top 3 regimes cover most of the mass?
-  - Add a temporary Excel column: cumulative sum of `rho_global_post`.
-- **Tail cut:** if you have a discarded column (names vary), does one regime lose much more than others?
-  - That regime is where the “borderline” results live.
-
-**If you only read one artifact first, read this one.**
-It answers: “Who dominated my result set?”
+This artifact answers: **“Which groups dominate my retrieval results?”**
 
 ### Step 2 — open `artifact_2_active_set.csv` (the retained items)
 
 Now open the active set. It will feel like:
 
 ```
-item_id   regime_id           rho_global_post  rho_local_post  score  ...
-doc_001   namespace=kb        0.092            0.151           0.82
-doc_101   namespace=tickets   0.087            0.224           0.77
+item_id   regime_id   rho_global_post  rho_local_post  score  ...
+doc_001   kb          0.09             0.15            0.82
+doc_101   tickets     0.08             0.22            0.77
 ...
 ```
 
-**What to do (Excel “screenshot steps”):**
+**How to read it:**
 
-1. Filter/sort descending by `rho_global_post`.
-2. Then sort descending by `rho_local_post` (within the top regime).
-
-**What those columns mean:**
-
-- `rho_global_post` → “How important is this item overall (after pruning)?”
-- `rho_local_post` → “How dominant is this item inside its regime?”
-  - This is the “top hits inside namespace=kb”.
-
-**Two useful reads:**
-
-- **Global triage list:** sort by `rho_global_post` and take the top 20.
-  - That’s your “review list” across all namespaces.
-- **Within-regime triage:** filter to one `regime_id` and sort by `rho_local_post`.
-  - That’s “what dominates inside this namespace.”
+- Sort by `rho_global_post` → your global “review list”
+- Filter to one `regime_id` and sort by `rho_local_post` → “top hits inside this regime”
 
 ### Step 3 — the “90% coverage” headline (concentration in one number)
-
-This is the same “proof line” used in the long-tail demo.
 
 In Excel:
 
@@ -208,56 +185,23 @@ In Excel:
 
 That row number is **items_to_cover_90pct**.
 
-Interpretation:
-
-- smaller number → more concentrated (fewer items explain most mass)
-- bigger number → more diffuse (mass spread across many results)
-
-### Step 4 — cross-check discarded budget (`artifact_4_error_budget.json`)
-
-Open the JSON. Look for a key like:
-
-- `discarded_budget_global`
-
-Interpretation:
-
-- near 0.00 → you retained almost everything (little pruning)
-- larger → pruning is doing real work (be deliberate about `tau` / targets)
-
----
-
-## Quick dashboard (no notebooks)
-
-Inspect any output folder:
-
-```powershell
-.\.venv\Scripts\python scripts/inspect_huf_artifacts.py --out out/vector_db_demo
-```
-
-Backward-compatible alias (older docs links):
-
-```powershell
-.\.venv\Scripts\python scripts/inspect_vector_db_artifacts.py --out out/vector_db_demo
-```
-
-The inspector prints:
-
-- top regimes by `rho_global_post` (top 10)
-- items-to-cover-90%
-- discarded budget (if present)
-
 ---
 
 ## Common issues
 
-### “Unexpected UTF-8 BOM …” (Windows)
+### “I typed `huf traffic ...` and got `SyntaxError`”
 
-Some editors save JSONL/CSV with a UTF-8 BOM. Prefer BOM-tolerant readers (recommended),
-or rewrite without BOM:
+If you see this:
+
+- `>>> huf traffic ...`
+- `SyntaxError: invalid syntax`
+
+…it means you typed a **shell command inside Python**.
+
+Fix: exit Python (`exit()`), then run the command in PowerShell:
 
 ```powershell
-$content = Get-Content $in -Raw
-[System.IO.File]::WriteAllText($in, $content, (New-Object System.Text.UTF8Encoding($false)))
+.\.venv\Scripts\huf traffic --csv cases/traffic_phase/inputs/toronto_traffic_signals_phase_status.csv --out out/traffic_phase
 ```
 
 ### “My scores are distances (lower is better)”
@@ -268,16 +212,6 @@ HUF assumes higher score = better. If your tool emits distance where lower is be
 - or `score = -distance` (if negative values are acceptable for your adapter)
 
 Keep the transform explicit so your audit trail stays honest.
-
-### “My regimes are too coarse / too fine”
-
-Try a different `--regime-field`:
-
-- coarse: `tenant`
-- medium: `namespace`
-- fine: `namespace + source` (if your adapter supports multi-field regime labels)
-
-A good rule: choose the regime label that matches *how you’d triage the results*.
 
 ---
 
