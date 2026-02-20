@@ -1303,6 +1303,78 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#math-appendix-artifact-columns-formulas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Math appendix: artifact columns ↔ formulas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Math appendix: artifact columns ↔ formulas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-element-level-columns-typical-in-artifact_2_active_setcsv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A) Element-level columns (typical in artifact_2_active_set.csv)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-regime-level-columns-typical-in-artifact_1_coherence_mapcsv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B) Regime-level columns (typical in artifact_1_coherence_map.csv)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-error-budget-artifact_4_error_budgetjson" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C) Error budget (artifact_4_error_budget.json)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-the-items-to-cover-90-headline-used-in-demos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D) The “items to cover 90%” headline (used in demos)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e-trace-report-artifact_3_trace_reportjsonl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        E) Trace report (artifact_3_trace_report.jsonl)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#next" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1662,6 +1734,78 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#math-appendix-artifact-columns-formulas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Math appendix: artifact columns ↔ formulas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Math appendix: artifact columns ↔ formulas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-element-level-columns-typical-in-artifact_2_active_setcsv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A) Element-level columns (typical in artifact_2_active_set.csv)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-regime-level-columns-typical-in-artifact_1_coherence_mapcsv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B) Regime-level columns (typical in artifact_1_coherence_map.csv)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-error-budget-artifact_4_error_budgetjson" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C) Error budget (artifact_4_error_budget.json)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-the-items-to-cover-90-headline-used-in-demos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D) The “items to cover 90%” headline (used in demos)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e-trace-report-artifact_3_trace_reportjsonl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        E) Trace report (artifact_3_trace_report.jsonl)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#next" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1782,13 +1926,14 @@ T_\tau(\rho)_i = \rho_i \cdot \mathbf{1}[\rho_i \ge \tau]
 [
 \delta(\tau) = 1 - \sum_i T_\tau(\rho)_i
 ]</p>
+<p>Let (K(\tau) = { i : \rho_i \ge \tau }) be the retained set and (Z(\tau)=\sum_{k\in K(\tau)}\rho_k = 1-\delta(\tau)).</p>
 <p>Renormalized retained distribution:
 [
-\hat\rho_i(\tau) = \frac{T_\tau(\rho)<em>i}{\sum_k T</em>\tau(\rho)_k}
+\hat\rho_i(\tau) = \frac{\rho_i}{Z(\tau)} \quad \text{for } i \in K(\tau)
 ]</p>
 <p><strong>Proof sketch (renormalized unity):</strong>
 [
-\sum_i \hat\rho_i(\tau) = \frac{\sum_i T_\tau(\rho)<em>i}{\sum_k T</em>\tau(\rho)_k} = 1
+\sum_{i \in K(\tau)} \hat\rho_i(\tau) = \frac{\sum_{i \in K(\tau)} \rho_i}{Z(\tau)} = 1
 ]</p>
 <p>This is why HUF can be “compression + audit”: you can <em>discard</em> mass, but you must (1) declare it, and (2) renormalize what remains.</p>
 <h3 id="32-retainedtarget-form">3.2 Retained‑target form (α)<a class="headerlink" href="#32-retainedtarget-form" title="Permanent link">&para;</a></h3>
@@ -1848,6 +1993,130 @@ You don’t need this to run HUF — but it’s a clean way to quantify “the m
 <li><strong>Trace report</strong> → provenance map (why each kept item is kept, and what it came from)</li>
 </ul>
 <p>If you can’t show all three, you’re not doing HUF — you’re doing storytelling.</p>
+<hr />
+<h2 id="math-appendix-artifact-columns-formulas">Math appendix: artifact columns ↔ formulas<a class="headerlink" href="#math-appendix-artifact-columns-formulas" title="Permanent link">&para;</a></h2>
+<p>This section lets you jump from an artifact column name to the math above.</p>
+<p><strong>Important notes:</strong>
+- Column presence varies by adapter, but these names are common across HUF runs.
+- Suffix meanings are consistent:
+  - <code>*_pre</code> → computed on the <strong>original unity budget</strong> (\rho)
+  - <code>*_post</code> → computed after exclusions + renormalization on the <strong>retained</strong> distribution (\hat\rho)
+- Let (K) be the retained set, (Z=\sum_{k\in K}\rho_k=1-\delta).</p>
+<h3 id="a-element-level-columns-typical-in-artifact_2_active_setcsv">A) Element-level columns (typical in <code>artifact_2_active_set.csv</code>)<a class="headerlink" href="#a-element-level-columns-typical-in-artifact_2_active_setcsv" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Formula</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>rho_global_pre</code></td>
+<td>(\rho_i)</td>
+<td>Element’s share of the original unity budget</td>
+</tr>
+<tr>
+<td><code>rho_global_post</code></td>
+<td>(\hat\rho_i=\rho_i/Z) for (i\in K)</td>
+<td>Element’s share <strong>after</strong> exclusion + renormalization</td>
+</tr>
+<tr>
+<td><code>rho_local_pre</code></td>
+<td>(\rho_i / \rho(R)) where (i\in R)</td>
+<td>Element’s share <strong>within its regime</strong> (pre)</td>
+</tr>
+<tr>
+<td><code>rho_local_post</code></td>
+<td>(\hat\rho_i / \hat\rho(R))</td>
+<td>Element’s share <strong>within its regime</strong> (post)</td>
+</tr>
+</tbody>
+</table>
+<p>Where:
+- (\rho(R)=\sum_{j\in R}\rho_j)
+- (\hat\rho(R)=\sum_{j\in R\cap K}\hat\rho_j = \frac{\sum_{j\in R\cap K}\rho_j}{Z})</p>
+<p>A useful simplification:
+[
+\rho_local_post(i\in R) = \frac{\rho_i}{\sum_{j\in R\cap K}\rho_j}
+]
+(renormalization cancels (Z) inside the regime).</p>
+<p><strong>Practical reading:</strong> <code>rho_global_post</code> answers “how important is this element overall (after pruning)?”<br />
+<code>rho_local_post</code> answers “how dominant is this element inside its regime?”</p>
+<h3 id="b-regime-level-columns-typical-in-artifact_1_coherence_mapcsv">B) Regime-level columns (typical in <code>artifact_1_coherence_map.csv</code>)<a class="headerlink" href="#b-regime-level-columns-typical-in-artifact_1_coherence_mapcsv" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Formula</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>rho_global_pre</code></td>
+<td>(\rho(R)=\sum_{i\in R}\rho_i)</td>
+<td>Regime share in the original distribution</td>
+</tr>
+<tr>
+<td><code>rho_global_post</code></td>
+<td>(\hat\rho(R)=\sum_{i\in R\cap K}\rho_i/Z)</td>
+<td>Regime share after exclusion + renormalization</td>
+</tr>
+<tr>
+<td><code>rho_discarded_pre</code></td>
+<td>(\sum_{i\in R\setminus K}\rho_i)</td>
+<td>Amount of original mass discarded inside the regime</td>
+</tr>
+</tbody>
+</table>
+<p>So the coherence map can be read as:
+- <strong>who dominates now</strong> (<code>rho_global_post</code>)
+- <strong>how much tail was cut away</strong> (<code>rho_discarded_pre</code>)</p>
+<h3 id="c-error-budget-artifact_4_error_budgetjson">C) Error budget (<code>artifact_4_error_budget.json</code>)<a class="headerlink" href="#c-error-budget-artifact_4_error_budgetjson" title="Permanent link">&para;</a></h3>
+<p>Common keys and their math:</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Formula</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>discarded_budget_global</code> (or similar)</td>
+<td>(\delta = 1 - \sum_{i\in K}\rho_i)</td>
+<td>Total mass discarded globally</td>
+</tr>
+<tr>
+<td><code>retained_budget_global</code> (if present)</td>
+<td>(Z = \sum_{i\in K}\rho_i = 1-\delta)</td>
+<td>Total mass retained before renormalization</td>
+</tr>
+</tbody>
+</table>
+<h3 id="d-the-items-to-cover-90-headline-used-in-demos">D) The “items to cover 90%” headline (used in demos)<a class="headerlink" href="#d-the-items-to-cover-90-headline-used-in-demos" title="Permanent link">&para;</a></h3>
+<p>Given active set rows sorted by <code>rho_global_post</code> descending, define:
+[
+k_{0.90} = \min \left{k : \sum_{i=1}^k \rho^{post}_{(i)} \ge 0.90 \right}
+]</p>
+<p>This is what the demo prints as:</p>
+<ul>
+<li><code>items_to_cover_90pct baseline -&gt; exception</code></li>
+</ul>
+<p>If (k_{0.90}) shrinks in the exception view, you can legitimately say:</p>
+<blockquote>
+<p>“Concentration increased.”</p>
+</blockquote>
+<h3 id="e-trace-report-artifact_3_trace_reportjsonl">E) Trace report (<code>artifact_3_trace_report.jsonl</code>)<a class="headerlink" href="#e-trace-report-artifact_3_trace_reportjsonl" title="Permanent link">&para;</a></h3>
+<p>The trace report isn’t one formula; it’s the <strong>provenance map</strong> for each retained item:
+- which input rows/cells formed the finite element,
+- what regime labels were assigned,
+- what exclusions applied,
+- what post-normalized shares were computed.</p>
+<p>Think of it as a serialized proof object that supports the numbers above.</p>
 <h2 id="next">Next<a class="headerlink" href="#next" title="Permanent link">&para;</a></h2>
 <ul>
 <li>For the accounting‑facing explanation and the baseline→exception→variance flow, see:</li>
