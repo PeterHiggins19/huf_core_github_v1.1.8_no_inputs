@@ -4,10 +4,6 @@ Run the Vector DB coherence adapter twice (tau A and tau B) and print a one-line
 concentration delta:
 
   Concentration increased: items_to_cover_90pct X -> Y
-
-Designed to be run from the repo root using the repo venv:
-
-  .\.venv\Scripts\python scripts/run_vector_db_concentration_delta.py --in cases/vector_db/inputs/retrieval.jsonl --out out/vector_db_delta --tau-a 0.005 --tau-b 0.02 --regime-field namespace
 """
 
 from __future__ import annotations

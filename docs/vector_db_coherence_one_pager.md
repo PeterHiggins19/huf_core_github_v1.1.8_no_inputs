@@ -1,23 +1,14 @@
-# Vector DB coherence adapter (one-page brief)
+# Vector DB coherence (one-page brief)
 
 > **No live vector DB required:** export retrieval results (JSONL/CSV/TSV) and audit **composition**.
 
-## What you get (in one sentence)
+## What you get
 
-A repeatable audit that shows **which regimes dominate**, **how concentrated the kept set is**, and **what was discarded (declared)**.
+A repeatable audit that shows:
 
-## Canonical links
-
-- **HUF repo:** https://github.com/PeterHiggins19/huf_core_github_v1.1.8_no_inputs
-- **Docs:** https://peterhiggins19.github.io/huf_core_github_v1.1.8_no_inputs/
-- **Full walkthrough:** `vector_db_coherence.md`
-
-## Proof line (the one number)
-
-`items_to_cover_90pct = k`  
-The top **k** retained items explain **90%** of the post-normalized mass.
-
-Smaller `k` ⇒ more concentrated ⇒ a tiny set dominates retrieval.
+- which regimes dominate (`rho_global_post`)
+- how concentrated the kept set is (`items_to_cover_90pct`)
+- what was discarded (error budget)
 
 ## Artifacts (open in this order)
 
@@ -27,7 +18,6 @@ Smaller `k` ⇒ more concentrated ⇒ a tiny set dominates retrieval.
    Sort by `rho_global_post` ⇒ which items matter most overall
 3) `artifact_4_error_budget.json` — declared discards  
    Look for `discarded_budget_global`
-4) `artifact_3_trace_report.jsonl` — why retained (audit trail)
 
 ## 60-second run (Windows / repo venv)
 
@@ -62,5 +52,3 @@ Example:
 ```text
 Concentration increased: items_to_cover_90pct 37 -> 12
 ```
-
-If you want the “how to interpret in Excel” walkthrough, see `vector_db_coherence.md`.

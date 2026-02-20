@@ -65,7 +65,6 @@ nav:
       - Included cases: cases.md
       - Markham worked example: markham_worked_example.md
       - Traffic phase worked example: traffic_phase_worked_example.md
-      - Planck LFI 70 GHz guide: planck.md
   - Adapters:
       - Vector DB coherence: vector_db_coherence.md
       - Vector DB coherence (one-page brief): vector_db_coherence_one_pager.md
