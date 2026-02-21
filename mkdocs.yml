@@ -80,6 +80,7 @@ nav:
       - Jupyter demos: jupyter_demos.md
 
   - Reference:
+      - Docs inventory: docs_inventory.md
       - Handbook: handbook.md
       - Reference manual: reference_manual.md
       - Troubleshooting: troubleshooting.md

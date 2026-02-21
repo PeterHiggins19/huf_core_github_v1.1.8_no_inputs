@@ -19,6 +19,11 @@
     "title": "Data Sources & Fetching",
     "sha256": "e9b737f2c49373e0a54f9cbc305cbb1320e47a048197276414e4ca87cdc718eb"
   },
+  "docs_inventory.md": {
+    "path": "docs_inventory.md",
+    "title": "Docs inventory",
+    "sha256": "26cdbeec926d3a9e42c6f93c54586addeb6e29454c98f05c13f98166568a7c2f"
+  },
   "get_started_readme.md": {
     "path": "get_started_readme.md",
     "title": "HUF Get Started Package",
