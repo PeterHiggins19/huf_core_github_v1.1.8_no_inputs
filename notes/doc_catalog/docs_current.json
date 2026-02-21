@@ -27,7 +27,7 @@
   "get_started_zero_github.md": {
     "path": "get_started_zero_github.md",
     "title": "Start Here (Zero GitHub Knowledge)",
-    "sha256": "722e55118bd9994be8273b2b3ba0bd4de1dcf209446c80f12d45a91e3d8472c9"
+    "sha256": "b6220af0beabe379a8d2f8fa2391304ca54b70b31b3e20133bc62bd8145bc04e"
   },
   "github_for_beginners.md": {
     "path": "github_for_beginners.md",
@@ -74,10 +74,70 @@
     "title": "Markham worked example (2018 budget)",
     "sha256": "b3d03ef6e6d80f3e2aeed55cec7ea86027e0d008f831a17c3dfb299d42d27b99"
   },
+  "partnerships/case_studies/evaluation_platforms.md": {
+    "path": "partnerships/case_studies/evaluation_platforms.md",
+    "title": "Arize / Weights & Biases / Ragas — composition audit layer",
+    "sha256": "1a1765a42d6ba350ae8c950889d8612f67e6a3e39551370a590448093ff3bab7"
+  },
+  "partnerships/case_studies/index.md": {
+    "path": "partnerships/case_studies/index.md",
+    "title": "Case studies",
+    "sha256": "171812dae33d2ec446b64ca0b9583653f24ed4472fa2645746ce0f98b6c75741"
+  },
+  "partnerships/case_studies/orchestration.md": {
+    "path": "partnerships/case_studies/orchestration.md",
+    "title": "LangChain / LlamaIndex — retrieval callback → coherence report",
+    "sha256": "0d1ad1f250f8510ff23d0317348604c5db7ea81578dfe4773d3e8eeb10893760"
+  },
+  "partnerships/case_studies/pinecone.md": {
+    "path": "partnerships/case_studies/pinecone.md",
+    "title": "Pinecone — namespace dominance audit (multi-tenant)",
+    "sha256": "2d2582387b04d4dad830b6167c699a5b7fce32ff1761b967153cfa3b76ee23d0"
+  },
+  "partnerships/case_studies/public_sector.md": {
+    "path": "partnerships/case_studies/public_sector.md",
+    "title": "Public sector — long-tail accounting lens",
+    "sha256": "6f7c24ff277ce20f4ffdd6a74f377d537461dabdfd83c68ed4324ca71e3377aa"
+  },
+  "partnerships/case_studies/qdrant.md": {
+    "path": "partnerships/case_studies/qdrant.md",
+    "title": "Qdrant — collection/payload coherence audit",
+    "sha256": "207b112ecd9c8f2d282c57561dbb8812aba7c9f447569ad4e5d1494bf700d0d4"
+  },
+  "partnerships/case_studies/scientific_planck.md": {
+    "path": "partnerships/case_studies/scientific_planck.md",
+    "title": "Scientific computing — Planck 70 GHz validation",
+    "sha256": "158d74437486bb907b41c7dc6789703a306a1e5e83b19db535d691753acea209"
+  },
+  "partnerships/case_studies/weaviate_vector_db_coherence.md": {
+    "path": "partnerships/case_studies/weaviate_vector_db_coherence.md",
+    "title": "Weaviate — Vector DB coherence case study",
+    "sha256": "55e61aca19e3c60ee326d66c08620baa90bda14ef2fc733d44ebe479964c64ea"
+  },
+  "partnerships/dissemination.md": {
+    "path": "partnerships/dissemination.md",
+    "title": "Dissemination checklist",
+    "sha256": "cd16e8e675207ae065bf008088ca2ef91523e9f3f131dd713a6aa1e2382adc73"
+  },
   "partnerships/index.md": {
     "path": "partnerships/index.md",
     "title": "Partnerships",
     "sha256": "45f5349d599202b7adb6b1e71864d86925fcc146348147c62a90e122c60e02fe"
+  },
+  "partnerships/partner_playbook.md": {
+    "path": "partnerships/partner_playbook.md",
+    "title": "Partner playbook",
+    "sha256": "01c92385568c27ba8375d0f059698cc2c991272a96f2a4b90fbf4923d1bf8998"
+  },
+  "partnerships/partner_program.md": {
+    "path": "partnerships/partner_program.md",
+    "title": "HUF partner program",
+    "sha256": "8199806d1506867e091b6207da76c0e6c6a8c827746f394139d11a43a52c0651"
+  },
+  "partnerships/templates.md": {
+    "path": "partnerships/templates.md",
+    "title": "Outreach templates",
+    "sha256": "fa56942a7074dd80aced0aa911db57481b93b354f3a8484e4245fb410e06687a"
   },
   "partnerships/weaviate_full_picture.md": {
     "path": "partnerships/weaviate_full_picture.md",
@@ -104,6 +164,11 @@
     "title": "HUF Reference Manual",
     "sha256": "02a4c0828ec717411e298d496d2c460ea2c704fa26fab91cce9d13ca103037b1"
   },
+  "repo_hygiene.md": {
+    "path": "repo_hygiene.md",
+    "title": "Repo hygiene (clean commits)",
+    "sha256": "da10f5f387fc7bbf44fd54f0b151bd5ed9e1eac3d92066cde8af700e26bd948d"
+  },
   "running_examples.md": {
     "path": "running_examples.md",
     "title": "Running examples on Windows, macOS, and Linux",
@@ -112,7 +177,7 @@
   "start_here.md": {
     "path": "start_here.md",
     "title": "Start Here (Developer)",
-    "sha256": "87c33d5bdcdfd82c589199a0f5c0ffd8052e7538a57b7e9614e5b7634b3c540c"
+    "sha256": "8dcadefa7520ca47913e8bfd2213c0aa8f460075cd1c29f9bbf3dc743b5f8e9e"
   },
   "The_Higgins_Unity_Framework.md": {
     "path": "The_Higgins_Unity_Framework.md",
@@ -132,7 +197,7 @@
   "troubleshooting.md": {
     "path": "troubleshooting.md",
     "title": "Troubleshooting",
-    "sha256": "ca16814513a8f3e6bbeb61ac1c59cbb8a32b9898732bf75c61ab789122a27039"
+    "sha256": "2210ec20ddd210c3ac64c07b51c0603ca3f3e0d236a306a9c448bbe031736fda"
   },
   "vector_db_coherence.md": {
     "path": "vector_db_coherence.md",
