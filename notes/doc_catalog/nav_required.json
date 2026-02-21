@@ -1,4 +1,18 @@
 {
+  "HUF Books": [
+    {
+      "title": "HUF Handbook (v1.3.0)",
+      "path": "handbook.md"
+    },
+    {
+      "title": "HUF Reference (v1.3.0)",
+      "path": "huf_reference.md"
+    },
+    {
+      "title": "Ethics & disclosure",
+      "path": "ethics.md"
+    }
+  ],
   "Start here": [
     {
       "title": "Running examples (Windows/macOS/Linux)",
@@ -9,78 +23,40 @@
       "path": "windows_powershell_vs_python.md"
     }
   ],
+  "Science": [
+    {
+      "title": "Overview",
+      "path": "science/index.md"
+    }
+  ],
+  "Civic": [
+    {
+      "title": "Overview",
+      "path": "civic/index.md"
+    }
+  ],
   "Cases": [
     {
-      "title": "Planck LFI 70 GHz guide",
-      "path": "planck.md"
+      "title": "Included cases (catalog)",
+      "path": "partners/case_studies/index.md"
+    },
+    {
+      "title": "Planck LFI 70 GHz",
+      "path": "partners/case_studies/planck_lfi_70ghz.md"
+    },
+    {
+      "title": "City of Markham",
+      "path": "partners/case_studies/markham_worked_example.md"
+    },
+    {
+      "title": "Traffic phase anomaly",
+      "path": "partners/case_studies/traffic_phase.md"
     }
   ],
-  "Reference": [
+  "Partners": [
     {
-      "title": "Docs inventory",
-      "path": "docs_inventory.md"
-    }
-  ],
-  "Partnerships": [
-    {
-      "title": "Partnerships home",
-      "path": "partnerships/index.md"
-    },
-    {
-      "title": "Partner program",
-      "path": "partnerships/partner_program.md"
-    },
-    {
-      "title": "Partner playbook",
-      "path": "partnerships/partner_playbook.md"
-    },
-    {
-      "title": "Dissemination checklist",
-      "path": "partnerships/dissemination.md"
-    },
-    {
-      "title": "Outreach templates",
-      "path": "partnerships/templates.md"
-    },
-    {
-      "title": "Case studies",
-      "path": "partnerships/case_studies/index.md"
-    },
-    {
-      "title": "Weaviate — Vector DB coherence",
-      "path": "partnerships/case_studies/weaviate_vector_db_coherence.md"
-    },
-    {
-      "title": "Qdrant — Coherence audit",
-      "path": "partnerships/case_studies/qdrant.md"
-    },
-    {
-      "title": "Pinecone — Namespace dominance",
-      "path": "partnerships/case_studies/pinecone.md"
-    },
-    {
-      "title": "LangChain/LlamaIndex — Retrieval callback",
-      "path": "partnerships/case_studies/orchestration.md"
-    },
-    {
-      "title": "Eval platforms — Composition audit",
-      "path": "partnerships/case_studies/evaluation_platforms.md"
-    },
-    {
-      "title": "Public sector — Accounting lens",
-      "path": "partnerships/case_studies/public_sector.md"
-    },
-    {
-      "title": "Science — Planck validation",
-      "path": "partnerships/case_studies/scientific_planck.md"
-    },
-    {
-      "title": "Weaviate outreach package",
-      "path": "partnerships/weaviate_outreach.md"
-    },
-    {
-      "title": "Weaviate × HUF — full picture",
-      "path": "partnerships/weaviate_full_picture.md"
+      "title": "Overview",
+      "path": "partners/index.md"
     }
   ]
 }

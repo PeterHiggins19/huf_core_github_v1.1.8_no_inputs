@@ -50,6 +50,7 @@ markdown_extensions:
   - toc:
       permalink: true
 
+# Strict-mode safe navigation
 nav:
 
   - Home: index.md
@@ -76,7 +77,6 @@ nav:
       - Overview: civic/index.md
 
   - Cases:
-      - Planck LFI 70 GHz guide: planck.md
       - Included cases (catalog): partners/case_studies/index.md
       - Planck LFI 70 GHz: partners/case_studies/planck_lfi_70ghz.md
       - City of Markham: partners/case_studies/markham_worked_example.md
@@ -94,6 +94,7 @@ nav:
 
   - Documentation:
       - Docs inventory: docs_inventory.md
+      - Reference manual: reference_manual.md
       - CLI command lists + terminology: cli_huf_reference.md
       - Troubleshooting: troubleshooting.md
       - Repo hygiene (clean commits): repo_hygiene.md
@@ -121,21 +122,4 @@ nav:
 
   - Optional:
       - Jupyter demos: jupyter_demos.md
-  - Reference:
-      - Docs inventory: docs_inventory.md
-  - Partnerships:
-      - Partnerships home: partnerships/index.md
-      - Partner program: partnerships/partner_program.md
-      - Partner playbook: partnerships/partner_playbook.md
-      - Dissemination checklist: partnerships/dissemination.md
-      - Outreach templates: partnerships/templates.md
-      - Case studies: partnerships/case_studies/index.md
-      - Weaviate — Vector DB coherence: partnerships/case_studies/weaviate_vector_db_coherence.md
-      - Qdrant — Coherence audit: partnerships/case_studies/qdrant.md
-      - Pinecone — Namespace dominance: partnerships/case_studies/pinecone.md
-      - LangChain/LlamaIndex — Retrieval callback: partnerships/case_studies/orchestration.md
-      - Eval platforms — Composition audit: partnerships/case_studies/evaluation_platforms.md
-      - Public sector — Accounting lens: partnerships/case_studies/public_sector.md
-      - Science — Planck validation: partnerships/case_studies/scientific_planck.md
-      - Weaviate outreach package: partnerships/weaviate_outreach.md
-      - Weaviate × HUF — full picture: partnerships/weaviate_full_picture.md
+
