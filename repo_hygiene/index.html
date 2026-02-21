@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://peterhiggins19.github.io/huf_core_github_v1.1.8_no_inputs/gui_quickstart/">
+        <link rel="canonical" href="https://peterhiggins19.github.io/huf_core_github_v1.1.8_no_inputs/repo_hygiene/">
       
       
-        <link rel="prev" href="../cli_huf_reference/">
+        <link rel="prev" href="../troubleshooting/">
       
       
-        <link rel="next" href="../github_for_beginners/">
+        <link rel="next" href="../theory_notes/">
       
       
         
@@ -25,7 +25,7 @@
     
     
       
-        <title>GUI quickstart - HUF Core Snapshot</title>
+        <title>Repo hygiene (clean commits) - HUF Core Snapshot</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#gui-quickstart-nongithubnative-users" class="md-skip">
+        <a href="#repo-hygiene-clean-commits" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              GUI quickstart
+              Repo hygiene (clean commits)
             
           </span>
         </div>
@@ -1144,10 +1144,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../repo_hygiene/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Repo hygiene (clean commits)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1163,6 +1190,59 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#quick-cleanup-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick cleanup (recommended)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#helper-script-dry-run-by-default" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Helper script (dry-run by default)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this matters
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1284,37 +1364,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    GUI quickstart
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../gui_quickstart/" class="md-nav__link">
         
   
   
@@ -1330,198 +1383,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#note" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Note
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-you-can-do-without-git" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What you can do without Git
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-github-desktop-recommended-for-updates" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Using GitHub Desktop (recommended for updates)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#one-time-setup-to-run-huf" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        One-time setup to run HUF
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="One-time setup to run HUF">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#step-1-open-a-terminal-in-the-repo-folder" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 1 — Open a terminal in the repo folder
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-2-run-the-bootstrap-crossplatform" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 2 — Run the bootstrap (cross‑platform)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#download-the-real-input-data-no-big-inputs-are-bundled" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Download the real input data (no big inputs are bundled)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Download the real input data (no big inputs are bundled)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#markham-toronto-automatic" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Markham + Toronto (automatic)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#toronto-non-interactive-yes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Toronto non-interactive (--yes)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#planck-guidedmanual" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Planck (guided/manual)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#run-the-demos" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Run the demos
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Run the demos">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#markham" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Markham
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#toronto-traffic" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Toronto traffic
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#where-outputs-go" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Where outputs go
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2141,10 +2002,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#note" class="md-nav__link">
+  <a href="#quick-cleanup-recommended" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Note
+        Quick cleanup (recommended)
       
     </span>
   </a>
@@ -2152,10 +2013,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-you-can-do-without-git" class="md-nav__link">
+  <a href="#helper-script-dry-run-by-default" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What you can do without Git
+        Helper script (dry-run by default)
       
     </span>
   </a>
@@ -2163,149 +2024,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#using-github-desktop-recommended-for-updates" class="md-nav__link">
+  <a href="#why-this-matters" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Using GitHub Desktop (recommended for updates)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#one-time-setup-to-run-huf" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        One-time setup to run HUF
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="One-time setup to run HUF">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#step-1-open-a-terminal-in-the-repo-folder" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 1 — Open a terminal in the repo folder
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-2-run-the-bootstrap-crossplatform" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 2 — Run the bootstrap (cross‑platform)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#download-the-real-input-data-no-big-inputs-are-bundled" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Download the real input data (no big inputs are bundled)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Download the real input data (no big inputs are bundled)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#markham-toronto-automatic" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Markham + Toronto (automatic)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#toronto-non-interactive-yes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Toronto non-interactive (--yes)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#planck-guidedmanual" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Planck (guided/manual)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#run-the-demos" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Run the demos
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Run the demos">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#markham" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Markham
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#toronto-traffic" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Toronto traffic
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#where-outputs-go" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Where outputs go
+        Why this matters
       
     </span>
   </a>
@@ -2380,80 +2102,41 @@
   
 
 
-<h1 id="gui-quickstart-nongithubnative-users">GUI Quickstart (non‑GitHub‑native users)<a class="headerlink" href="#gui-quickstart-nongithubnative-users" title="Permanent link">&para;</a></h1>
-<p>This page is for people who prefer <strong>GUI workflows</strong> (e.g., GitHub Desktop, file explorers, Word/Excel) but still want to <strong>run HUF</strong> and keep <strong>record copies</strong>.</p>
-<h2 id="note">Note<a class="headerlink" href="#note" title="Permanent link">&para;</a></h2>
-<p>This docs-only package does not include the code/CLI. To <strong>run HUF</strong>, download the <strong>GitHub package</strong> release as well.</p>
-<h2 id="what-you-can-do-without-git">What you can do without Git<a class="headerlink" href="#what-you-can-do-without-git" title="Permanent link">&para;</a></h2>
-<p>If you don’t want Git at all:</p>
-<ol>
-<li>Download the latest <strong>release ZIP</strong> from GitHub (look for <strong>Releases</strong> on the right side of the repo page).</li>
-<li>Unzip it to a folder like <code>Documents/HUF/</code>.</li>
-<li>Open the Markdown record copies in <code>docs/</code>:</li>
-<li><code>docs/handbook.md</code></li>
-<li><code>docs/reference_manual.md</code></li>
-<li><code>docs/data_sources.md</code></li>
-</ol>
-<p>You can still run the CLI from this unzipped folder (see below).</p>
-<h2 id="using-github-desktop-recommended-for-updates">Using GitHub Desktop (recommended for updates)<a class="headerlink" href="#using-github-desktop-recommended-for-updates" title="Permanent link">&para;</a></h2>
-<p>If you want one-click updates:</p>
-<ol>
-<li>Install <strong>GitHub Desktop</strong>.</li>
-<li>In GitHub Desktop: <strong>File → Clone repository…</strong></li>
-<li>Pick a local folder (e.g., <code>Documents/GitHub/huf-core</code>).</li>
-<li>To update later: press <strong>Fetch origin</strong> then <strong>Pull origin</strong>.</li>
-</ol>
-<h2 id="one-time-setup-to-run-huf">One-time setup to run HUF<a class="headerlink" href="#one-time-setup-to-run-huf" title="Permanent link">&para;</a></h2>
-<p>You need <strong>Python 3.10+</strong> installed.</p>
-<h3 id="step-1-open-a-terminal-in-the-repo-folder">Step 1 — Open a terminal in the repo folder<a class="headerlink" href="#step-1-open-a-terminal-in-the-repo-folder" title="Permanent link">&para;</a></h3>
+<h1 id="repo-hygiene-clean-commits">Repo hygiene (clean commits)<a class="headerlink" href="#repo-hygiene-clean-commits" title="Permanent link">&para;</a></h1>
+<p>If you publish <code>site/</code> (MkDocs output) or <code>out/</code> (run artifacts) into git, GitHub will treat the repo like a static site
+and the language bar becomes “mostly HTML”. This can reduce credibility for technical skimmers.</p>
+<p>This repo is set up to <strong>build</strong> <code>site/</code> in GitHub Actions and publish it to Pages — you should not commit <code>site/</code>.</p>
+<hr />
+<h2 id="quick-cleanup-recommended">Quick cleanup (recommended)<a class="headerlink" href="#quick-cleanup-recommended" title="Permanent link">&para;</a></h2>
+<p>1) Ensure <code>.gitignore</code> includes:</p>
 <ul>
-<li><strong>Windows</strong>: open File Explorer → go to the repo folder → right‑click → <strong>Open in Terminal</strong> (or PowerShell).</li>
-<li><strong>macOS</strong>: Finder → repo folder → right‑click → <strong>New Terminal at Folder</strong> (or open Terminal and <code>cd</code>).</li>
-<li><strong>Linux</strong>: open Terminal and <code>cd</code> into the folder.</li>
+<li><code>site/</code></li>
+<li><code>out/</code></li>
+<li><code>*.egg-info/</code></li>
+<li><code>.venv/</code></li>
 </ul>
-<h3 id="step-2-run-the-bootstrap-crossplatform">Step 2 — Run the bootstrap (cross‑platform)<a class="headerlink" href="#step-2-run-the-bootstrap-crossplatform" title="Permanent link">&para;</a></h3>
-<p>From the repo root:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>python<span class="w"> </span>scripts/bootstrap.py
+<p>2) Remove generated folders from git tracking (keeps local files on disk):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">git</span> <span class="nb">rm </span><span class="n">-r</span> <span class="p">-</span><span class="n">-cached</span> <span class="n">site</span> <span class="n">out</span> <span class="n">huf_core</span><span class="p">.</span><span class="n">egg-info</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">git</span> <span class="n">commit</span> <span class="n">-m</span> <span class="s2">&quot;Repo hygiene: stop tracking generated outputs&quot;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">git</span> <span class="n">push</span>
 </code></pre></div>
-<p>This creates <code>.venv/</code> and installs everything you need.</p>
-<blockquote>
-<p>If you’re on macOS/Linux you can also use: <code>make bootstrap</code></p>
-</blockquote>
-<h2 id="download-the-real-input-data-no-big-inputs-are-bundled">Download the real input data (no big inputs are bundled)<a class="headerlink" href="#download-the-real-input-data-no-big-inputs-are-bundled" title="Permanent link">&para;</a></h2>
-<h3 id="markham-toronto-automatic">Markham + Toronto (automatic)<a class="headerlink" href="#markham-toronto-automatic" title="Permanent link">&para;</a></h3>
-<p>After bootstrap, run one of these:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>make<span class="w"> </span>fetch-data
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1"># or:</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>python<span class="w"> </span>scripts/fetch_data.py<span class="w"> </span>--markham<span class="w"> </span>--toronto
+<p>If you don’t have <code>huf_core.egg-info</code> tracked, remove it from the command.</p>
+<hr />
+<h2 id="helper-script-dry-run-by-default">Helper script (dry-run by default)<a class="headerlink" href="#helper-script-dry-run-by-default" title="Permanent link">&para;</a></h2>
+<p>This repo includes a helper that detects tracked generated files and prints the exact commands:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">.\.</span><span class="n">venv</span><span class="p">\</span><span class="n">Scripts</span><span class="p">\</span><span class="n">python</span> <span class="n">scripts</span><span class="p">/</span><span class="n">repo_cleanup</span><span class="p">.</span><span class="n">py</span>
 </code></pre></div>
-<h3 id="toronto-non-interactive-yes">Toronto non-interactive (<code>--yes</code>)<a class="headerlink" href="#toronto-non-interactive-yes" title="Permanent link">&para;</a></h3>
-<p>For scripted demos (no prompts):</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>make<span class="w"> </span>fetch-toronto-yes
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1"># or:</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>python<span class="w"> </span>scripts/fetch_data.py<span class="w"> </span>--toronto<span class="w"> </span>--yes
+<p>To apply automatically:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">.\.</span><span class="n">venv</span><span class="p">\</span><span class="n">Scripts</span><span class="p">\</span><span class="n">python</span> <span class="n">scripts</span><span class="p">/</span><span class="n">repo_cleanup</span><span class="p">.</span><span class="n">py</span> <span class="p">-</span><span class="n">-apply</span>
 </code></pre></div>
-<h3 id="planck-guidedmanual">Planck (guided/manual)<a class="headerlink" href="#planck-guidedmanual" title="Permanent link">&para;</a></h3>
-<p>Planck files are large, so HUF prints the steps instead of downloading by default:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>make<span class="w"> </span>planck-guide
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1"># or:</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>python<span class="w"> </span>scripts/fetch_data.py<span class="w"> </span>--planck-guide
-</code></pre></div>
-<h2 id="run-the-demos">Run the demos<a class="headerlink" href="#run-the-demos" title="Permanent link">&para;</a></h2>
-<h3 id="markham">Markham<a class="headerlink" href="#markham" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>huf<span class="w"> </span>markham<span class="w"> </span>--xlsx<span class="w"> </span>cases/markham2018/inputs/2018-Budget-Allocation-of-Revenue-and-Expenditure-by-Fund.xlsx<span class="w"> </span>--out<span class="w"> </span>out/markham2018<span class="w"> </span>--tau-global<span class="w"> </span><span class="m">0</span>.005<span class="w"> </span>--tau-local<span class="w"> </span><span class="m">0</span>.02
-</code></pre></div>
-<h3 id="toronto-traffic">Toronto traffic<a class="headerlink" href="#toronto-traffic" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>huf<span class="w"> </span>traffic<span class="w"> </span>--csv<span class="w"> </span>cases/traffic_phase/inputs/toronto_traffic_signals_phase_status.csv<span class="w"> </span>--out<span class="w"> </span>out/traffic_phase<span class="w"> </span>--tau-local<span class="w"> </span><span class="m">0</span>.05
-</code></pre></div>
-<h2 id="where-outputs-go">Where outputs go<a class="headerlink" href="#where-outputs-go" title="Permanent link">&para;</a></h2>
-<p>Each run writes a folder like <code>out/markham2018/</code> or <code>out/traffic_phase/</code> containing the <strong>mandatory artifacts</strong>:</p>
+<hr />
+<h2 id="why-this-matters">Why this matters<a class="headerlink" href="#why-this-matters" title="Permanent link">&para;</a></h2>
 <ul>
-<li><code>artifact_1_coherence_map.csv</code></li>
-<li><code>artifact_2_active_set.csv</code></li>
-<li><code>artifact_3_trace_report.jsonl</code></li>
-<li><code>artifact_4_error_budget.json</code></li>
+<li>Cleaner diffs</li>
+<li>Fewer merge conflicts</li>
+<li>Correct GitHub language stats (shows Python, not HTML)</li>
+<li>Faster PR review (no “built site” noise)</li>
 </ul>
-<p>You can open the CSVs in <strong>Excel</strong> and keep them with your meeting notes.</p>
 
 
 
