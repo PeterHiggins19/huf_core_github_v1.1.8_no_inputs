@@ -1,5 +1,5 @@
 \
-"""scripts/ensure_nav_entries.py
+r"""scripts/ensure_nav_entries.py
 
 MkDocs nav auto-fix (text-based, Material-safe).
 
@@ -68,7 +68,6 @@ def ensure_section(lines: List[str], nav_start: int, nav_end: int, section: str)
     Ensure a section like '  - Partnerships:' exists inside nav.
     Returns (new_lines, section_header_index).
     """
-    # Search within nav for section header
     pat = re.compile(rf"^\s*-\s*{re.escape(section)}:\s*$")
     for i in range(nav_start + 1, nav_end):
         if pat.match(lines[i]):
