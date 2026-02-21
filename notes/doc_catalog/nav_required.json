@@ -67,6 +67,14 @@
     {
       "title": "Science — Planck validation",
       "path": "partnerships/case_studies/scientific_planck.md"
+    },
+    {
+      "title": "Weaviate outreach package",
+      "path": "partnerships/weaviate_outreach.md"
+    },
+    {
+      "title": "Weaviate × HUF — full picture",
+      "path": "partnerships/weaviate_full_picture.md"
     }
   ]
 }

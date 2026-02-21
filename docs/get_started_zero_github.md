@@ -1,6 +1,8 @@
 # Start Here (Zero GitHub Knowledge)
 
-You can run HUF without learning command-line git. The goal is:
+You can run HUF without learning command-line git.
+
+The goal is:
 
 - you can run `.\.venv\Scripts\huf --help`
 - you can produce `out/.../run_stamp.json`
@@ -21,10 +23,12 @@ From the repo root:
 
 ### 1) Create a repo virtual environment
 
+> If you plan to run the docs locally, install `.[dev,docs]` (MkDocs is pinned in the `docs` extra).
+
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\python -m pip install --upgrade pip setuptools wheel
-.\.venv\Scripts\python -m pip install -e ".[dev]"
+.\.venv\Scripts\python -m pip install -e ".[dev,docs]"
 ```
 
 ### 2) Fetch the civic inputs (Markham + Toronto)

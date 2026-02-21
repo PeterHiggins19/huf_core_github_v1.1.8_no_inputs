@@ -8,6 +8,7 @@ version = "1.1.8"
 description = "HUF Core: unity-budgeted hierarchy contract + artifact emission."
 readme = "README.md"
 requires-python = ">=3.9"
+
 dependencies = [
   "numpy>=1.24",
   "pandas>=2.0",
@@ -21,7 +22,7 @@ dev = [
 ]
 
 # Docs stack (pinned for reproducibility)
-# - MkDocs 2.0 is (currently) pre-release and Material for MkDocs is not compatible.
+# Note: MkDocs 2.0 is (currently) pre-release and Material for MkDocs is not compatible.
 docs = [
   "mkdocs==1.6.1",
   "mkdocs-material==9.7.2",

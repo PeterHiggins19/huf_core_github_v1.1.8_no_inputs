@@ -12,10 +12,13 @@ venv/
 ENV/
 env/
 
-# MkDocs build output
+# Packaging outputs
+*.egg-info/
+
+# MkDocs build output (should NOT be committed)
 site/
 
-# Local outputs / artifacts
+# Local outputs / artifacts (should NOT be committed)
 out/
 notes/orphaned_docs/
 
