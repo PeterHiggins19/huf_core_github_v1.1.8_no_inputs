@@ -65,22 +65,28 @@ nav:
       - Get started (README-style): get_started_readme.md
       - Data sources & fetching: data_sources.md
 
+  - Science:
+      - Overview: science/index.md
+
+  - Civic:
+      - Overview: civic/index.md
+
   - Cases:
-      - Planck LFI 70 GHz guide: planck.md
-      - Included cases: cases.md
-      - Markham worked example: markham_worked_example.md
-      - Traffic phase worked example: traffic_phase_worked_example.md
+      - Included cases (catalog): partners/case_studies/index.md
+      - Planck LFI 70 GHz: partners/case_studies/planck_lfi_70ghz.md
+      - Markham worked example: partners/case_studies/markham_worked_example.md
+      - Traffic phase anomaly: partners/case_studies/traffic_phase.md
 
   - Adapters:
       - Vector DB coherence: vector_db_coherence.md
       - Vector DB coherence (one-page brief): vector_db_coherence_one_pager.md
 
-  - Optional:
-      - Jupyter demos: jupyter_demos.md
-
   - Research:
-      - Clean handbook v1.3.0 (DOCX): assets/papers/HUF_Clean_Handbook_v1.3.0.docx
-      - Skeptic appendix v1.3.0 (DOCX): assets/papers/HUF_Skeptic_Appendix_v1.3.0.docx
+      # Markdown-only policy: no .docx in public nav
+      # (If/when you add these .md pages, uncomment the lines below.)
+      # - Clean handbook v1.3.0: handbook.md
+      # - Skeptic appendix v1.3.0: skeptic_appendix.md
+      # - Ethics & disclosure: ethics.md
       - Mathematical form and function: huf_math_form_and_function.md
       - Theory notes: theory_notes.md
       - Long tail (accounting lens): long_tail_accounting_lens.md
@@ -96,21 +102,23 @@ nav:
       - GitHub for beginners: github_for_beginners.md
       - Contributing: contributing.md
 
-  - Partnerships:
-      - Partnerships home: partnerships/index.md
-      - Partner program: partnerships/partner_program.md
-      - Partner playbook: partnerships/partner_playbook.md
-      - Dissemination checklist: partnerships/dissemination.md
-      - Outreach templates: partnerships/templates.md
-      - Case studies: partnerships/case_studies/index.md
-      - Weaviate — Vector DB coherence: partnerships/case_studies/weaviate_vector_db_coherence.md
-      - Qdrant — Coherence audit: partnerships/case_studies/qdrant.md
-      - Pinecone — Namespace dominance: partnerships/case_studies/pinecone.md
-      - LangChain/LlamaIndex — Retrieval callback: partnerships/case_studies/orchestration.md
-      - Eval platforms — Composition audit: partnerships/case_studies/evaluation_platforms.md
-      - Public sector — Accounting lens: partnerships/case_studies/public_sector.md
-      - Science — Planck validation: partnerships/case_studies/scientific_planck.md
-      - Weaviate outreach package: partnerships/weaviate_outreach.md
-      - Weaviate × HUF — full picture: partnerships/weaviate_full_picture.md
-  - Reference:
-      - Docs inventory: docs_inventory.md
+  - Partners:
+      - Overview: partners/index.md
+
+      - Integrations:
+          - Weaviate: partners/integrations/weaviate.md
+          - Qdrant: partners/integrations/qdrant.md
+          - Pinecone: partners/integrations/pinecone.md
+          - LangChain & LlamaIndex: partners/integrations/langchain_llamaindex.md
+          - Evaluation platforms: partners/integrations/evaluation_platforms.md
+          - Public sector accounting lens: partners/integrations/public_sector_accounting_lens.md
+          - "Science validation: Planck": partners/integrations/science_planck_validation.md
+
+      - Case studies:
+          - Catalog: partners/case_studies/index.md
+          - Traffic phase anomaly: partners/case_studies/traffic_phase.md
+          - City of Markham: partners/case_studies/markham_worked_example.md
+          - Planck LFI 70 GHz: partners/case_studies/planck_lfi_70ghz.md
+
+  - Optional:
+      - Jupyter demos: jupyter_demos.md
