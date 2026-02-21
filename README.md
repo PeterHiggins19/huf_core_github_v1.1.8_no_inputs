@@ -1,6 +1,7 @@
 # HUF Core Snapshot (v1.1.8)
 
-**HUF is an artifact-first compression + audit framework for long-tail distributions** (budgets, logs, exceptions).  
+**HUF is an artifact-first compression + audit framework for long-tail distributions** (budgets, logs, exceptions).
+
 **Not ML class imbalance:** here “long tail” means **mass distribution + exception reweighting** (baseline vs filtered view).
 
 It produces three “review-first” artifacts on every run:
@@ -19,8 +20,8 @@ Docs site: https://peterhiggins19.github.io/huf_core_github_v1.1.8_no_inputs/
 
 You will run:
 
-1) **Traffic Phase** (baseline) → writes to `out/traffic_phase_demo/`  
-2) **Traffic Anomaly** (exception-only) → writes to `out/traffic_anomaly_demo/`  
+1) **Traffic Phase** (baseline) → writes to `out/traffic_phase_demo/`
+2) **Traffic Anomaly** (exception-only) → writes to `out/traffic_anomaly_demo/`
 3) A console summary that prints:
    - top regimes changed (top 10 by `rho_global_post`)
    - **PROOF line**: `items_to_cover_90pct baseline -> exception`
@@ -63,4 +64,17 @@ Strict check:
 
 ```powershell
 .\.venv\Scripts\python -m mkdocs build --strict
+```
+
+### MkDocs versions (pinned)
+
+This repo pins a stable docs stack in `pyproject.toml`:
+
+- `mkdocs==1.6.1`
+- `mkdocs-material==9.7.2`
+
+If you see a warning about MkDocs 2.0, re-install the pinned versions:
+
+```powershell
+.\.venv\Scripts\python -m pip install "mkdocs==1.6.1" "mkdocs-material==9.7.2"
 ```

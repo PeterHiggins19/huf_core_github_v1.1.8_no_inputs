@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+*.so
+.pytest_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# MkDocs build output
+site/
+
+# Local outputs / artifacts
+out/
+notes/orphaned_docs/
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

@@ -1,12 +1,15 @@
+\
 #!/usr/bin/env python3
-"""Bootstrap a local dev/runtime environment for HUF Core.
+r"""Bootstrap a local dev/runtime environment for HUF Core.
 
 Goal: help non-GitHub-native / GUI-first users get to a runnable setup fast.
 
 What it does:
 1) Creates a .venv virtual environment (if missing)
 2) Upgrades pip
-3) Installs this package in editable mode with [dev] extras
+3) Installs this package in editable mode with extras:
+   - [dev]  (pytest, ruff)
+   - [docs] (MkDocs + Material, pinned)
 
 It does NOT:
 - Download large upstream datasets (use scripts/fetch_data.py)
@@ -18,7 +21,6 @@ Usage:
 
 from __future__ import annotations
 
-import os
 import platform
 import subprocess
 import sys
@@ -55,24 +57,32 @@ def main() -> int:
     # Upgrade pip/setuptools/wheel to reduce install friction
     run([str(vpy), "-m", "pip", "install", "--upgrade", "pip", "setuptools", "wheel"], cwd=repo_root)
 
-    # Install editable with dev extras (includes pytest, mkdocs, etc.)
-    run([str(vpy), "-m", "pip", "install", "-e", ".[dev]"], cwd=repo_root)
+    # Install editable with dev + docs extras (MkDocs stack pinned in pyproject.toml)
+    run([str(vpy), "-m", "pip", "install", "-e", ".[dev,docs]"], cwd=repo_root)
 
-    print("\n✅ Bootstrap complete. Next steps:\n")
+    print("\n✅ Bootstrap complete.\n")
+
     if platform.system().lower().startswith("win"):
-        print("1) Download civic inputs (Markham + Toronto):")
-        print(r"   .venv\Scripts\python scripts\fetch_data.py --markham --toronto")
-        print("   (Non-interactive Toronto: add --yes)\n")
-        print("2) Run a case:")
-        print(r"   .venv\Scripts\huf --help")
+        print("Next steps (Windows / PowerShell):\n")
+        print("1) Fetch civic inputs (Markham + Toronto):")
+        print(r"  .\.venv\Scripts\python scripts/fetch_data.py --markham --toronto --yes")
+        print("\n2) Run a case:")
+        print(r"  .\.venv\Scripts\huf --help")
+        print("\n3) Run docs locally:")
+        print(r"  .\.venv\Scripts\python -m mkdocs serve")
+        print("\nStrict check:")
+        print(r"  .\.venv\Scripts\python -m mkdocs build --strict")
     else:
-        print("1) Download civic inputs (Markham + Toronto):")
-        print("   ./.venv/bin/python scripts/fetch_data.py --markham --toronto")
-        print("   (Non-interactive Toronto: add --yes)\n")
-        print("2) Run a case:")
-        print("   ./.venv/bin/huf --help")
+        print("Next steps (macOS/Linux):\n")
+        print("1) Fetch civic inputs (Markham + Toronto):")
+        print("  ./.venv/bin/python scripts/fetch_data.py --markham --toronto --yes")
+        print("\n2) Run a case:")
+        print("  ./.venv/bin/huf --help")
+        print("\n3) Run docs locally:")
+        print("  ./.venv/bin/python -m mkdocs serve")
+        print("\nStrict check:")
+        print("  ./.venv/bin/python -m mkdocs build --strict")
 
-    print("\nIf you prefer Make targets (Mac/Linux): make fetch-data, make fetch-toronto-yes, make planck-guide\n")
     return 0
 
 
