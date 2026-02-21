@@ -11,55 +11,90 @@ Requires-Dist: openpyxl>=3.1
 Provides-Extra: dev
 Requires-Dist: pytest>=8.0; extra == "dev"
 Requires-Dist: ruff>=0.4; extra == "dev"
+Provides-Extra: docs
+Requires-Dist: mkdocs==1.6.1; extra == "docs"
+Requires-Dist: mkdocs-material==9.7.2; extra == "docs"
 Provides-Extra: planck
 Requires-Dist: astropy>=6.0; extra == "planck"
 Dynamic: license-file
 
 # HUF Core Snapshot (v1.1.8)
 
-This repo is a **runnable snapshot** of the Higgins Unity Framework (HUF) with:
-- working demo cases (Markham, Toronto traffic, Planck),
-- auditable artifacts (`out/*`),
-- a MkDocs site (Material theme).
+**HUF is an artifact-first compression + audit framework for long-tail distributions** (budgets, logs, exceptions).
 
-## Windows PowerShell quickstart (copy/paste)
+**Not ML class imbalance:** here “long tail” means **mass distribution + exception reweighting** (baseline vs filtered view).
 
-From the repo root:
+It produces three “review-first” artifacts on every run:
+
+- **Coherence map** (`artifact_1_coherence_map.csv`) — *where the mass is* (ranked regimes)
+- **Active set** (`artifact_2_active_set.csv`) — retained items + global/local shares
+- **Trace report** (`artifact_3_trace_report.jsonl`) — provenance + “why it stayed”
+
+Docs site: https://peterhiggins19.github.io/huf_core_github_v1.1.8_no_inputs/
+
+---
+
+## 2‑minute long-tail demo (Windows/Conda copy/paste)
+
+**What this demonstrates:** the same dataset can look “stable” in the baseline view, but become **more concentrated** in an exception-only view — the practical long-tail story.
+
+You will run:
+
+1) **Traffic Phase** (baseline) → writes to `out/traffic_phase_demo/`
+2) **Traffic Anomaly** (exception-only) → writes to `out/traffic_anomaly_demo/`
+3) A console summary that prints:
+   - top regimes changed (top 10 by `rho_global_post`)
+   - **PROOF line**: `items_to_cover_90pct baseline -> exception`
+   - discarded budget (if present)
+
+Run these **three commands** from the repo root:
 
 ```powershell
-# 1) Create + activate repo venv (recommended)
-python -m venv .venv
-.\.venv\Scripts\python -m pip install -U pip
-.\.venv\Scripts\python -m pip install -e .
-
-# 2) Fetch bundled public datasets (Markham + Toronto)
-.\.venv\Scripts\python scripts\fetch_data.py --markham --toronto --yes
-
-# 3) Run cases
-.\.venv\Scripts\huf markham --xlsx cases\markham2018\inputs\2018-Budget-Allocation-of-Revenue-and-Expenditure-by-Fund.xlsx --out out\markham2018
-.\.venv\Scripts\huf traffic --csv cases\traffic_phase\inputs\toronto_traffic_signals_phase_status.csv --out out\traffic_phase
-.\.venv\Scripts\huf traffic-anomaly --csv cases\traffic_anomaly\inputs\toronto_traffic_signals_phase_status.csv --out out\traffic_anomaly --status "Green Termination" --tau-global 0.0005
-
-# 4) Planck (manual download guide)
-.\.venv\Scripts\python scripts\fetch_data.py --planck-guide
+python scripts/bootstrap.py
+.\.venv\Scripts\python scripts/fetch_data.py --toronto --yes
+.\.venv\Scripts\python scripts/run_long_tail_demo.py --status "Green Termination"
 ```
+
+After it finishes, look for a line like:
+
+- `PROOF: items_to_cover_90pct 37 -> 12`
+
+That’s the “repeatable number” people cite: exception views often tighten into fewer items.
+
+Want the quick dashboard on any folder?
+
+```powershell
+.\.venv\Scripts\python scripts/inspect_huf_artifacts.py --out out/traffic_anomaly_demo
+```
+
+**Why this works (accounting mapping):** baseline P&L → exception-only P&L → ranked variance review.  
+See: `docs/long_tail_accounting_lens.md`
+
+---
 
 ## Docs site (local)
 
+Always run MkDocs via the repo venv:
+
 ```powershell
-.\.venv\Scripts\python -m pip install mkdocs mkdocs-material
 .\.venv\Scripts\python -m mkdocs serve
 ```
 
-Open: http://127.0.0.1:8000/
+Strict check:
 
-## Read the artifacts
+```powershell
+.\.venv\Scripts\python -m mkdocs build --strict
+```
 
-Start with:
-- `artifact_1_coherence_map.csv` (who dominates)
-- `artifact_2_active_set.csv` (retained items + shares)
-- `artifact_3_trace_report.jsonl` (why)
+### MkDocs versions (pinned)
 
-## Vector DB coherence (optional)
+This repo pins a stable docs stack in `pyproject.toml`:
 
-See: `docs/vector_db_coherence.md`
+- `mkdocs==1.6.1`
+- `mkdocs-material==9.7.2`
+
+If you see a warning about MkDocs 2.0, re-install the pinned versions:
+
+```powershell
+.\.venv\Scripts\python -m pip install "mkdocs==1.6.1" "mkdocs-material==9.7.2"
+```
