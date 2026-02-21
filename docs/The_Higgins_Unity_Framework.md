@@ -54,7 +54,7 @@ Each case is both:
 ## Where to begin
 
 1. **Follow the beginner path:** [Learning Path](learning_path.md)  
-2. **Run a demo:** [Cases](cases.md)  
+2. **Run a demo:** [Cases](partners/case_studies/index.md)  
 3. **If you hit errors:** [Troubleshooting](troubleshooting.md)
 
 ## Advanced / theory (optional)
