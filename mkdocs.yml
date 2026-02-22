@@ -63,8 +63,8 @@ nav:
   - HUF Books:
       - HUF Handbook (v1.3.0): handbook.md
       - HUF Reference (v1.3.0): huf_reference.md
-      - HUF Field Guide: field_guide.md
       - Ethics & disclosure: ethics.md
+      - HUF Field Guide: field_guide.md
 
   - Start here:
       - Running examples (Windows/macOS/Linux): running_examples.md
