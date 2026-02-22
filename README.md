@@ -1,27 +1,27 @@
-# HUF Core Snapshot (v1.1.8)
+﻿# HUF Core Snapshot (v1.1.8)
 
 **HUF is an artifact-first compression + audit framework for long-tail distributions** (budgets, logs, exceptions).
 
-**Not ML class imbalance:** here “long tail” means **mass distribution + exception reweighting** (baseline vs filtered view).
+**Not ML class imbalance:** here â€œlong tailâ€ means **mass distribution + exception reweighting** (baseline vs filtered view).
 
-It produces three “review-first” artifacts on every run:
+It produces three â€œreview-firstâ€ artifacts on every run:
 
-- **Coherence map** (`artifact_1_coherence_map.csv`) — *where the mass is* (ranked regimes)
-- **Active set** (`artifact_2_active_set.csv`) — retained items + global/local shares
-- **Trace report** (`artifact_3_trace_report.jsonl`) — provenance + “why it stayed”
+- **Coherence map** (`artifact_1_coherence_map.csv`) â€” *where the mass is* (ranked regimes)
+- **Active set** (`artifact_2_active_set.csv`) â€” retained items + global/local shares
+- **Trace report** (`artifact_3_trace_report.jsonl`) â€” provenance + â€œwhy it stayedâ€
 
-Docs site: https://peterhiggins19.github.io/huf_core_github_v1.1.8_no_inputs/
+Docs site: https://peterhiggins19.github.io/huf_core/
 
 ---
 
-## 2‑minute long-tail demo (Windows/Conda copy/paste)
+## 2â€‘minute long-tail demo (Windows/Conda copy/paste)
 
-**What this demonstrates:** the same dataset can look “stable” in the baseline view, but become **more concentrated** in an exception-only view — the practical long-tail story.
+**What this demonstrates:** the same dataset can look â€œstableâ€ in the baseline view, but become **more concentrated** in an exception-only view â€” the practical long-tail story.
 
 You will run:
 
-1) **Traffic Phase** (baseline) → writes to `out/traffic_phase_demo/`
-2) **Traffic Anomaly** (exception-only) → writes to `out/traffic_anomaly_demo/`
+1) **Traffic Phase** (baseline) â†’ writes to `out/traffic_phase_demo/`
+2) **Traffic Anomaly** (exception-only) â†’ writes to `out/traffic_anomaly_demo/`
 3) A console summary that prints:
    - top regimes changed (top 10 by `rho_global_post`)
    - **PROOF line**: `items_to_cover_90pct baseline -> exception`
@@ -39,7 +39,7 @@ After it finishes, look for a line like:
 
 - `PROOF: items_to_cover_90pct 37 -> 12`
 
-That’s the “repeatable number” people cite: exception views often tighten into fewer items.
+Thatâ€™s the â€œrepeatable numberâ€ people cite: exception views often tighten into fewer items.
 
 Want the quick dashboard on any folder?
 
@@ -47,7 +47,7 @@ Want the quick dashboard on any folder?
 .\.venv\Scripts\python scripts/inspect_huf_artifacts.py --out out/traffic_anomaly_demo
 ```
 
-**Why this works (accounting mapping):** baseline P&L → exception-only P&L → ranked variance review.  
+**Why this works (accounting mapping):** baseline P&L â†’ exception-only P&L â†’ ranked variance review.  
 See: `docs/long_tail_accounting_lens.md`
 
 ---
