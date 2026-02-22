@@ -36,7 +36,7 @@ HUF takes any **hierarchical mixture** — budgets, logs, retrieval outputs, cha
 - *What changed between baseline and exception views?*  
 - *Why did each item stay or get discarded?*  
 
-The “counter‑intuitive” part is intentional: **discarding tail mass and then re-normalizing makes the retained portion look stronger**. HUF makes that effect explicit (and auditable), so humans don’t misread it as “magic.”
+The “counter‑intuitive” part is intentional: **discarding tail mass and then re-normalizing makes the retained portion look stronger**. HUF makes that effect explicit (and auditable), so it is less likely to be misinterpreted as a black-box effect.
 
 ---
 
@@ -199,10 +199,10 @@ PROOF: items_to_cover_90pct 37 -> 12
 **Meaning:** sort items by mass share; count the minimum number needed to cover 90% of total mass.  
 Lower count → more concentrated mix (fewer items dominate).
 
-!!! tip "How to explain it to a human"
-    Baseline view: “Where is the mass across everything?”  
-    Exception view: “Where is the mass given only the exceptions?”  
-    Re-normalization makes the exception story *sharper*, so concentration becomes visible instead of blurred.
+!!! tip "How to interpret it"
+    Baseline view: "Where is the mass across everything?"
+    Exception view: "Where is the mass given only the exceptions?"
+    Re-normalization makes the exception view sharper, so concentration becomes visible instead of blurred.
 
 ---
 
