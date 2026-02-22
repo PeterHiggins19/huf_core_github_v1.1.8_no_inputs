@@ -5,7 +5,7 @@ site_author: Peter Higgins
 site_url: https://peterhiggins19.github.io/huf_core_github_v1.1.8_no_inputs/
 
 repo_url: https://github.com/PeterHiggins19/huf_core_github_v1.1.8_no_inputs
-repo_name: PeterHiggins19/huf_core_github_v1.1.8_no_inputs
+repo_name: huf-core
 edit_uri: edit/main/docs/
 
 theme:
