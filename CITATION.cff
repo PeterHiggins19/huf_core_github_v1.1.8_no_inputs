@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Higgins Unity Framework (HUF) — huf-core"
+type: software
+authors:
+  - family-names: "Higgins"
+    given-names: "Peter"
+repository-code: "https://github.com/PeterHiggins19/huf_core"
+url: "https://github.com/PeterHiggins19/huf_core"
+version: "1.1.8"
+license: "MIT"
+keywords:
+  - normalization
+  - audit
+  - hierarchical mixtures
+  - regimes
+  - multitenant
+  - retrieval
+  - observability
+abstract: >-
+  HUF (Higgins Unity Framework) is a normalization-invariant audit layer for hierarchical mixtures
+  (regimes/tenants/sources). It emits review-first artifacts (coherence map, active set, trace report,
+  error budget) to diagnose dominance, concentration, and drift in multi-regime systems.
+
+# Optional (add after enabling Zenodo):
+# doi: "10.5281/zenodo.XXXXXXX"
