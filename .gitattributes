@@ -1,9 +1,9 @@
-# Reduce language-noise in GitHub Linguist stats
-# Keep partner HTML in-repo for email use, but exclude from language breakdown.
+# Reduce language-noise in GitHub Linguist stats.
+# Keep partner HTML in-repo for email use, but exclude it from language breakdown.
 
 notes/partner_html/** linguist-vendored
 notes/partner_html_backup_*/** linguist-vendored
 notes/legacy_md/** linguist-vendored
 
-# If these overlay folders are legacy demos, exclude them too:
+# If overlay folders are legacy demos, exclude them too:
 huf_*_overlay/** linguist-vendored
