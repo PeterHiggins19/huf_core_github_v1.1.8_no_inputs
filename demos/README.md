@@ -21,3 +21,6 @@ Docs site: https://peterhiggins19.github.io/huf_core/
 **Run**
 ```powershell
 python demos/food_guide_demo.py
+
+### 2) Collective trace report (Ramsar primer development)
+- Artifact: `collective_trace_report.csv` — Wiki: https://github.com/PeterHiggins19/huf_core/wiki/Collective-Trace-Report-Ramsar-Primer-Development
