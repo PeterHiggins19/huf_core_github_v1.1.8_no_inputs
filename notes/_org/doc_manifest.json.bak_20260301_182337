@@ -3,6 +3,31 @@
   "generated": "2026-03-01",
   "documents": [
     {
+      "doc_id": "<DOC_ID>",
+      "title": "doc inventory",
+      "status": "<status>",
+      "lane": "<LANE>",
+      "huf_version": "<HUF_VERSION>",
+      "doc_version": "<DOC_VERSION>",
+      "responsible_operator": "<name>",
+      "canonical_path": "D:/GitHub/HUF-Core/huf_core_github_v1.1.8_no_inputs/scripts/doc_inventory.py",
+      "codes": [
+        "..."
+      ],
+      "artifacts": [
+        "CM",
+        "AS",
+        "TR",
+        "EB"
+      ],
+      "evidence": "E0-E4",
+      "posture": "DEF/OP/INT/THM",
+      "weights": null,
+      "caps": null,
+      "source_file": "D:/GitHub/HUF-Core/huf_core_github_v1.1.8_no_inputs/scripts/doc_inventory.py",
+      "source_type": "text"
+    },
+    {
       "doc_id": "HUF.DRAFT.BOOK.MANUSCRIPT.ADVANCED_MATH",
       "title": "index",
       "status": "draft",
@@ -1270,5 +1295,10 @@
       "source_type": "text"
     }
   ],
-  "collisions": {}
+  "collisions": {
+    "<DOC_ID>": [
+      "D:/GitHub/HUF-Core/huf_core_github_v1.1.8_no_inputs/notes/_org/templates/header_md.txt",
+      "D:/GitHub/HUF-Core/huf_core_github_v1.1.8_no_inputs/scripts/doc_inventory.py"
+    ]
+  }
 }
