@@ -57,16 +57,62 @@ markdown_extensions:
 nav:
 
   - Home: index.md
-  - Learning path: learning_path.md
   - Quick run: quick_run.md
 
-  - HUF Books:
+  - Learning:
+      - Overview: learning/index.md
+
+      - "00 Orientation":
+          - Overview: learning/00_orientation/index.md
+          - Quiz: learning/00_orientation/quiz.md
+          - Answers: learning/00_orientation/answers.md
+
+      - "01 Foundations":
+          - Overview: learning/01_foundations/index.md
+          - Quiz: learning/01_foundations/quiz.md
+          - Answers: learning/01_foundations/answers.md
+
+      - "02 Formal core":
+          - Overview: learning/02_formal_core/index.md
+          - Quiz: learning/02_formal_core/quiz.md
+          - Answers: learning/02_formal_core/answers.md
+
+      - "03 Artifacts":
+          - Overview: learning/03_artifacts/index.md
+          - Quiz: learning/03_artifacts/quiz.md
+          - Answers: learning/03_artifacts/answers.md
+
+      - "04 Running examples":
+          - Overview: learning/04_running_examples/index.md
+          - Quiz: learning/04_running_examples/quiz.md
+          - Answers: learning/04_running_examples/answers.md
+
+      - "05 Case studies":
+          - Overview: learning/05_case_studies/index.md
+          - Quiz: learning/05_case_studies/quiz.md
+          - Answers: learning/05_case_studies/answers.md
+
+      - "06 Partner pilots":
+          - Overview: learning/06_partner_pilots/index.md
+          - Quiz: learning/06_partner_pilots/quiz.md
+          - Answers: learning/06_partner_pilots/answers.md
+
+      - "07 Advanced math":
+          - Overview: learning/07_advanced_math/index.md
+          - Quiz: learning/07_advanced_math/quiz.md
+          - Answers: learning/07_advanced_math/answers.md
+
+      - Legacy (single page): learning_path.md
+
+  - Books:
+      - Overview: books/index.md
+      - Advanced Mathematics (draft): books/advanced_mathematics/index.md
       - HUF Handbook (v1.3.0): handbook.md
       - HUF Reference (v1.3.0): huf_reference.md
       - The Trap of Coherence: trap_of_coherence.md
+      - "The Trap of Coherence (wiki mirror)": wiki_trap_of_coherence.md
       - HUF Field Guide: field_guide.md
       - Ethics & disclosure: ethics.md
-      
 
   - Start here:
       - Running examples (Windows/macOS/Linux): running_examples.md
@@ -122,10 +168,10 @@ nav:
 
       - Case studies:
           - Catalog: partners/case_studies/index.md
+          - Ramsar pilot (draft): partners/case_studies/partner_ramsar_pilot.md
           - Traffic phase anomaly: partners/case_studies/traffic_phase.md
           - City of Markham: partners/case_studies/markham_worked_example.md
           - Planck LFI 70 GHz: partners/case_studies/planck_lfi_70ghz.md
 
   - Optional:
       - Jupyter demos: jupyter_demos.md
-
