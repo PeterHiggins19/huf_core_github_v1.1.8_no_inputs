@@ -1,15 +1,24 @@
-# Paste-over patch: docs clean + mkdocs nav + HUF headers
+# Link hygiene: "current documents override" updates
 
-This patch:
-- Adds HUF two-line headers to all docs pages missing them (keeps existing headers)
-- Fixes Field Guide anchor mismatch (double hyphen -> single)
-- Updates mkdocs.yml nav so Learning + Books (and everything else) appears on the site
-- Includes scripts/doc_inventory.py (placeholder DOC_ID ignored)
+This adds:
+- `scripts/link_hygiene_current.py`
 
-Apply:
-1) Paste all contents of this zip into repo root (merge/overwrite).
-2) Run:
-   .\.venv\Scripts\python -m mkdocs build --strict
+Run (dry-run):
+```powershell
+.\.venv\Scripts\python scripts\link_hygiene_current.py
+```
 
-If you want to regenerate the manifest after:
-   .\.venv\Scripts\python scripts\doc_inventory.py --root . --write --merge
+Apply changes + write report:
+```powershell
+.\.venv\Scripts\python scripts\link_hygiene_current.py --write
+```
+
+Then verify:
+```powershell
+.\.venv\Scripts\python -m mkdocs build --strict
+```
+
+If you publish:
+```powershell
+.\.venv\Scripts\python -m mkdocs gh-deploy --force
+```
