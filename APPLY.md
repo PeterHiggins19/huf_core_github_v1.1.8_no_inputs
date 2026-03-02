@@ -1,24 +1,22 @@
-# Link hygiene: "current documents override" updates
+# Patch: enforce "current documents supersede" for Books
 
-This adds:
-- `scripts/link_hygiene_current.py`
+Adds:
+- notes/_org/current_sources.json
+- scripts/sync_current_sources.py
 
-Run (dry-run):
+Run dry-run:
 ```powershell
-.\.venv\Scripts\python scripts\link_hygiene_current.py
+.\.venv\Scripts\python scripts\sync_current_sources.py
 ```
 
-Apply changes + write report:
+Apply:
 ```powershell
-.\.venv\Scripts\python scripts\link_hygiene_current.py --write
-```
-
-Then verify:
-```powershell
+.\.venv\Scripts\python scripts\sync_current_sources.py --write
 .\.venv\Scripts\python -m mkdocs build --strict
-```
-
-If you publish:
-```powershell
+git add -A
+git commit -m "Books: link to current_documents sources (handbook/reference)"
+git push
 .\.venv\Scripts\python -m mkdocs gh-deploy --force
 ```
+
+If you later move the canonical DOCX to a new doc_id folder, update `notes/_org/current_sources.json`.

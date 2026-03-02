@@ -1,0 +1,14 @@
+{
+  "handbook": {
+    "page": "docs/handbook.md",
+    "source": "notes/current_documents/staged/HUF.LEGACY.BOOK.MANUSCRIPT.HUF_HANDBOOK_V1_2_0/HUF_Handbook_v1.2.0.docx",
+    "title": "HUF Handbook",
+    "status": "current_source"
+  },
+  "reference": {
+    "page": "docs/huf_reference.md",
+    "source": "notes/current_documents/staged/HUF.DRAFT.BOOK.MANUSCRIPT.HUF_COMPLETE_REFERENCE_FEB2026/HUF_Complete_Reference_Feb2026.docx",
+    "title": "HUF Reference",
+    "status": "current_source"
+  }
+}
